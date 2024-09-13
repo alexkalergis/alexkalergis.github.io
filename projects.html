@@ -13,6 +13,7 @@
             background-color: #fff;
             color: #333;
             display: flex;
+            flex-direction: column;
             min-height: 100vh;
         }
         header {
@@ -21,6 +22,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            background-color: #f4f4f4;
             position: absolute;
             top: 0;
             right: 0;
@@ -37,31 +39,24 @@
         main {
             display: flex;
             flex: 1;
-            justify-content: center;
-            width: 100%;
-            padding: 2rem;
+            justify-content: flex-start; /* Aligns projects to the left */
+            align-items: center; /* Vertically centers the content */
+            padding-left: 2rem; /* Moves content a bit to the right */
         }
-        .project {
-            border: 1px solid #ddd;
-            padding: 1rem;
-            border-radius: 8px;
-            background-color: #fafafa;
+        ul.project-list {
+            list-style-type: disc;
+            padding-left: 2rem; /* Bullet indentation */
         }
-        .project h3 {
-            margin: 0 0 0.5rem 0;
+        ul.project-list li {
             font-size: 1.2rem;
-        }
-        .project p {
-            margin: 0.5rem 0 0 0;
-            font-size: 0.95rem;
-            line-height: 1.4;
+            line-height: 1.8;
         }
         footer {
             text-align: center;
-            padding: 0.3rem 0; /* Reduced padding */
+            padding: 0.3rem 0;
             width: 100%;
-            background-color: #fff;
-            font-size: 0.8rem; /* Reduced font size */
+            background-color: #f4f4f4;
+            font-size: 0.8rem;
             position: absolute;
             bottom: 0;
         }
@@ -75,10 +70,13 @@
             header a {
                 margin: 0.5rem 0;
             }
+            main {
+                padding-left: 1rem;
+            }
         }
         @media (min-width: 769px) {
             main {
-                padding: 3rem;
+                padding-left: 3rem;
             }
         }
     </style>
@@ -90,16 +88,11 @@
         <a href="https://github.com/alexkalergis" target="_blank">GitHub</a>
     </header>
     <main>
-        <h1>My Projects</h1>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of Project 1</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of Project 2</p>
-        </div>
-        <!-- Add more projects here -->
+        <ul class="project-list">
+            <li><strong>Project 1:</strong> Description of Project 1</li>
+            <li><strong>Project 2:</strong> Description of Project 2</li>
+            <!-- Add more projects here -->
+        </ul>
     </main>
     <footer>
         <p>&copy; 2024 Alexandros Kalergis</p>
