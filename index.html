@@ -12,7 +12,7 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+            box-sizing: border-box;
         }
 
         body {
@@ -21,26 +21,23 @@
             color: #333;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            overflow-y: auto; /* Allow vertical scrolling only when necessary */
         }
 
         header {
             width: 100%;
             padding: 1rem 2rem;
             display: flex;
-            justify-content: center;
+            justify-content: center; /* Centering the navigation links */
             align-items: center;
-            position: fixed; /* Keep the header fixed at the top */
+            position: fixed;
             top: 0;
             background-color: white;
             z-index: 1000;
         }
 
-        header a {
+        .nav-links a {
             margin-left: 2rem;
             color: #333;
             text-decoration: none;
@@ -48,20 +45,18 @@
             border-bottom: 2px solid transparent;
         }
 
-        header a.active {
+        .nav-links a.active {
             border-bottom-color: #3498db;
         }
 
-        header a:hover {
+        .nav-links a:hover {
             color: #3498db;
         }
 
         .social-links {
-            display: flex;
-            justify-content: flex-end;
             position: absolute;
-            top: 1rem;
             right: 2rem;
+            top: 1rem;
         }
 
         .social-links a {
@@ -76,18 +71,20 @@
 
         main {
             display: flex;
-            flex: 1;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
-            margin-top: 5rem; /* Space for the fixed header */
-            text-align: justify;
+            width: 100%;
+            padding: 5rem 2rem;
+            margin-top: 6rem; /* Space for the fixed header */
         }
 
         .about-me {
-            max-width: 400px;
+            max-width: 400px; /* Restricted the width for better readability */
+            margin-right: 4rem; /* Space between the text and profile picture */
             font-size: 1rem;
             line-height: 1.6;
+            text-align: justify;
         }
 
         .profile-pic {
@@ -95,7 +92,6 @@
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            margin-left: 2rem;
         }
 
         footer {
@@ -104,36 +100,36 @@
             width: 100%;
             background-color: #fff;
             font-size: 0.8rem;
-            position: relative;
-            bottom: 0;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="project.html" id="projects-link">Projects</a>
-        <a href="designs.html" id="designs-link">Designs</a>
-        <a href="other.html" id="other-link">Other</a>
+        <div class="nav-links">
+            <a href="projects.html" id="projects-link">Projects</a>
+            <a href="designs.html" id="designs-link">Designs</a>
+            <a href="other.html" id="other-link">Other</a>
+        </div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/alexandros-kalergis/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/alexkalergis" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
     </header>
-    
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/alexandros-kalergis/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/alexkalergis" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-        </a>
-    </div>
-    
+
     <main>
         <div class="about-me">
             <h2>About Me</h2>
             <p>Hello, world! Welcome to my personal website. 
-                If you wish a more detailed portfolio, this is my <a href="Kalergis Resume.pdf" target="_blank">CV</a>.</p>
+                If you wish for a more detailed portfolio, this is my <a href="Kalergis Resume.pdf" target="_blank">CV</a>.</p>
         </div>
         <img src="IMG_1989.jpg" alt="Profile Picture" class="profile-pic">
     </main>
-    
+
     <footer>
         <p>&copy; 2024 Alexandros Kalergis</p>
     </footer>
