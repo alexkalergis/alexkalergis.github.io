@@ -71,17 +71,18 @@
 
         main {
             display: flex;
+            flex-direction: column; /* Stack elements vertically */
             justify-content: center;
             align-items: center;
             flex: 1;
             width: 100%;
             padding: 2rem;
-            text-align: center; /* Center text in "About Me" section */
+            text-align: center; /* Center text content */
         }
 
         .about-me {
-            max-width: 400px; /* Restricted the width for better readability */
-            margin-right: 2rem;
+            max-width: 400px;
+            margin-bottom: 2rem; /* Adds space between text and profile picture */
             font-size: 1rem;
             line-height: 1.6;
         }
@@ -106,7 +107,7 @@
 <body>
     <header>
         <div class="nav-links">
-            <a href="projects.html" id="projects-link">Projects</a>
+            <a href="project.html" id="projects-link">Projects</a>
             <a href="designs.html" id="designs-link">Designs</a>
             <a href="other.html" id="other-link">Other</a>
         </div>
@@ -125,7 +126,7 @@
             <h2>About Me</h2>
             <p>Hello, world! Welcome to my personal website. 
                 If you wish for a more detailed portfolio, this is my <a href="Kalergis Resume.pdf" target="_blank">CV</a>.
-            Keep in mind everything is under construction here!</p>
+            Keep in mind everything is under construction!</p>
         </div>
         <img src="IMG_1989.jpg" alt="Profile Picture" class="profile-pic">
     </main>
