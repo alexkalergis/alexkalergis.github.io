@@ -21,7 +21,6 @@
             color: #333;
             display: flex;
             flex-direction: column;
-            align-items: center;
             min-height: 100vh;
         }
 
@@ -63,6 +62,7 @@
             margin-left: 1rem;
             color: #333;
             font-size: 1.5rem;
+            text-decoration: none;
         }
 
         .social-links a:hover {
@@ -71,20 +71,19 @@
 
         main {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            flex: 1;
             width: 100%;
-            padding: 5rem 2rem;
-            margin-top: 6rem; /* Space for the fixed header */
+            padding: 2rem;
+            text-align: center; /* Center text in "About Me" section */
         }
 
         .about-me {
             max-width: 400px; /* Restricted the width for better readability */
-            margin-right: 4rem; /* Space between the text and profile picture */
+            margin-right: 2rem;
             font-size: 1rem;
             line-height: 1.6;
-            text-align: justify;
         }
 
         .profile-pic {
@@ -107,7 +106,7 @@
 <body>
     <header>
         <div class="nav-links">
-            <a href="project.html" id="projects-link">Projects</a>
+            <a href="projects.html" id="projects-link">Projects</a>
             <a href="designs.html" id="designs-link">Designs</a>
             <a href="other.html" id="other-link">Other</a>
         </div>
@@ -125,8 +124,7 @@
         <div class="about-me">
             <h2>About Me</h2>
             <p>Hello, world! Welcome to my personal website. 
-                If you wish for a more detailed portfolio, this is my <a href="Kalergis Resume.pdf" target="_blank">CV</a>.
-            Keep in mind that my website is under contruction. Hold on!</p>
+                If you wish for a more detailed portfolio, this is my <a href="Kalergis Resume.pdf" target="_blank">CV</a>.</p>
         </div>
         <img src="IMG_1989.jpg" alt="Profile Picture" class="profile-pic">
     </main>
