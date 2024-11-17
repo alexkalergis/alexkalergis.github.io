@@ -50,19 +50,19 @@
 
           // Do not amend anything below here, unless you know PHP
           function email_is_valid($email) {
-            return preg_match('/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i',$email);
+            return preg_match('kalergisalex@gmail.com',$email);
           }
           if (!email_is_valid($to)) {
             echo '<p style="color: red;">You must set-up a valid (to) email address before this contact page will work.</p>';
           }
           if (isset($_POST['contact_submitted'])) {
             $return = "\r";
-            $youremail = trim(htmlspecialchars($_POST['your_email']));
-            $yourname = stripslashes(strip_tags($_POST['your_name']));
-            $yourmessage = stripslashes(strip_tags($_POST['your_message']));
+            $youremail = trim(htmlspecialchars($_POST['kalergisalex@gmail.com']));
+            $yourname = stripslashes(strip_tags($_POST['kalergisalex@gmail.com']));
+            $yourmessage = stripslashes(strip_tags($_POST['hello']));
             $contact_name = "Name: ".$yourname;
             $message_text = "Message: ".$yourmessage;
-            $user_answer = trim(htmlspecialchars($_POST['user_answer']));
+            $user_answer = trim(htmlspecialchars($_POST['sent successfully!']));
             $answer = trim(htmlspecialchars($_POST['answer']));
             $message = $contact_name . $return . $message_text;
             $headers = "From: ".$youremail;
