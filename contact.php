@@ -44,25 +44,25 @@
           // 1. Enter the email address you would like the enquiry sent to
           // 2. Enter the subject of the email you will receive, when someone contacts you
           // 3. Enter the text that you would like the user to see once they submit the contact form
-          $to = 'email@emailaddress.com';
+          $to = 'kalergisalex@gmail.com';
           $subject = 'Enquiry from the website';
           $contact_submitted = 'Your message has been sent.';
 
           // Do not amend anything below here, unless you know PHP
           function email_is_valid($email) {
-            return preg_match('kalergisalex@gmail.com',$email);
+            return preg_match('/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i',$email);
           }
           if (!email_is_valid($to)) {
             echo '<p style="color: red;">You must set-up a valid (to) email address before this contact page will work.</p>';
           }
           if (isset($_POST['contact_submitted'])) {
             $return = "\r";
-            $youremail = trim(htmlspecialchars($_POST['kalergisalex@gmail.com']));
-            $yourname = stripslashes(strip_tags($_POST['kalergisalex@gmail.com']));
-            $yourmessage = stripslashes(strip_tags($_POST['hello']));
+            $youremail = trim(htmlspecialchars($_POST['your_email']));
+            $yourname = stripslashes(strip_tags($_POST['your_name']));
+            $yourmessage = stripslashes(strip_tags($_POST['your_message']));
             $contact_name = "Name: ".$yourname;
             $message_text = "Message: ".$yourmessage;
-            $user_answer = trim(htmlspecialchars($_POST['sent successfully!']));
+            $user_answer = trim(htmlspecialchars($_POST['user_answer']));
             $answer = trim(htmlspecialchars($_POST['answer']));
             $message = $contact_name . $return . $message_text;
             $headers = "From: ".$youremail;
