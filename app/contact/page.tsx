@@ -143,25 +143,6 @@ export default function ContactPage() {
             <Card>
               <CardContent className="p-6 flex items-start gap-4">
                 <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Phone</h3>
-                  <Link
-                    href="tel:+306973739493"
-                    className="text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1"
-                  >
-                    +30 6973739493
-                    <ExternalLink className="h-3 w-3 text-primary" />
-                  </Link>
-                  <p className="text-muted-foreground text-sm">Available for calls</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6 flex items-start gap-4">
-                <div className="bg-primary/10 p-3 rounded-full flex-shrink-0">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
