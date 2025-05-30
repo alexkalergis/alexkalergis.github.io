@@ -21,29 +21,21 @@ export function Personal() {
   const videos = [
     {
       id: 1,
-      title: "MIT 6.S191: Introduction to Deep Learning",
-      creator: "MIT",
-      link: "https://www.youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI",
-      tags: ["Deep Learning", "Neural Networks", "MIT"],
-      description: "Comprehensive lecture series that provided me with a solid foundation in deep learning concepts.",
+      title: "The Art of Code - Dylan Beattie",
+      creator: "Dylan Beattie",
+      link: "https://www.youtube.com/watch?v=ZqeA_psKn2E",
+      tags: ["Programming", "Art", "Creativity", "Code"],
+      description:
+        "An inspiring talk about the intersection of programming and art, exploring how code can be a creative medium.",
     },
     {
       id: 2,
-      title: "Stanford CS231n: Convolutional Neural Networks for Visual Recognition",
-      creator: "Stanford University",
-      link: "https://www.youtube.com/playlist?list=PL3FW7Lu3i5JvHM8ljYj-zLfQRF3EO8sYv",
-      tags: ["CNN", "Computer Vision", "Stanford"],
+      title: "The Future of Programming",
+      creator: "Bret Victor",
+      link: "https://www.youtube.com/watch?v=9uOMectkCCs",
+      tags: ["Programming", "Future", "Innovation", "Technology"],
       description:
-        "In-depth course on CNNs that significantly improved my understanding of computer vision techniques.",
-    },
-    {
-      id: 3,
-      title: "Two Minute Papers",
-      creator: "Károly Zsolnai-Fehér",
-      link: "https://www.youtube.com/c/K%C3%A1rolyZsolnai",
-      tags: ["AI Research", "Paper Summaries", "Accessible"],
-      description:
-        "Concise explanations of complex AI research papers that help me stay updated with the latest developments.",
+        "A thought-provoking presentation about the evolution and future possibilities of programming paradigms.",
     },
   ]
 

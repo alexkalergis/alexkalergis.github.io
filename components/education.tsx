@@ -55,15 +55,13 @@ export function Education() {
                 <Badge className="self-start">2018 - 2023</Badge>
               </div>
               <p className="text-muted-foreground">University of Patras, Greece</p>
-              <div className="space-y-3">
-                <div className="grid sm:grid-cols-2 gap-2">
-                  <p>
-                    <span className="font-medium">Major:</span> Cyber-Physical Systems
-                  </p>
-                  <p>
-                    <span className="font-medium">Achievement:</span> Top 2.9% of class
-                  </p>
-                </div>
+              <div className="space-y-2">
+                <p>
+                  <span className="font-medium">Major:</span> Cyber-Physical Systems
+                </p>
+                <p>
+                  <span className="font-medium">Achievement:</span> Top 2.9% of class
+                </p>
                 <p>
                   <span className="font-medium">Thesis:</span> Robot writing via Reinforcement Learning
                 </p>
@@ -86,7 +84,7 @@ export function Education() {
           <CardContent className="space-y-6">
             <div className="space-y-6">
               <div className="space-y-3">
-                <h3 className="font-bold">Honorable Mention in Artificial Intelligence Competition (2023)</h3>
+                <h3 className="font-bold text-lg">Honorable Mention in Artificial Intelligence Competition (2023)</h3>
                 <p className="text-muted-foreground text-sm">
                   Designed and developed two robotic systems using reinforcement learning algorithms. Gained experience
                   with Python libraries like Tensorflow, NumPy, Keras, PyTorch for deep learning. Researched multiple
@@ -107,7 +105,7 @@ export function Education() {
               </div>
 
               <div className="border-t pt-4">
-                <h3 className="font-bold mb-3">Professional Certifications</h3>
+                <h3 className="font-bold text-lg mb-3">Professional Certifications</h3>
                 <div className="space-y-3">
                   {certifications.map((cert) => (
                     <div key={cert.id} className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">

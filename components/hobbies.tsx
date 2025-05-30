@@ -1,32 +1,22 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Camera, Music, Book, Gamepad, Bike } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Camera, Music, Book, Bike, Film, ExternalLink } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function Hobbies() {
   const photographyItems = [
     {
       id: 1,
-      title: "Sunset at the Beach",
-      description: "Captured during golden hour at a local beach",
+      title: "Theater Act",
+      description: 'Photographic documentation of a theatrical performance at "Εμπρός Theater"',
       image: "/placeholder.svg?height=600&width=800",
     },
     {
       id: 2,
-      title: "Urban Architecture",
-      description: "Modern buildings in downtown Athens",
-      image: "/placeholder.svg?height=600&width=800",
-    },
-    {
-      id: 3,
-      title: "Mountain Landscape",
-      description: "Hiking trip in the mountains of Greece",
-      image: "/placeholder.svg?height=600&width=800",
-    },
-    {
-      id: 4,
-      title: "Street Photography",
-      description: "Capturing everyday life in the city",
+      title: "Ενδιάμεσα Τοπία",
+      description: 'Visual documentation of the group exhibition "Ενδιάμεσα Τοπία" at Mets Art Center',
       image: "/placeholder.svg?height=600&width=800",
     },
   ]
@@ -67,21 +57,21 @@ export function Hobbies() {
     },
   ]
 
-  const gamingItems = [
+  const movieItems = [
     {
       id: 1,
-      title: "Favorite Games",
-      content: "The Witcher 3, Dark Souls series, Civilization VI, Factorio",
+      title: "Favorite Directors",
+      content: "Christopher Nolan, Denis Villeneuve, Stanley Kubrick, Andrei Tarkovsky",
     },
     {
       id: 2,
-      title: "Platforms",
-      content: "PC, PlayStation",
+      title: "Favorite Films",
+      content: "Blade Runner 2049, Interstellar, 2001: A Space Odyssey, The Matrix, Arrival",
     },
     {
       id: 3,
-      title: "Game Jams",
-      content: "Participated in 3 game jams, creating small indie games",
+      title: "Favorite Genres",
+      content: "Science Fiction, Psychological Thrillers, Art House Cinema",
     },
   ]
 
@@ -126,9 +116,9 @@ export function Hobbies() {
             <Book className="h-4 w-4" />
             <span className="hidden sm:inline">Reading</span>
           </TabsTrigger>
-          <TabsTrigger value="gaming" className="flex items-center gap-2">
-            <Gamepad className="h-4 w-4" />
-            <span className="hidden sm:inline">Gaming</span>
+          <TabsTrigger value="movies" className="flex items-center gap-2">
+            <Film className="h-4 w-4" />
+            <span className="hidden sm:inline">Movies</span>
           </TabsTrigger>
           <TabsTrigger value="sports" className="flex items-center gap-2">
             <Bike className="h-4 w-4" />
@@ -137,18 +127,33 @@ export function Hobbies() {
         </TabsList>
 
         <TabsContent value="photography" className="mt-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            {photographyItems.map((item) => (
-              <Card key={item.id} className="overflow-hidden">
-                <div className="relative h-64 w-full">
-                  <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
-                </div>
-                <CardContent className="p-4">
-                  <h3 className="font-bold text-lg">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              {photographyItems.map((item) => (
+                <Card key={item.id} className="overflow-hidden">
+                  <div className="relative h-64 w-full">
+                    <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-bold text-lg">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="text-center">
+              <Button variant="outline" asChild>
+                <Link
+                  href="https://500px.com/p/alexkalergis?view=photos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  See more on 500px
+                  <ExternalLink className="h-4 w-4 text-primary" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </TabsContent>
 
@@ -178,9 +183,9 @@ export function Hobbies() {
           </div>
         </TabsContent>
 
-        <TabsContent value="gaming" className="mt-6">
+        <TabsContent value="movies" className="mt-6">
           <div className="grid md:grid-cols-3 gap-6">
-            {gamingItems.map((item) => (
+            {movieItems.map((item) => (
               <Card key={item.id}>
                 <CardContent className="p-6">
                   <h3 className="font-bold text-lg mb-2">{item.title}</h3>
