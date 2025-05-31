@@ -21,21 +21,30 @@ export function Personal() {
   const videos = [
     {
       id: 1,
-      title: "The Art of Code - Dylan Beattie",
+      title: "The Art of Code",
       creator: "Dylan Beattie",
-      link: "https://www.youtube.com/watch?v=ZqeA_psKn2E",
-      tags: ["Programming", "Art", "Creativity", "Code"],
+      link: "https://www.youtube.com/watch?v=6avJHaC3C2U",
+      tags: ["Programming", "Art", "Creativity", "Code", "Music"],
       description:
-        "An inspiring talk about the intersection of programming and art, exploring how code can be a creative medium.",
+        "A fascinating exploration of how programming can be an art form, featuring live coding performances and the intersection of code, music, and creativity. Dylan demonstrates how code can be used to create music, poetry, and visual art.",
     },
     {
       id: 2,
       title: "The Future of Programming",
       creator: "Bret Victor",
-      link: "https://www.youtube.com/watch?v=9uOMectkCCs",
-      tags: ["Programming", "Future", "Innovation", "Technology"],
+      link: "https://www.youtube.com/watch?v=8pTEmbeENF4",
+      tags: ["Programming", "Future", "Innovation", "Technology", "Design"],
       description:
-        "A thought-provoking presentation about the evolution and future possibilities of programming paradigms.",
+        "A thought-provoking presentation delivered as if from 1973, imagining what programming might look like in the future. Bret Victor challenges conventional thinking about programming paradigms and user interfaces.",
+    },
+    {
+      id: 3,
+      title: "Inventing on Principle",
+      creator: "Bret Victor",
+      link: "https://www.youtube.com/watch?v=PUv66718DII",
+      tags: ["Design", "Programming", "Innovation", "Creativity", "Principles"],
+      description:
+        "An inspiring talk about following your principles and how immediate feedback can transform the creative process. Victor demonstrates revolutionary programming tools that provide instant visual feedback.",
     },
   ]
 
