@@ -1,14 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
-}
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
 
-export default nextConfig
+const nextConfig = {
+  output: 'export',
+  // Set the base path if you want your site in a subdirectory
+  basePath: isGithubPages ? '/alexkalergis.github.io' : '',
+  // Set assetPrefix if you want (not required unless using images/static assets from root)
+};
+
+module.exports = nextConfig;
