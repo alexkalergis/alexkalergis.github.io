@@ -31,6 +31,7 @@ jobs:
           else
             echo "manager=npm" >> $GITHUB_OUTPUT
           fi
+        shell: bash
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -38,6 +39,7 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
 
+      # THIS IS THE CRUCIAL PART
       - name: Setup pnpm
         if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
         uses: pnpm/action-setup@v2
