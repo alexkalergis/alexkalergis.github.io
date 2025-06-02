@@ -25,23 +25,27 @@ jobs:
         id: detect-package-manager
         run: |
           if [ -f pnpm-lock.yaml ]; then
-            echo "manager=pnpm" >> $GITHUB_OUTPUT
+            echo "pnpm" > pm.txt
           elif [ -f yarn.lock ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "yarn" > pm.txt
           else
-            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "npm" > pm.txt
           fi
+        shell: bash
+
+      - name: Read detected package manager
+        id: read-pm
+        run: echo "manager=$(cat pm.txt)" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache: ${{ steps.read-pm.outputs.manager }}
 
-      # THIS IS THE CRUCIAL PART
       - name: Setup pnpm
-        if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
+        if: ${{ steps.read-pm.outputs.manager == 'pnpm' }}
         uses: pnpm/action-setup@v2
         with:
           version: 8
@@ -62,9 +66,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [ "${{ steps.detect-package-manager.outputs.manager }}" = "pnpm" ]; then
+          if [ "${{ steps.read-pm.outputs.manager }}" = "pnpm" ]; then
             pnpm install
-          elif [ "${{ steps.detect-package-manager.outputs.manager }}" = "yarn" ]; then
+          elif [ "${{ steps.read-pm.outputs.manager }}" = "yarn" ]; then
             yarn install
           else
             npm install --legacy-peer-deps
