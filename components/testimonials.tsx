@@ -10,7 +10,7 @@ export function Testimonials() {
         "Alexandros is an exceptional senior engineer who consistently delivers high-quality solutions. His ability to architect scalable systems and mentor junior developers makes him an invaluable team member.",
       author: "Sarah Johnson",
       role: "Engineering Manager, TechCorp",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: "/sarah.jpg",
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ export function Testimonials() {
         "Working with Alexandros on our microservices migration was transformative. His technical expertise and leadership skills helped us achieve a seamless transition with zero downtime.",
       author: "Michael Chen",
       role: "CTO, ScaleUp Inc",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: "/michael.jpg",
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ export function Testimonials() {
         "Alexandros brings a unique combination of technical depth and strategic thinking. His contributions to our platform architecture have been instrumental in our ability to scale efficiently.",
       author: "Emily Rodriguez",
       role: "VP of Engineering, DataFlow",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: "/emily.jpg",
     },
   ]
 
