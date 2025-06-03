@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { FileText, Video, LinkIcon, ExternalLink } from "lucide-react"
+import { FileText, Video, LinkIcon, ExternalLink, Quote } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 
@@ -67,6 +67,27 @@ export function Personal() {
     },
   ]
 
+  const quotes = [
+    {
+      id: 1,
+      text: "The best way to predict the future is to invent it.",
+      author: "Alan Kay",
+      context: "Computer Scientist & Turing Award Winner",
+    },
+    {
+      id: 2,
+      text: "Design is not just what it looks like and feels like. Design is how it works.",
+      author: "Steve Jobs",
+      context: "Co-founder of Apple Inc.",
+    },
+    {
+      id: 3,
+      text: "Any sufficiently advanced technology is indistinguishable from magic.",
+      author: "Arthur C. Clarke",
+      context: "Science Fiction Writer & Futurist",
+    },
+  ]
+
   return (
     <section id="personal" className="container py-24 space-y-16">
       <div className="text-center space-y-4">
@@ -77,7 +98,7 @@ export function Personal() {
       </div>
 
       <Tabs defaultValue="papers" className="w-full">
-        <TabsList className="grid w-full grid-cols-3">
+        <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="papers" className="flex items-center gap-2">
             <FileText className="h-4 w-4" />
             <span className="hidden sm:inline">Papers</span>
@@ -89,6 +110,10 @@ export function Personal() {
           <TabsTrigger value="resources" className="flex items-center gap-2">
             <LinkIcon className="h-4 w-4" />
             <span className="hidden sm:inline">Resources</span>
+          </TabsTrigger>
+          <TabsTrigger value="quotes" className="flex items-center gap-2">
+            <Quote className="h-4 w-4" />
+            <span className="hidden sm:inline">Quotes</span>
           </TabsTrigger>
         </TabsList>
 
@@ -184,6 +209,21 @@ export function Personal() {
                         {tag}
                       </Badge>
                     ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
+        <TabsContent value="quotes" className="mt-6">
+          <div className="grid md:grid-cols-1 gap-6">
+            {quotes.map((quote) => (
+              <Card key={quote.id}>
+                <CardContent className="p-6">
+                  <blockquote className="text-lg italic mb-4 border-l-4 border-primary pl-4">"{quote.text}"</blockquote>
+                  <div className="text-right">
+                    <p className="font-medium">— {quote.author}</p>
+                    <p className="text-sm text-muted-foreground">{quote.context}</p>
                   </div>
                 </CardContent>
               </Card>

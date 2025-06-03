@@ -24,18 +24,18 @@ export function Hobbies() {
   const musicItems = [
     {
       id: 1,
-      title: "Favorite Artists",
-      content: "Pink Floyd, Radiohead, Tool, Porcupine Tree, Opeth",
+      title: "Currently Listening",
+      content: "Lumineers, Mega, KALEO, Black Pumas",
     },
     {
       id: 2,
-      title: "Instruments",
-      content: "Guitar, Piano basics",
+      title: "Favorite Genres",
+      content: "Alternative Rock, Funk/Soul, Jazz, Hip/Hop",
     },
     {
       id: 3,
-      title: "Concerts Attended",
-      content: "Over 30 live performances across Europe",
+      title: "Find me on Spotify and Discogs",
+      content: "Discover my music taste and vinyl collection",
     },
   ]
 
