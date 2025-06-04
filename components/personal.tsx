@@ -21,30 +21,21 @@ export function Personal() {
   const videos = [
     {
       id: 1,
-      title: "The Art of Code",
-      creator: "Dylan Beattie",
-      link: "https://www.youtube.com/watch?v=6avJHaC3C2U",
-      tags: ["Programming", "Art", "Creativity", "Code", "Music"],
+      title: "The first secret of great design",
+      creator: "Tony Fadell",
+      link: "https://www.youtube.com/watch?v=9uOMectkCCs&t=1s",
+      tags: ["Design", "Innovation", "Product Design", "TED", "Technology"],
       description:
-        "A fascinating exploration of how programming can be an art form, featuring live coding performances and the intersection of code, music, and creativity. Dylan demonstrates how code can be used to create music, poetry, and visual art.",
+        "Tony Fadell, the man behind the first iPod and the Nest thermostat, shares insights about noticing the little things that make a big difference in design. A fascinating look at how to see problems and opportunities that others miss.",
     },
     {
       id: 2,
-      title: "The Future of Programming",
-      creator: "Bret Victor",
-      link: "https://www.youtube.com/watch?v=8pTEmbeENF4",
-      tags: ["Programming", "Future", "Innovation", "Technology", "Design"],
+      title: "How to think like a designer",
+      creator: "TED",
+      link: "https://www.youtube.com/watch?v=ZqeA_psKn2E",
+      tags: ["Design Thinking", "Creativity", "Problem Solving", "Innovation", "TED"],
       description:
-        "A thought-provoking presentation delivered as if from 1973, imagining what programming might look like in the future. Bret Victor challenges conventional thinking about programming paradigms and user interfaces.",
-    },
-    {
-      id: 3,
-      title: "Inventing on Principle",
-      creator: "Bret Victor",
-      link: "https://www.youtube.com/watch?v=PUv66718DII",
-      tags: ["Design", "Programming", "Innovation", "Creativity", "Principles"],
-      description:
-        "An inspiring talk about following your principles and how immediate feedback can transform the creative process. Victor demonstrates revolutionary programming tools that provide instant visual feedback.",
+        "An exploration of the design thinking process and how designers approach problems differently. Learn the mindset and methodologies that can help you think more creatively and solve complex challenges.",
     },
   ]
 

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Camera, Music, Book, Bike, Film, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { SpotifyNowPlaying } from "./spotify-now-playing"
 
 export function Hobbies() {
   const photographyItems = [
@@ -21,34 +22,16 @@ export function Hobbies() {
     },
   ]
 
-  const musicItems = [
-    {
-      id: 1,
-      title: "Currently Listening",
-      content: "Lumineers, Mega, KALEO, Black Pumas",
-    },
-    {
-      id: 2,
-      title: "Favorite Genres",
-      content: "Alternative Rock, Funk/Soul, Jazz, Hip/Hop",
-    },
-    {
-      id: 3,
-      title: "Find me on Spotify and Discogs",
-      content: "Discover my music taste and vinyl collection",
-    },
-  ]
-
   const readingItems = [
     {
       id: 1,
       title: "Favorite Books",
-      content: "Dune by Frank Herbert, 1984 by George Orwell, The Hitchhiker's Guide to the Galaxy by Douglas Adams",
+      content: "When Nietzsche Wept, Ikigai, Siddhartha, Logicomix, Elementary Aesthetics",
     },
     {
       id: 2,
-      title: "Current Reading",
-      content: "The Three-Body Problem by Liu Cixin",
+      title: "Currently Reading",
+      content: "Creative Act: A Way of Being, The Cafe on the Edge of the World",
     },
     {
       id: 3,
@@ -158,15 +141,67 @@ export function Hobbies() {
         </TabsContent>
 
         <TabsContent value="music" className="mt-6">
-          <div className="grid md:grid-cols-3 gap-6">
-            {musicItems.map((item) => (
-              <Card key={item.id}>
+          <div className="space-y-6">
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.content}</p>
+                  <h3 className="font-bold text-lg mb-4">Currently Listening</h3>
+                  <SpotifyNowPlaying />
                 </CardContent>
               </Card>
-            ))}
+
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-bold text-lg mb-4">Favorite Artists</h3>
+                  <div className="space-y-2 text-muted-foreground">
+                    <p>• Black Pumas</p>
+                    <p>• KALEO</p>
+                    <p>• Lumineers</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-bold text-lg mb-4">Favorite Genres</h3>
+                  <div className="space-y-2 text-muted-foreground">
+                    <p>• Alternative Rock</p>
+                    <p>• Funk/Soul</p>
+                    <p>• Jazz</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                Find me on Spotify and Discogs to discover my music taste and vinyl collection
+              </p>
+              <div className="flex justify-center gap-4">
+                <Button variant="outline" asChild>
+                  <Link
+                    href="https://open.spotify.com/user/alexkalergis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2"
+                  >
+                    Spotify Profile
+                    <ExternalLink className="h-4 w-4 text-primary" />
+                  </Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link
+                    href="https://www.discogs.com/user/alexkalergis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2"
+                  >
+                    Discogs Collection
+                    <ExternalLink className="h-4 w-4 text-primary" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </TabsContent>
 

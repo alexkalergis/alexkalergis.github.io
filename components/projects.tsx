@@ -173,7 +173,13 @@ export function Projects() {
 
       <div className="text-center">
         <Button variant="outline" size="lg" asChild>
-          <Link href="https://github.com/alexkalergis" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://github.com/alexkalergis"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2"
+          >
+            <Github className="h-5 w-5" />
             View All Projects on GitHub
           </Link>
         </Button>
