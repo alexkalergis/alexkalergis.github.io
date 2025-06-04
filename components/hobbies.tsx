@@ -12,13 +12,13 @@ export function Hobbies() {
       id: 1,
       title: "Theater Act",
       description: 'Photographic documentation of a theatrical performance at "Εμπρός Theater"',
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/theater-act.png", // Updated path
     },
     {
       id: 2,
       title: "Ενδιάμεσα Τοπία",
       description: 'Visual documentation of the group exhibition "Ενδιάμεσα Τοπία" at Mets Art Center',
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/images/interim-landscapes.png", // Updated path
     },
   ]
 

@@ -9,24 +9,25 @@ export function Hero() {
   return (
     <section className="container py-24 md:py-32 flex flex-col md:flex-row items-center gap-8">
       <div className="flex-1 space-y-6">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+        <h1 className="text-4xl md:text-6xl font-heading font-bold leading-tight">
           Hi, I'm Alex Kalergis
           <span className="block text-primary">Software Engineer & Product Designer</span>
         </h1>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-xl text-muted-foreground font-mono">
           Electrical & Computer Engineering graduate with expertise in AI, machine learning, and product design.
           Passionate about creating innovative solutions that combine technical excellence with exceptional user
           experience.
         </p>
         <div className="flex gap-4">
           <Button asChild>
-            <Link href="/contact" className="inline-flex items-center gap-2">
+            <Link href="/contact" className="inline-flex items-center gap-2 font-mono">
               Let's Talk <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
           <Button variant="outline" asChild>
             <Link
               href="#projects"
+              className="font-mono"
               onClick={(e) => {
                 e.preventDefault()
                 document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })
