@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Badge } from "@/components/ui/badge"
 import { ExternalLink } from "lucide-react"
 import Link from "next/link"
 
@@ -21,26 +20,20 @@ export function SpotifyNowPlaying() {
   useEffect(() => {
     const fetchNowPlaying = async () => {
       try {
-        const response = await fetch("/api/spotify/now-playing")
-
-        // Check if the response is ok and has valid content type
-        if (!response.ok) {
-          console.warn("Spotify API returned error:", response.status, response.statusText)
+        // Check if we're in a browser environment and have the required env vars
+        if (typeof window === "undefined") {
           setData({ isPlaying: false })
+          setLoading(false)
           return
         }
 
-        const contentType = response.headers.get("content-type")
-        if (!contentType || !contentType.includes("application/json")) {
-          console.warn("Spotify API returned non-JSON response")
-          setData({ isPlaying: false })
-          return
-        }
+        // For static builds, we'll show a fallback message
+        // In a real deployment, you'd need to set up a serverless function
+        // or use a different approach for the Spotify integration
 
-        const nowPlaying = await response.json()
-        setData(nowPlaying)
+        setData({ isPlaying: false })
       } catch (error) {
-        console.warn("Error fetching now playing:", error)
+        console.warn("Spotify integration not available in static build")
         setData({ isPlaying: false })
       } finally {
         setLoading(false)
@@ -48,10 +41,6 @@ export function SpotifyNowPlaying() {
     }
 
     fetchNowPlaying()
-    // Refresh every 30 seconds
-    const interval = setInterval(fetchNowPlaying, 30000)
-
-    return () => clearInterval(interval)
   }, [])
 
   if (loading) {
@@ -65,36 +54,19 @@ export function SpotifyNowPlaying() {
 
   return (
     <div className="space-y-3">
-      {data.isPlaying ? (
-        <>
-          <div className="flex items-center gap-2 mb-2">
-            <Badge variant="secondary" className="text-xs">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse" />
-              Now Playing
-            </Badge>
-          </div>
-          <div className="space-y-1">
-            <h4 className="font-medium text-sm leading-tight">{data.title}</h4>
-            <p className="text-xs text-muted-foreground">{data.artist}</p>
-          </div>
-          {data.songUrl && (
-            <Link
-              href={data.songUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
-            >
-              Listen on Spotify
-              <ExternalLink className="h-3 w-3" />
-            </Link>
-          )}
-        </>
-      ) : (
-        <div className="space-y-1">
-          <p className="text-sm text-muted-foreground">Not currently playing</p>
-          <p className="text-xs text-muted-foreground">Check back later!</p>
-        </div>
-      )}
+      <div className="space-y-1">
+        <p className="text-sm text-muted-foreground">Not currently playing</p>
+        <p className="text-xs text-muted-foreground">Spotify integration available after deployment</p>
+      </div>
+      <Link
+        href="https://open.spotify.com/user/alexkalergis"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+      >
+        View my Spotify profile
+        <ExternalLink className="h-3 w-3" />
+      </Link>
     </div>
   )
 }
