@@ -42,7 +42,7 @@ export function About() {
                 className="inline-flex items-center gap-2"
               >
                 <FileText className="h-4 w-4" />
-                Download Resume
+                Download CV
               </Link>
             </Button>
           </div>

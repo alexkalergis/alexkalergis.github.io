@@ -16,7 +16,7 @@ export function Projects() {
       tags: ["Python", "Reinforcement Learning", "TensorFlow", "PyTorch", "Deep Learning", "Neural Networks"],
       liveUrl: "#",
       githubUrl: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
-      year: "2024",
+      year: "2023",
       supervisor: "Charalampos Bechlioulis",
       supervisorUrl: "https://scholar.google.com/citations?hl=el&user=F7peXRQAAAAJ&view_op=list_works&sortby=pubdate",
       resources: [
@@ -180,7 +180,7 @@ export function Projects() {
             className="inline-flex items-center gap-2"
           >
             <Github className="h-5 w-5" />
-            View All Projects on GitHub
+            View more on GitHub
           </Link>
         </Button>
       </div>

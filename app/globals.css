@@ -15,24 +15,24 @@ html {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    --card-foreground: 0 0% 9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
+    --popover-foreground: 0 0% 9%;
     --primary: 142 76% 36%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
     --ring: 142 76% 36%;
     --radius: 0.5rem;
   }
@@ -74,21 +74,21 @@ html {
   h4,
   h5,
   h6 {
-    @apply font-sans font-bold;
-    letter-spacing: -0.025em;
+    @apply font-sans font-semibold;
+    letter-spacing: -0.02em;
   }
 
   .font-mono {
-    font-family: var(--font-ibm-plex-mono);
+    font-family: var(--font-geist-mono);
   }
 
   .font-sans {
-    font-family: var(--font-inter);
+    font-family: var(--font-geist-sans);
   }
 
   code,
   pre,
   .code {
-    font-family: var(--font-ibm-plex-mono);
+    font-family: var(--font-geist-mono);
   }
 }

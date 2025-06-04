@@ -2,17 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 export function Skills() {
-  const programmingLanguages = [
-    "Python",
-    "Matlab",
-    "JavaScript",
-    "Java",
-    "Prolog",
-    "HTML",
-    "Arduino",
-    "Verilog",
-    "LaTeX",
-  ]
+  const programmingLanguages = ["Python", "Matlab", "JavaScript", "Prolog", "HTML", "Arduino", "LaTeX"]
 
   const frameworksTools = [
     "React",
@@ -23,7 +13,6 @@ export function Skills() {
     "SourceTree",
     "PyCharm",
     "Arduino IDE",
-    "Linux",
     "AutoCAD",
   ]
 

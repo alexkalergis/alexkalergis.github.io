@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
-import { Camera, Music, Book, Bike, Film, ExternalLink } from "lucide-react"
+import { Camera, Music, Book, Bike, Film } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { SpotifyNowPlaying } from "./spotify-now-playing"
@@ -26,35 +26,35 @@ export function Hobbies() {
     {
       id: 1,
       title: "Favorite Books",
-      content: "When Nietzsche Wept, Ikigai, Siddhartha, Logicomix, Elementary Aesthetics",
+      items: ["When Nietzsche Wept", "Ikigai", "Siddhartha", "Logicomix", "Elementary Aesthetics"],
     },
     {
       id: 2,
       title: "Currently Reading",
-      content: "Creative Act: A Way of Being, The Cafe on the Edge of the World",
+      items: ["Creative Act: A Way of Being", "The Cafe on the Edge of the World"],
     },
     {
       id: 3,
       title: "Favorite Genres",
-      content: "Science Fiction, Philosophy, Popular Science",
+      items: ["Science Fiction", "Philosophy", "Popular Science"],
     },
   ]
 
   const movieItems = [
     {
       id: 1,
-      title: "Favorite Directors",
-      content: "Christopher Nolan, Denis Villeneuve, Stanley Kubrick, Andrei Tarkovsky",
+      title: "Favorite Universes",
+      items: ["Avatar", "Harry Potter", "Star Wars", "Pirates of the Caribbean"],
     },
     {
       id: 2,
-      title: "Favorite Films",
-      content: "Blade Runner 2049, Interstellar, 2001: A Space Odyssey, The Matrix, Arrival",
+      title: "Favorite Movies",
+      items: ["Spirited Away", "A beautiful mind", "Other me"],
     },
     {
       id: 3,
       title: "Favorite Genres",
-      content: "Science Fiction, Psychological Thrillers, Art House Cinema",
+      items: ["Science Fiction", "Thriller", "Fantasy"],
     },
   ]
 
@@ -132,8 +132,12 @@ export function Hobbies() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2"
                 >
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v1h-1v-1zm-3 0h1v1h-1v-1z" />
+                    <path d="M12.5 7c-1.381 0-2.5-1.119-2.5-2.5S11.119 2 12.5 2s2.5 1.119 2.5 2.5S13.881 7 12.5 7z" />
+                    <path d="M12 13c-4.411 0-8 3.589-8 8h16c0-4.411-3.589-8-8-8z" />
+                  </svg>
                   See more on 500px
-                  <ExternalLink className="h-4 w-4 text-primary" />
                 </Link>
               </Button>
             </div>
@@ -172,36 +176,6 @@ export function Hobbies() {
                 </CardContent>
               </Card>
             </div>
-
-            <div className="text-center">
-              <p className="text-sm text-muted-foreground mb-4">
-                Find me on Spotify and Discogs to discover my music taste and vinyl collection
-              </p>
-              <div className="flex justify-center gap-4">
-                <Button variant="outline" asChild>
-                  <Link
-                    href="https://open.spotify.com/user/alexkalergis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2"
-                  >
-                    Spotify Profile
-                    <ExternalLink className="h-4 w-4 text-primary" />
-                  </Link>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link
-                    href="https://www.discogs.com/user/alexkalergis"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2"
-                  >
-                    Discogs Collection
-                    <ExternalLink className="h-4 w-4 text-primary" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
           </div>
         </TabsContent>
 
@@ -210,8 +184,12 @@ export function Hobbies() {
             {readingItems.map((item) => (
               <Card key={item.id}>
                 <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.content}</p>
+                  <h3 className="font-bold text-lg mb-4">{item.title}</h3>
+                  <div className="space-y-2 text-muted-foreground">
+                    {item.items.map((book, index) => (
+                      <p key={index}>• {book}</p>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -223,8 +201,12 @@ export function Hobbies() {
             {movieItems.map((item) => (
               <Card key={item.id}>
                 <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.content}</p>
+                  <h3 className="font-bold text-lg mb-4">{item.title}</h3>
+                  <div className="space-y-2 text-muted-foreground">
+                    {item.items.map((movie, index) => (
+                      <p key={index}>• {movie}</p>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             ))}
