@@ -80,7 +80,7 @@ export function Personal() {
   ]
 
   return (
-    <section id="personal" className="container py-24 space-y-16">
+    <section id="personal" className="container py-0 space-y-16">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold">Personal Library</h2>
         <p className="text-muted-foreground text-lg max-w-3xl mx-auto">

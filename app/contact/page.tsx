@@ -38,7 +38,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="container py-24 space-y-16">
+      <main className="container py-24 md:py-32 space-y-16">
         <div className="flex items-center gap-4 mb-8">
           <Button variant="ghost" size="icon" asChild>
             <Link href="/" className="inline-flex items-center gap-2">
@@ -46,8 +46,8 @@ export default function ContactPage() {
             </Link>
           </Button>
           <div>
-            <h1 className="text-4xl font-bold">Get In Touch</h1>
-            <p className="text-muted-foreground text-lg mt-2">
+            <h1 className="text-4xl md:text-6xl font-bold">Get In Touch</h1>
+            <p className="text-muted-foreground text-xl mt-2">
               Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
             </p>
           </div>

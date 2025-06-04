@@ -11,7 +11,7 @@ export default function PersonalPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <div className="container py-12">
+        <div className="container py-24 md:py-32">
           <div className="flex items-center gap-4 mb-8">
             <Button variant="ghost" size="icon" asChild>
               <Link href="/" className="inline-flex items-center gap-2">
@@ -19,8 +19,8 @@ export default function PersonalPage() {
               </Link>
             </Button>
             <div>
-              <h1 className="text-4xl font-bold">Personal</h1>
-              <p className="text-muted-foreground text-lg mt-2">
+              <h1 className="text-4xl md:text-6xl font-bold">Personal</h1>
+              <p className="text-muted-foreground text-xl mt-2">
                 A glimpse into my interests, hobbies, and the resources that inspire me.
               </p>
             </div>
