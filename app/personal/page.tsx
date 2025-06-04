@@ -8,7 +8,7 @@ import Link from "next/link"
 
 export default function PersonalPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Header />
       <main>
         <div className="container py-24 md:py-32">
