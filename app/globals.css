@@ -15,11 +15,11 @@ html {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 48 2% 98%;
     --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
+    --card: 48 2% 98%;
     --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
+    --popover: 448 2% 98%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 142 76% 36%;
     --primary-foreground: 0 0% 98%;
@@ -78,7 +78,7 @@ html {
   h4,
   h5,
   h6 {
-    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-geist), system-ui, -apple-system, sans-serif;
     @apply font-semibold;
     letter-spacing: -0.02em;
     line-height: 1.2;
@@ -90,17 +90,18 @@ html {
   }
 
   .font-sans {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-geist), system-ui, -apple-system, sans-serif;
   }
 
   .font-heading {
-    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-geist), system-ui, -apple-system, sans-serif;
   }
 
   code,
   pre,
   .code {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+      monospace;
     @apply bg-secondary px-1.5 py-0.5 rounded-sm text-sm;
   }
 
@@ -114,7 +115,7 @@ html {
       monospace;
   }
 
-  .font-inter {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  .font-geist {
+    font-family: var(--font-geist), system-ui, -apple-system, sans-serif;
   }
 }

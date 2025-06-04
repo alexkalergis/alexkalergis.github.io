@@ -12,13 +12,13 @@ export function Hobbies() {
       id: 1,
       title: "Theater Act",
       description: 'Photographic documentation of a theatrical performance at "Εμπρός Theater"',
-      image: "/images/theater-act.png", // Updated path
+      image: "/images/theater-act.png",
     },
     {
       id: 2,
       title: "Ενδιάμεσα Τοπία",
       description: 'Visual documentation of the group exhibition "Ενδιάμεσα Τοπία" at Mets Art Center',
-      image: "/images/interim-landscapes.png", // Updated path
+      image: "/images/interim-landscapes.png",
     },
   ]
 
@@ -86,28 +86,45 @@ export function Hobbies() {
       </div>
 
       <Tabs defaultValue="photography" className="w-full">
-        <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="photography" className="flex items-center gap-2">
-            <Camera className="h-4 w-4" />
-            <span className="hidden sm:inline">Photography</span>
-          </TabsTrigger>
-          <TabsTrigger value="music" className="flex items-center gap-2">
-            <Music className="h-4 w-4" />
-            <span className="hidden sm:inline">Music</span>
-          </TabsTrigger>
-          <TabsTrigger value="reading" className="flex items-center gap-2">
-            <Book className="h-4 w-4" />
-            <span className="hidden sm:inline">Reading</span>
-          </TabsTrigger>
-          <TabsTrigger value="movies" className="flex items-center gap-2">
-            <Film className="h-4 w-4" />
-            <span className="hidden sm:inline">Movies</span>
-          </TabsTrigger>
-          <TabsTrigger value="sports" className="flex items-center gap-2">
-            <Bike className="h-4 w-4" />
-            <span className="hidden sm:inline">Sports</span>
-          </TabsTrigger>
-        </TabsList>
+        <div className="flex justify-center mb-8 overflow-x-auto">
+          <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-transparent p-1 text-muted-foreground">
+            <TabsTrigger
+              value="photography"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+            >
+              <Camera className="h-4 w-4 mr-2" />
+              Photography
+            </TabsTrigger>
+            <TabsTrigger
+              value="music"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+            >
+              <Music className="h-4 w-4 mr-2" />
+              Music
+            </TabsTrigger>
+            <TabsTrigger
+              value="reading"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+            >
+              <Book className="h-4 w-4 mr-2" />
+              Reading
+            </TabsTrigger>
+            <TabsTrigger
+              value="movies"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+            >
+              <Film className="h-4 w-4 mr-2" />
+              Movies
+            </TabsTrigger>
+            <TabsTrigger
+              value="sports"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+            >
+              <Bike className="h-4 w-4 mr-2" />
+              Sports
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
         <TabsContent value="photography" className="mt-6">
           <div className="space-y-6">

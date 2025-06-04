@@ -1,20 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Poppins, Geist_Mono as GeistMono } from "next/font/google"
+import { Geist, Geist_Mono as GeistMono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
+  variable: "--font-geist",
   display: "swap",
 })
 
@@ -41,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable} ${geistMono.variable} font-mono antialiased`}>
+      <body className={`${geist.variable} ${geistMono.variable} font-mono antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
