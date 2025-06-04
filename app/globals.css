@@ -67,8 +67,9 @@ html {
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
+    line-height: 1.6;
   }
 
   h1,
@@ -77,26 +78,45 @@ html {
   h4,
   h5,
   h6 {
-    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
-      monospace;
+    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
     @apply font-semibold;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
 
   .font-mono {
-    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
   }
 
   .font-sans {
-    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
-      monospace;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+
+  .font-heading {
+    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
   }
 
   code,
   pre,
   .code {
-    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
+  }
+
+  /* Most content uses Geist Mono */
+  p,
+  span,
+  div,
+  li,
+  a,
+  button {
+    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+      monospace;
+  }
+
+  /* Override for specific elements that should use Inter */
+  .font-inter {
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
 }
