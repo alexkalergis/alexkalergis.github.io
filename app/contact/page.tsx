@@ -36,7 +36,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Header />
       <main className="container py-24 md:py-32 space-y-16">
         <div className="flex items-center gap-4 mb-8">
