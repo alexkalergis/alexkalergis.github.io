@@ -15,7 +15,7 @@ html {
 
 @layer base {
   :root {
-    --background: 255 255 255;
+    --background: 249 250 251;
     --foreground: 17 24 39;
     --card: 255 255 255;
     --card-foreground: 17 24 39;
@@ -23,11 +23,11 @@ html {
     --popover-foreground: 17 24 39;
     --primary: 142 76% 36%;
     --primary-foreground: 255 255 255;
-    --secondary: 248 250 252;
+    --secondary: 243 244 246;
     --secondary-foreground: 17 24 39;
-    --muted: 248 250 252;
+    --muted: 243 244 246;
     --muted-foreground: 107 114 128;
-    --accent: 248 250 252;
+    --accent: 243 244 246;
     --accent-foreground: 17 24 39;
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
@@ -67,9 +67,8 @@ html {
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
-    line-height: 1.6;
   }
 
   h1,
@@ -78,45 +77,26 @@ html {
   h4,
   h5,
   h6 {
-    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+      monospace;
     @apply font-semibold;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    letter-spacing: -0.01em;
   }
 
   .font-mono {
-    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
   }
 
   .font-sans {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  }
-
-  .font-heading {
-    font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+      monospace;
   }
 
   code,
   pre,
   .code {
-    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
-  }
-
-  /* Most content uses Geist Mono */
-  p,
-  span,
-  div,
-  li,
-  a,
-  button {
-    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
-      monospace;
-  }
-
-  /* Override for specific elements that should use Inter */
-  .font-inter {
-    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
 }
