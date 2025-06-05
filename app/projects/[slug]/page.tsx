@@ -145,6 +145,12 @@ const projects = {
   },
 }
 
+export async function generateStaticParams() {
+  return Object.keys(projects).map((slug) => ({
+    slug,
+  }))
+}
+
 interface PageProps {
   params: Promise<{ slug: string }>
 }
