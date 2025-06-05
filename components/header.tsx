@@ -87,16 +87,6 @@ export function Header() {
               >
                 Projects
               </Link>
-              <Link
-                href="#volunteering"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.querySelector("#volunteering")?.scrollIntoView({ behavior: "smooth" })
-                }}
-              >
-                Volunteering
-              </Link>
             </>
           )}
           <Link
@@ -206,17 +196,6 @@ export function Header() {
                   }}
                 >
                   Projects
-                </Link>
-                <Link
-                  href="#volunteering"
-                  className="text-sm font-medium hover:text-primary transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    document.querySelector("#volunteering")?.scrollIntoView({ behavior: "smooth" })
-                    toggleMenu()
-                  }}
-                >
-                  Volunteering
                 </Link>
               </>
             )}

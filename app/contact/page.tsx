@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -37,20 +36,23 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen">
-      <Header />
-      <main className="container py-24 md:py-32 space-y-16">
-        <div className="flex items-center gap-4 mb-8">
-          <Button variant="ghost" size="icon" asChild>
+      <div className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center">
+          <Button variant="ghost" size="icon" asChild className="mr-4">
             <Link href="/" className="inline-flex items-center gap-2">
               <ArrowLeft className="h-5 w-5" />
             </Link>
           </Button>
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold">Get In Touch</h1>
-            <p className="text-muted-foreground text-xl mt-2">
-              Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
-            </p>
+            <h1 className="text-2xl font-bold">Contact</h1>
           </div>
+        </div>
+      </div>
+      <main className="container py-12 md:py-16 space-y-16">
+        <div>
+          <p className="text-muted-foreground text-xl">
+            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">

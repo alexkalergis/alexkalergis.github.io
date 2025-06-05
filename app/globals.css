@@ -67,7 +67,7 @@ html {
 
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
     line-height: 1.6;
   }
@@ -78,29 +78,29 @@ html {
   h4,
   h5,
   h6 {
-    font-family: var(--font-geist), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-roboto), system-ui, -apple-system, sans-serif;
     @apply font-semibold;
     letter-spacing: -0.02em;
     line-height: 1.2;
   }
 
   .font-mono {
-    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
   }
 
   .font-sans {
-    font-family: var(--font-geist), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-roboto), system-ui, -apple-system, sans-serif;
   }
 
   .font-heading {
-    font-family: var(--font-geist), system-ui, -apple-system, sans-serif;
+    font-family: var(--font-roboto), system-ui, -apple-system, sans-serif;
   }
 
   code,
   pre,
   .code {
-    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
     @apply bg-secondary px-1.5 py-0.5 rounded-sm text-sm;
   }
@@ -111,11 +111,11 @@ html {
   li,
   a,
   button {
-    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
+    font-family: var(--font-roboto-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo,
       monospace;
   }
 
-  .font-geist {
-    font-family: var(--font-geist), system-ui, -apple-system, sans-serif;
+  .font-roboto {
+    font-family: var(--font-roboto), system-ui, -apple-system, sans-serif;
   }
 }

@@ -78,47 +78,47 @@ export function Hobbies() {
 
   return (
     <section id="hobbies" className="container py-24 space-y-16">
-      <div className="text-center space-y-4">
+      <div className="space-y-4">
         <h2 className="text-3xl font-bold">Hobbies & Interests</h2>
-        <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+        <p className="text-muted-foreground text-lg max-w-3xl">
           Beyond my professional life, I enjoy a variety of creative and recreational activities.
         </p>
       </div>
 
       <Tabs defaultValue="photography" className="w-full">
-        <div className="flex justify-center mb-8 overflow-x-auto">
-          <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-transparent p-1 text-muted-foreground">
+        <div className="border-b mb-8">
+          <TabsList className="flex h-10 items-center justify-start bg-transparent p-0 w-full overflow-x-auto">
             <TabsTrigger
               value="photography"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
             >
               <Camera className="h-4 w-4 mr-2" />
               Photography
             </TabsTrigger>
             <TabsTrigger
               value="music"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
             >
               <Music className="h-4 w-4 mr-2" />
               Music
             </TabsTrigger>
             <TabsTrigger
               value="reading"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
             >
               <Book className="h-4 w-4 mr-2" />
               Reading
             </TabsTrigger>
             <TabsTrigger
               value="movies"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
             >
               <Film className="h-4 w-4 mr-2" />
               Movies
             </TabsTrigger>
             <TabsTrigger
               value="sports"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
             >
               <Bike className="h-4 w-4 mr-2" />
               Sports

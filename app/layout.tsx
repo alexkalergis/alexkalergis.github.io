@@ -1,20 +1,20 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono as GeistMono } from "next/font/google"
+import { Roboto, Roboto_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const geist = Geist({
+const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-geist",
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
   display: "swap",
 })
 
-const geistMono = GeistMono({
+const robotoMono = Roboto_Mono({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-geist-mono",
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto-mono",
   display: "swap",
 })
 
@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geist.variable} ${geistMono.variable} font-mono antialiased`}>
+      <body className={`${roboto.variable} ${robotoMono.variable} font-mono antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>

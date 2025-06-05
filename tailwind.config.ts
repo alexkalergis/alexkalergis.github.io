@@ -20,9 +20,9 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist)", "system-ui", "sans-serif"],
-        heading: ["var(--font-geist)", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
+        sans: ["var(--font-roboto)", "system-ui", "sans-serif"],
+        heading: ["var(--font-roboto)", "system-ui", "sans-serif"],
+        mono: ["var(--font-roboto-mono)", "ui-monospace", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",

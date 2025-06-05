@@ -81,40 +81,37 @@ export function Personal() {
 
   return (
     <section id="personal" className="container py-0 space-y-16">
-      <div className="text-center space-y-4">
+      <div className="space-y-4">
         <h2 className="text-3xl font-bold">Personal Library</h2>
-        <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-          A collection of papers, videos, and resources that have influenced my thinking and work.
-        </p>
       </div>
 
       <Tabs defaultValue="papers" className="w-full">
-        <div className="flex justify-center mb-8">
-          <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-transparent p-1 text-muted-foreground">
+        <div className="border-b mb-8">
+          <TabsList className="flex h-10 items-center justify-start bg-transparent p-0 w-full overflow-x-auto">
             <TabsTrigger
               value="papers"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
             >
               <FileText className="h-4 w-4 mr-2" />
               Papers
             </TabsTrigger>
             <TabsTrigger
               value="videos"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
             >
               <Video className="h-4 w-4 mr-2" />
               Videos
             </TabsTrigger>
             <TabsTrigger
               value="resources"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
             >
               <LinkIcon className="h-4 w-4 mr-2" />
               Resources
             </TabsTrigger>
             <TabsTrigger
               value="quotes"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-6 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:shadow-none data-[state=active]:border-b-2 data-[state=active]:border-primary"
+              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
             >
               <Quote className="h-4 w-4 mr-2" />
               Quotes
