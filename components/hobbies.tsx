@@ -1,81 +1,58 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { Camera, Music, Book, Bike, Film, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
+const photographyItems = [
+  {
+    id: 1,
+    title: "Theater Act",
+    description: 'Photographic documentation of a theatrical performance at "Εμπρός Theater"',
+    image: "/images/theater-act.png",
+  },
+  {
+    id: 2,
+    title: "Ενδιάμεσα Τοπία",
+    description: 'Visual documentation of the group exhibition "Ενδιάμεσα Τοπία" at Mets Art Center',
+    image: "/images/interim-landscapes.png",
+  },
+]
+
+const favoriteAlbums = ["The Lumineers", "Black Pumas", "Purpose"]
+
+const readingItems = [
+  {
+    id: 1,
+    title: "Favorite Books",
+    items: ["When Nietzsche Wept", "Ikigai", "Siddhartha", "Logicomix", "Elementary Aesthetics"],
+  },
+  { id: 2, title: "Currently Reading", items: ["Creative Act: A Way of Being", "The Cafe on the Edge of the World"] },
+  { id: 3, title: "Favorite Genres", items: ["Science Fiction", "Philosophy", "Popular Science"] },
+]
+
+const movieItems = [
+  { id: 1, title: "Favorite Universes", items: ["Avatar", "Harry Potter", "Star Wars", "Pirates of the Caribbean"] },
+  { id: 2, title: "Favorite Movies", items: ["Spirited Away", "A beautiful mind", "Other me"] },
+  { id: 3, title: "Favorite Genres", items: ["Science Fiction", "Thriller", "Fantasy"] },
+]
+
+const sportsItems = [
+  { id: 1, title: "Cycling", content: "Weekend rides around the countryside, occasional city commuting" },
+  { id: 2, title: "Hiking", content: "Exploring mountain trails and natural parks" },
+  { id: 3, title: "Swimming", content: "Regular swimming sessions at local beaches during summer" },
+]
+
+const tabTriggers = [
+  { value: "photography", label: "Photography", Icon: Camera },
+  { value: "music", label: "Music", Icon: Music },
+  { value: "reading", label: "Reading", Icon: Book },
+  { value: "movies", label: "Movies", Icon: Film },
+  { value: "sports", label: "Sports", Icon: Bike },
+]
+
 export function Hobbies() {
-  const photographyItems = [
-    {
-      id: 1,
-      title: "Theater Act",
-      description: 'Photographic documentation of a theatrical performance at "Εμπρός Theater"',
-      image: "/images/theater-act.png",
-    },
-    {
-      id: 2,
-      title: "Ενδιάμεσα Τοπία",
-      description: 'Visual documentation of the group exhibition "Ενδιάμεσα Τοπία" at Mets Art Center',
-      image: "/images/interim-landscapes.png",
-    },
-  ]
-
-  const favoriteAlbums = ["The Lumineers", "Black Pumas", "Purpose"]
-
-  const readingItems = [
-    {
-      id: 1,
-      title: "Favorite Books",
-      items: ["When Nietzsche Wept", "Ikigai", "Siddhartha", "Logicomix", "Elementary Aesthetics"],
-    },
-    {
-      id: 2,
-      title: "Currently Reading",
-      items: ["Creative Act: A Way of Being", "The Cafe on the Edge of the World"],
-    },
-    {
-      id: 3,
-      title: "Favorite Genres",
-      items: ["Science Fiction", "Philosophy", "Popular Science"],
-    },
-  ]
-
-  const movieItems = [
-    {
-      id: 1,
-      title: "Favorite Universes",
-      items: ["Avatar", "Harry Potter", "Star Wars", "Pirates of the Caribbean"],
-    },
-    {
-      id: 2,
-      title: "Favorite Movies",
-      items: ["Spirited Away", "A beautiful mind", "Other me"],
-    },
-    {
-      id: 3,
-      title: "Favorite Genres",
-      items: ["Science Fiction", "Thriller", "Fantasy"],
-    },
-  ]
-
-  const sportsItems = [
-    {
-      id: 1,
-      title: "Cycling",
-      content: "Weekend rides around the countryside, occasional city commuting",
-    },
-    {
-      id: 2,
-      title: "Hiking",
-      content: "Exploring mountain trails and natural parks",
-    },
-    {
-      id: 3,
-      title: "Swimming",
-      content: "Regular swimming sessions at local beaches during summer",
-    },
-  ]
-
   return (
     <section id="hobbies" className="container py-24 space-y-16">
       <div className="space-y-4">
@@ -87,42 +64,17 @@ export function Hobbies() {
 
       <Tabs defaultValue="photography" className="w-full">
         <div className="border-b mb-8">
-          <TabsList className="flex h-10 items-center justify-start bg-transparent p-0 w-full overflow-x-auto">
-            <TabsTrigger
-              value="photography"
-              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
-            >
-              <Camera className="h-4 w-4 mr-2" />
-              Photography
-            </TabsTrigger>
-            <TabsTrigger
-              value="music"
-              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
-            >
-              <Music className="h-4 w-4 mr-2" />
-              Music
-            </TabsTrigger>
-            <TabsTrigger
-              value="reading"
-              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
-            >
-              <Book className="h-4 w-4 mr-2" />
-              Reading
-            </TabsTrigger>
-            <TabsTrigger
-              value="movies"
-              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
-            >
-              <Film className="h-4 w-4 mr-2" />
-              Movies
-            </TabsTrigger>
-            <TabsTrigger
-              value="sports"
-              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
-            >
-              <Bike className="h-4 w-4 mr-2" />
-              Sports
-            </TabsTrigger>
+          <TabsList className="flex h-auto sm:h-10 items-center justify-start bg-transparent p-0 w-full overflow-x-auto flex-wrap sm:flex-nowrap">
+            {tabTriggers.map(({ value, label, Icon }) => (
+              <TabsTrigger
+                key={value}
+                value={value}
+                className="flex items-center justify-center px-3 py-2 sm:px-4 text-sm font-medium data-[state=active]:text-foreground data-[state=active]:border-b-2 data-[state=active]:border-foreground rounded-none bg-transparent whitespace-nowrap"
+              >
+                <Icon className="h-4 w-4 mr-2 flex-shrink-0" />
+                {label}
+              </TabsTrigger>
+            ))}
           </TabsList>
         </div>
 
@@ -130,15 +82,20 @@ export function Hobbies() {
           <div className="space-y-8">
             <div className="grid md:grid-cols-2 gap-8">
               {photographyItems.map((item) => (
-                <div key={item.id} className="space-y-4">
-                  <div className="relative h-64 w-full rounded-lg overflow-hidden border">
-                    <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
+                <Card key={item.id} className="border bg-card/50 backdrop-blur-sm overflow-hidden">
+                  <div className="relative h-64 w-full">
+                    <Image
+                      src={item.image || "/placeholder.svg?width=400&height=256&query=Photography+Placeholder"}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
-                  </div>
-                </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm">{item.description}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
             <div className="text-center pt-4">
@@ -149,7 +106,7 @@ export function Hobbies() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2"
                 >
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v1h-1v-1zm-3 0h1v1h-1v-1z" />
                     <path d="M12.5 7c-1.381 0-2.5-1.119-2.5-2.5S11.119 2 12.5 2s2.5 1.119 2.5 2.5S13.881 7 12.5 7z" />
                     <path d="M12 13c-4.411 0-8 3.589-8 8h16c0-4.411-3.589-8-8-8z" />
@@ -164,32 +121,24 @@ export function Hobbies() {
         <TabsContent value="music" className="mt-6">
           <div className="space-y-8">
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold">Favorite Albums</h3>
-                <div className="space-y-2 text-muted-foreground">
-                  {favoriteAlbums.map((album) => (
-                    <p key={album}>• {album}</p>
-                  ))}
-                </div>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold">Favorite Artists</h3>
-                <div className="space-y-2 text-muted-foreground">
-                  <p>• Black Pumas</p>
-                  <p>• KALEO</p>
-                  <p>• Lumineers</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-xl font-bold">Favorite Genres</h3>
-                <div className="space-y-2 text-muted-foreground">
-                  <p>• Alternative Rock</p>
-                  <p>• Funk/Soul</p>
-                  <p>• Jazz</p>
-                </div>
-              </div>
+              {[
+                { title: "Favorite Albums", items: favoriteAlbums },
+                { title: "Favorite Artists", items: ["Black Pumas", "KALEO", "Lumineers"] },
+                { title: "Favorite Genres", items: ["Alternative Rock", "Funk/Soul", "Jazz"] },
+              ].map((section, idx) => (
+                <Card key={idx} className="border bg-card/50 backdrop-blur-sm">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold mb-4">{section.title}</h3>
+                    <ul className="space-y-1 text-muted-foreground list-disc list-inside">
+                      {section.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-            <div className="text-center pt-4 border-t border-border/50">
+            <div className="text-center pt-6 mt-6 border-t border-border/50">
               <Button variant="outline" asChild>
                 <Link
                   href="https://open.spotify.com/user/hu63onxuj7b01pqcewmt2serx?si=a01d7c65ad344f6c"
@@ -209,14 +158,16 @@ export function Hobbies() {
         <TabsContent value="reading" className="mt-6">
           <div className="grid md:grid-cols-3 gap-8">
             {readingItems.map((item) => (
-              <div key={item.id} className="space-y-4">
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <div className="space-y-2 text-muted-foreground">
-                  {item.items.map((book, index) => (
-                    <p key={index}>• {book}</p>
-                  ))}
-                </div>
-              </div>
+              <Card key={item.id} className="border bg-card/50 backdrop-blur-sm">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                  <ul className="space-y-1 text-muted-foreground list-disc list-inside">
+                    {item.items.map((book, index) => (
+                      <li key={index}>{book}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </TabsContent>
@@ -224,14 +175,16 @@ export function Hobbies() {
         <TabsContent value="movies" className="mt-6">
           <div className="grid md:grid-cols-3 gap-8">
             {movieItems.map((item) => (
-              <div key={item.id} className="space-y-4">
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <div className="space-y-2 text-muted-foreground">
-                  {item.items.map((movie, index) => (
-                    <p key={index}>• {movie}</p>
-                  ))}
-                </div>
-              </div>
+              <Card key={item.id} className="border bg-card/50 backdrop-blur-sm">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+                  <ul className="space-y-1 text-muted-foreground list-disc list-inside">
+                    {item.items.map((movie, index) => (
+                      <li key={index}>{movie}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </TabsContent>
@@ -239,10 +192,12 @@ export function Hobbies() {
         <TabsContent value="sports" className="mt-6">
           <div className="grid md:grid-cols-3 gap-8">
             {sportsItems.map((item) => (
-              <div key={item.id} className="space-y-4">
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.content}</p>
-              </div>
+              <Card key={item.id} className="border bg-card/50 backdrop-blur-sm">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground">{item.content}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </TabsContent>

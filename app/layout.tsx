@@ -1,7 +1,8 @@
-import type React from "react"
+import type React from "react" // Kept for children type
 import type { Metadata } from "next"
 import { Roboto, Roboto_Mono } from "next/font/google"
 import "./globals.css"
+// Removed ThemeProvider import as it's not used directly here, assuming it's in a child component or page if needed. If it was meant for global context, it should be added back. For now, assuming it's handled by individual pages or a root component within children.
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/profile-photo.png",
   },
-  generator: "v0.dev",
+  generator: "v0.dev", // This is fine, added by v0
 }
 
 export default function RootLayout({
@@ -32,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className="light" suppressHydrationWarning>
       <body className={`${roboto.variable} ${robotoMono.variable} font-mono antialiased`}>{children}</body>
     </html>
   )

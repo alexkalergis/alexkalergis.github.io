@@ -8,14 +8,17 @@ import { Hobbies } from "@/components/hobbies"
 
 export default function PersonalPage() {
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0)
   }, [])
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
+      {" "}
+      {/* Added flex flex-col */}
       <Header />
-      <main className="pt-16">
+      <main className="pt-16 flex-grow">
+        {" "}
+        {/* Added flex-grow */}
         <Personal />
         <Hobbies />
       </main>

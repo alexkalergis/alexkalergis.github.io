@@ -8,9 +8,13 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
+      {" "}
+      {/* Added flex flex-col for footer positioning */}
       <Header />
-      <main>
+      <main className="flex-grow">
+        {" "}
+        {/* Added flex-grow to push footer down */}
         <Hero />
         <Experience />
         <Projects />
