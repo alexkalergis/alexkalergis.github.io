@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Roboto, Roboto_Mono } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -33,12 +32,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${roboto.variable} ${robotoMono.variable} font-mono antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang="en" className="light">
+      <body className={`${roboto.variable} ${robotoMono.variable} font-mono antialiased`}>{children}</body>
     </html>
   )
 }

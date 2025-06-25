@@ -1,10 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
-import { Camera, Music, Book, Bike, Film } from "lucide-react"
+import { Camera, Music, Book, Bike, Film, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { SpotifyNowPlaying } from "./spotify-now-playing"
 
 export function Hobbies() {
   const photographyItems = [
@@ -21,6 +19,8 @@ export function Hobbies() {
       image: "/images/interim-landscapes.png",
     },
   ]
+
+  const favoriteAlbums = ["The Lumineers", "Black Pumas", "Purpose"]
 
   const readingItems = [
     {
@@ -79,9 +79,9 @@ export function Hobbies() {
   return (
     <section id="hobbies" className="container py-24 space-y-16">
       <div className="space-y-4">
-        <h2 className="text-3xl font-bold">Hobbies & Interests</h2>
-        <p className="text-muted-foreground text-lg max-w-3xl">
-          Beyond my professional life, I enjoy a variety of creative and recreational activities.
+        <h2 className="text-4xl md:text-5xl font-bold">Hobbies & Interests</h2>
+        <p className="text-xl text-muted-foreground">
+          Creative and recreational activities that fuel my creativity and provide balance.
         </p>
       </div>
 
@@ -127,21 +127,21 @@ export function Hobbies() {
         </div>
 
         <TabsContent value="photography" className="mt-6">
-          <div className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {photographyItems.map((item) => (
-                <Card key={item.id} className="overflow-hidden">
-                  <div className="relative h-64 w-full">
+                <div key={item.id} className="space-y-4">
+                  <div className="relative h-64 w-full rounded-lg overflow-hidden border">
                     <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
                   </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-bold text-lg">{item.title}</h3>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold">{item.title}</h3>
                     <p className="text-muted-foreground">{item.description}</p>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
-            <div className="text-center">
+            <div className="text-center pt-4">
               <Button variant="outline" asChild>
                 <Link
                   href="https://500px.com/p/alexkalergis?view=photos"
@@ -162,83 +162,87 @@ export function Hobbies() {
         </TabsContent>
 
         <TabsContent value="music" className="mt-6">
-          <div className="space-y-6">
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-4">Currently Listening</h3>
-                  <SpotifyNowPlaying />
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-4">Favorite Artists</h3>
-                  <div className="space-y-2 text-muted-foreground">
-                    <p>• Black Pumas</p>
-                    <p>• KALEO</p>
-                    <p>• Lumineers</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-4">Favorite Genres</h3>
-                  <div className="space-y-2 text-muted-foreground">
-                    <p>• Alternative Rock</p>
-                    <p>• Funk/Soul</p>
-                    <p>• Jazz</p>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="space-y-8">
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold">Favorite Albums</h3>
+                <div className="space-y-2 text-muted-foreground">
+                  {favoriteAlbums.map((album) => (
+                    <p key={album}>• {album}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold">Favorite Artists</h3>
+                <div className="space-y-2 text-muted-foreground">
+                  <p>• Black Pumas</p>
+                  <p>• KALEO</p>
+                  <p>• Lumineers</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-xl font-bold">Favorite Genres</h3>
+                <div className="space-y-2 text-muted-foreground">
+                  <p>• Alternative Rock</p>
+                  <p>• Funk/Soul</p>
+                  <p>• Jazz</p>
+                </div>
+              </div>
+            </div>
+            <div className="text-center pt-4 border-t border-border/50">
+              <Button variant="outline" asChild>
+                <Link
+                  href="https://open.spotify.com/user/hu63onxuj7b01pqcewmt2serx?si=a01d7c65ad344f6c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  <Music className="h-4 w-4" />
+                  My Spotify Profile
+                  <ExternalLink className="h-3 w-3 flex-shrink-0" />
+                </Link>
+              </Button>
             </div>
           </div>
         </TabsContent>
 
         <TabsContent value="reading" className="mt-6">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {readingItems.map((item) => (
-              <Card key={item.id}>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-4">{item.title}</h3>
-                  <div className="space-y-2 text-muted-foreground">
-                    {item.items.map((book, index) => (
-                      <p key={index}>• {book}</p>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={item.id} className="space-y-4">
+                <h3 className="text-xl font-bold">{item.title}</h3>
+                <div className="space-y-2 text-muted-foreground">
+                  {item.items.map((book, index) => (
+                    <p key={index}>• {book}</p>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </TabsContent>
 
         <TabsContent value="movies" className="mt-6">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {movieItems.map((item) => (
-              <Card key={item.id}>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-4">{item.title}</h3>
-                  <div className="space-y-2 text-muted-foreground">
-                    {item.items.map((movie, index) => (
-                      <p key={index}>• {movie}</p>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={item.id} className="space-y-4">
+                <h3 className="text-xl font-bold">{item.title}</h3>
+                <div className="space-y-2 text-muted-foreground">
+                  {item.items.map((movie, index) => (
+                    <p key={index}>• {movie}</p>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </TabsContent>
 
         <TabsContent value="sports" className="mt-6">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {sportsItems.map((item) => (
-              <Card key={item.id}>
-                <CardContent className="p-6">
-                  <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.content}</p>
-                </CardContent>
-              </Card>
+              <div key={item.id} className="space-y-4">
+                <h3 className="text-xl font-bold">{item.title}</h3>
+                <p className="text-muted-foreground">{item.content}</p>
+              </div>
             ))}
           </div>
         </TabsContent>

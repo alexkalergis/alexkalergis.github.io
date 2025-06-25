@@ -1,6 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { FileText, Video, LinkIcon, ExternalLink, Quote } from "lucide-react"
+import { FileText, Video, LinkIcon, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 
@@ -22,20 +21,20 @@ export function Personal() {
     {
       id: 1,
       title: "The first secret of great design",
-      creator: "Tony Fadell",
-      link: "https://www.youtube.com/watch?v=9uOMectkCCs&t=1s",
-      tags: ["Design", "Innovation", "Product Design", "TED", "Technology"],
+      creator: "Tony Fadell (via TED)",
+      link: "https://www.youtube.com/watch?v=9uOMectkCCs",
+      tags: ["Design", "Innovation", "Product Design", "TED", "Technology", "Habituation"],
       description:
-        "Tony Fadell, the man behind the first iPod and the Nest thermostat, shares insights about noticing the little things that make a big difference in design. A fascinating look at how to see problems and opportunities that others miss.",
+        "Tony Fadell, designer of the iPod and Nest thermostat, shares tips on noticing 'the way things are' to find opportunities for improvement and drive change by overcoming habituation.",
     },
     {
       id: 2,
-      title: "How to think like a designer",
-      creator: "TED",
+      title: "How product design can change the world",
+      creator: "Christiaan Maats (via TED)",
       link: "https://www.youtube.com/watch?v=ZqeA_psKn2E",
-      tags: ["Design Thinking", "Creativity", "Problem Solving", "Innovation", "TED"],
+      tags: ["Product Design", "Social Impact", "Innovation", "Design Thinking", "TED"],
       description:
-        "An exploration of the design thinking process and how designers approach problems differently. Learn the mindset and methodologies that can help you think more creatively and solve complex challenges.",
+        "Christiaan Maats explores how thoughtful product design can address global challenges and create positive social impact, demonstrating the power of design to solve real-world problems and improve lives.",
     },
   ]
 
@@ -58,31 +57,13 @@ export function Personal() {
     },
   ]
 
-  const quotes = [
-    {
-      id: 1,
-      text: "The best way to predict the future is to invent it.",
-      author: "Alan Kay",
-      context: "Computer Scientist & Turing Award Winner",
-    },
-    {
-      id: 2,
-      text: "Design is not just what it looks like and feels like. Design is how it works.",
-      author: "Steve Jobs",
-      context: "Co-founder of Apple Inc.",
-    },
-    {
-      id: 3,
-      text: "Any sufficiently advanced technology is indistinguishable from magic.",
-      author: "Arthur C. Clarke",
-      context: "Science Fiction Writer & Futurist",
-    },
-  ]
-
   return (
     <section id="personal" className="container py-0 space-y-16">
       <div className="space-y-4">
-        <h2 className="text-3xl font-bold">Personal Library</h2>
+        <h2 className="text-4xl md:text-5xl font-bold">Personal Library</h2>
+        <p className="text-xl text-muted-foreground">
+          A curated collection of papers, videos, and resources that inspire my work.
+        </p>
       </div>
 
       <Tabs defaultValue="papers" className="w-full">
@@ -109,126 +90,90 @@ export function Personal() {
               <LinkIcon className="h-4 w-4 mr-2" />
               Resources
             </TabsTrigger>
-            <TabsTrigger
-              value="quotes"
-              className="flex items-center justify-center px-4 py-2 text-sm font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary rounded-none bg-transparent"
-            >
-              <Quote className="h-4 w-4 mr-2" />
-              Quotes
-            </TabsTrigger>
           </TabsList>
         </div>
 
         <TabsContent value="papers" className="mt-6">
-          <div className="grid md:grid-cols-1 gap-6">
+          <div className="space-y-8">
             {papers.map((paper) => (
-              <Card key={paper.id}>
-                <CardHeader>
-                  <CardTitle className="flex justify-between items-start">
-                    <Link
-                      href={paper.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors inline-flex items-center gap-2"
-                    >
-                      {paper.title}
-                      <ExternalLink className="h-4 w-4 text-primary" />
-                    </Link>
-                    <Badge variant="outline">{paper.year}</Badge>
-                  </CardTitle>
-                  <p className="text-sm text-muted-foreground font-mono">{paper.authors}</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="mb-4">{paper.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {paper.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={paper.id} className="space-y-4 pb-8 border-b border-border/50 last:border-b-0 last:pb-0">
+                <div className="flex justify-between items-start">
+                  <Link
+                    href={paper.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors inline-flex items-center gap-2 flex-1 pr-4"
+                  >
+                    <h3 className="text-2xl font-bold leading-tight">{paper.title}</h3>
+                    <ExternalLink className="h-5 w-5 text-primary flex-shrink-0" />
+                  </Link>
+                  <Badge variant="outline" className="flex-shrink-0">
+                    {paper.year}
+                  </Badge>
+                </div>
+                <p className="text-muted-foreground font-mono">{paper.authors}</p>
+                <p className="text-muted-foreground leading-relaxed">{paper.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {paper.tags.map((tag) => (
+                    <Badge key={tag} variant="secondary" className="rounded-full">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </TabsContent>
 
         <TabsContent value="videos" className="mt-6">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-8">
             {videos.map((video) => (
-              <Card key={video.id}>
-                <CardHeader>
-                  <CardTitle>
-                    <Link
-                      href={video.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors inline-flex items-center gap-2"
-                    >
-                      {video.title}
-                      <ExternalLink className="h-4 w-4 text-primary" />
-                    </Link>
-                  </CardTitle>
-                  <p className="text-sm text-muted-foreground">by {video.creator}</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="mb-4">{video.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {video.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={video.id} className="space-y-4 pb-8 border-b border-border/50 last:border-b-0 last:pb-0">
+                <Link
+                  href={video.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors inline-flex items-start gap-2"
+                >
+                  <h3 className="text-2xl font-bold leading-tight flex-1">{video.title}</h3>
+                  <ExternalLink className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                </Link>
+                <p className="text-muted-foreground">by {video.creator}</p>
+                <p className="text-muted-foreground leading-relaxed">{video.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {video.tags.map((tag) => (
+                    <Badge key={tag} variant="secondary" className="rounded-full">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </TabsContent>
 
         <TabsContent value="resources" className="mt-6">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-8">
             {resources.map((resource) => (
-              <Card key={resource.id}>
-                <CardHeader>
-                  <CardTitle>
-                    <Link
-                      href={resource.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary transition-colors inline-flex items-center gap-2"
-                    >
-                      {resource.title}
-                      <ExternalLink className="h-4 w-4 text-primary" />
-                    </Link>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="mb-4">{resource.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {resource.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </TabsContent>
-        <TabsContent value="quotes" className="mt-6">
-          <div className="grid md:grid-cols-1 gap-6">
-            {quotes.map((quote) => (
-              <Card key={quote.id}>
-                <CardContent className="p-6">
-                  <blockquote className="text-lg italic mb-4 border-l-4 border-primary pl-4">"{quote.text}"</blockquote>
-                  <div className="text-right">
-                    <p className="font-medium">— {quote.author}</p>
-                    <p className="text-sm text-muted-foreground">{quote.context}</p>
-                  </div>
-                </CardContent>
-              </Card>
+              <div key={resource.id} className="space-y-4 pb-8 border-b border-border/50 last:border-b-0 last:pb-0">
+                <Link
+                  href={resource.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors inline-flex items-center gap-2"
+                >
+                  <h3 className="text-2xl font-bold">{resource.title}</h3>
+                  <ExternalLink className="h-5 w-5 text-primary flex-shrink-0" />
+                </Link>
+                <p className="text-muted-foreground leading-relaxed">{resource.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {resource.tags.map((tag) => (
+                    <Badge key={tag} variant="secondary" className="rounded-full">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </TabsContent>
