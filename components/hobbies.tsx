@@ -138,7 +138,7 @@ export function Hobbies() {
                 </Card>
               ))}
             </div>
-            <div className="text-center pt-6 mt-6 border-t border-border/50">
+            <div className="text-center pt-6 mt-6 border-t border-border/30">
               <Button variant="outline" asChild>
                 <Link
                   href="https://open.spotify.com/user/hu63onxuj7b01pqcewmt2serx?si=a01d7c65ad344f6c"

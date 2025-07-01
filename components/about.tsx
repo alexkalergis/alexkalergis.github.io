@@ -9,10 +9,8 @@ export function About() {
       <section id="about" className="py-24 bg-background">
         <div className="container space-y-12">
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold">About Me</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              A passionate Software Engineer and Product Designer dedicated to crafting innovative solutions.
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold">About</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">A few words about me.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -50,7 +48,7 @@ export function About() {
                       </div>
                       <p className="text-muted-foreground">University of Patras, Greece</p>
                     </div>
-                    <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-border/50">
+                    <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-gray-300">
                       <div className="space-y-3">
                         <div>
                           <span className="text-sm font-medium text-foreground">Major</span>
@@ -78,9 +76,9 @@ export function About() {
       <section className="py-24 bg-background">
         <div className="container space-y-16">
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold">Credentials & Achievements</h2>
+            <h2 className="font-bold text-3xl">Credentials & Achievements</h2>
             <p className="text-xl text-muted-foreground">
-              My certifications and recognition in the field of technology and engineering.
+              My certifications and awards in the field of technology and engineering.
             </p>
           </div>
 
@@ -97,8 +95,8 @@ export function About() {
                   {[
                     { name: "Human-Computer Interaction", org: "Interaction Design Foundation", year: "2025" },
                     { name: "Interactive Fiction", org: "University of Patras", year: "2022" },
-                  ].map((cert, idx) => (
-                    <div key={idx} className="space-y-2 pb-6 border-b border-border/30 last:border-b-0 last:pb-0">
+                  ].map((cert, idx, arr) => (
+                    <div key={idx} className="space-y-2">
                       <div className="flex justify-between items-start">
                         <h4 className="text-lg font-semibold leading-tight">{cert.name}</h4>
                         <Badge variant="outline" className="text-xs whitespace-nowrap ml-2">
@@ -106,6 +104,7 @@ export function About() {
                         </Badge>
                       </div>
                       <p className="text-sm text-muted-foreground">{cert.org}</p>
+                      {idx < arr.length - 1 && <div className="pt-6 border-b border-gray-300" />}
                     </div>
                   ))}
                 </div>
@@ -128,7 +127,8 @@ export function About() {
                     </Badge>
                   </div>
                   <p className="text-sm text-muted-foreground">Artificial Intelligence Competition</p>
-                  <div className="pt-3 border-t border-border/30">
+                  <div className="space-y-3 pt-3">
+                    <div className="border-t border-gray-300" />
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Designed and developed two robotic systems using reinforcement learning algorithms. Researched
                       multiple papers for the framework we proposed.

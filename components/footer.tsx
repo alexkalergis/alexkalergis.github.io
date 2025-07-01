@@ -12,16 +12,14 @@ export function Footer() {
   }
 
   return (
-    <footer className="border-t">
+    <footer className="border-t border-slate-100">
       <div className="container py-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
-            <h3 className="font-bold text-xl mb-1 font-mono">Alex Kalergis</h3> {/* Reduced mb */}
-            <p className="text-muted-foreground">Software Engineer & Product Designer</p>
+            <h3 className="font-bold text-xl mb-1 font-mono">Alex Kalergis</h3>
+            <p className="text-muted-foreground">Engineer | Designer</p>
           </div>
           <div className="flex gap-2">
-            {" "}
-            {/* Reduced gap slightly */}
             <Button variant="ghost" size="icon" asChild>
               <Link
                 href="https://github.com/alexkalergis"

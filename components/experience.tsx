@@ -2,15 +2,13 @@ import { ExternalLink } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-// Assuming company logos are correctly pathed and exist
 const companies = [
   {
     name: "Ainigma Technologies",
     logo: "/images/ainigma-logo-clean.png",
-    role: "Software Engineer",
+    role: "Software Engineer | Product Designer",
     startDate: "Jan 2025",
     endDate: "Present",
-    // duration: "6 months", // Duration can be calculated or omitted if start/end is clear
     location: "Athens, Greece",
     description: [
       "Led product design for digital health and EU program applications, utilizing Figma for user flows and UI prototypes.",
@@ -18,23 +16,20 @@ const companies = [
       "Gained experience to overall product strategy and design decisions in cross-functional teams.",
     ],
     website: "https://ainigma.tech",
-    // current: true, // Can be inferred from "Present"
   },
   {
     name: "Family Business",
     logo: "/images/family-business-logo.png",
-    role: "IT & Operations Assistant Manager",
+    role: "IT & Assistant Manager",
     startDate: "Jan 2024",
     endDate: "Dec 2024",
-    // duration: "12 months",
     location: "Volos, Greece",
     description: [
       "Supervised the digital presence of the business and managed IT requirements, ensuring optimal operation.",
       "Developed new ways to engage with customers, improving their overall experience which increased revenue by 23.8%.",
       "Gained understanding of business operations, budget allocation, expense distribution, and revenue management.",
     ],
-    website: "#", // Assuming '#' means no direct link
-    // current: false,
+    website: "#",
   },
   {
     name: "BuildUpLabs",
@@ -42,7 +37,6 @@ const companies = [
     role: "Product Design Intern",
     startDate: "Oct 2023",
     endDate: "Jan 2024",
-    // duration: "4 months",
     location: "Lisbon, Portugal",
     description: [
       "Led the ideation, design and development of an AI digital product that suggests best business models using Figma.",
@@ -50,7 +44,6 @@ const companies = [
       "Gained experience in digital product lifecycle, UX Design, coding, Agile methodologies, and collaboration skills.",
     ],
     website: "https://builduplabs.com",
-    // current: false,
   },
 ]
 
@@ -64,8 +57,8 @@ export function Experience() {
         </div>
 
         <div className="space-y-12">
-          {companies.map((company, index) => (
-            <div key={index} className="space-y-6 pb-12 border-b border-border/50 last:border-b-0 last:pb-0">
+          {companies.map((company, index, arr) => (
+            <div key={index} className="space-y-6">
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0">
                   <Image
@@ -78,14 +71,14 @@ export function Experience() {
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-2xl font-bold mb-1">{company.role}</h3> {/* Reduced mb */}
+                      <h3 className="text-2xl font-bold mb-1">{company.role}</h3>
                       <div className="flex items-center gap-2">
                         {company.website !== "#" ? (
                           <Link
                             href={company.website}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-lg font-medium hover:text-foreground transition-colors inline-flex items-center gap-1" // Changed hover to foreground
+                            className="text-lg font-medium hover:text-foreground transition-colors inline-flex items-center gap-1"
                           >
                             {company.name}
                             <ExternalLink className="h-4 w-4" />
@@ -105,8 +98,6 @@ export function Experience() {
                 </div>
               </div>
               <ul className="space-y-3 pl-0 sm:pl-28">
-                {" "}
-                {/* sm:pl matches logo width + gap roughly */}
                 {company.description.map((item, idx) => (
                   <li key={idx} className="text-muted-foreground flex items-start gap-3">
                     <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
@@ -114,6 +105,7 @@ export function Experience() {
                   </li>
                 ))}
               </ul>
+              {index < arr.length - 1 && <div className="pt-12 border-b border-gray-200" />}
             </div>
           ))}
         </div>

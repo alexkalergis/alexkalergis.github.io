@@ -9,16 +9,21 @@ import { TypewriterText } from "./typewriter-text"
 
 export function Hero() {
   const [nameComplete, setNameComplete] = useState(false)
-  const [key, setKey] = useState(0) // Force re-render of TypewriterText
+  const [subtitleComplete, setSubtitleComplete] = useState(false)
+  const [key, setKey] = useState(0)
 
   useEffect(() => {
-    // Reset animation on every page load/reload
     setNameComplete(false)
-    setKey((prev) => prev + 1) // Force TypewriterText to remount
+    setSubtitleComplete(false)
+    setKey((prev) => prev + 1)
   }, [])
 
-  const handleAnimationComplete = () => {
+  const handleNameAnimationComplete = () => {
     setNameComplete(true)
+  }
+
+  const handleSubtitleAnimationComplete = () => {
+    setSubtitleComplete(true)
   }
 
   return (
@@ -30,21 +35,32 @@ export function Hero() {
             <div className="space-y-6">
               <h1 className="text-5xl md:text-7xl font-bold font-mono leading-tight min-h-[1.2em]">
                 <TypewriterText
-                  key={key} // Force remount on page reload
+                  key={`name-${key}`}
                   text="Alex Kalergis"
                   delay={120}
-                  cursorDuration={1500}
-                  skipAnimation={false}
-                  onComplete={handleAnimationComplete}
+                  cursorDuration={1000}
+                  onComplete={handleNameAnimationComplete}
                 />
               </h1>
-              <div className={`transition-opacity duration-500 ${nameComplete ? "opacity-100" : "opacity-0"}`}>
-                <p className="text-lg text-muted-foreground whitespace-nowrap md:text-2xl font-normal">
-                  Software Engineer & Product Designer
-                </p>
+              <div
+                className={`min-h-[1.6em] transition-opacity duration-500 ${nameComplete ? "opacity-100" : "opacity-0"}`}
+              >
+                {nameComplete && (
+                  <p className="text-lg md:text-2xl text-muted-foreground font-normal">
+                    <TypewriterText
+                      key={`subtitle-${key}`}
+                      text="Engineer | Designer"
+                      delay={80}
+                      cursorDuration={1000}
+                      onComplete={handleSubtitleAnimationComplete}
+                    />
+                  </p>
+                )}
               </div>
             </div>
-            <div className={`transition-opacity duration-500 ${nameComplete ? "opacity-100 delay-300" : "opacity-0"}`}>
+            <div
+              className={`transition-opacity duration-500 ${subtitleComplete ? "opacity-100 delay-300" : "opacity-0"}`}
+            >
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-justify pt-2">
                 Crafting innovative solutions at the intersection of technology and design. Specialized in AI, machine
                 learning, and user-centered product development with a focus on creating meaningful digital experiences
@@ -53,9 +69,9 @@ export function Hero() {
             </div>
             {/* Download CV Button */}
             <div
-              className={`pt-2 transition-opacity duration-500 ${nameComplete ? "opacity-100 delay-500" : "opacity-0"}`}
+              className={`pt-2 transition-opacity duration-500 ${subtitleComplete ? "opacity-100 delay-500" : "opacity-0"}`}
             >
-              <Button variant="outline" className="rounded-md px-6" asChild>
+              <Button variant="outline" className="rounded-md px-6 bg-transparent" asChild>
                 <Link
                   href="/files/Alexandros_Kalergis_CV.pdf"
                   target="_blank"
@@ -72,7 +88,7 @@ export function Hero() {
 
           {/* Hero Image */}
           <div
-            className={`relative w-full aspect-square max-w-lg mx-auto transition-opacity duration-500 ${nameComplete ? "opacity-100 delay-700" : "opacity-0"}`}
+            className={`relative w-full aspect-square max-w-lg mx-auto transition-opacity duration-500 ${subtitleComplete ? "opacity-100 delay-700" : "opacity-0"}`}
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden border">
               <Image src="/images/profile-photo.png" alt="Alex Kalergis" fill className="object-cover" priority />

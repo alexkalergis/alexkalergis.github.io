@@ -17,9 +17,7 @@ export function Contact() {
       <div className="container space-y-16">
         <div className="space-y-6">
           <h2 className="text-4xl md:text-5xl font-bold">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl">
-            Ready to work together? Let's discuss your next project.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl">Want to work together?</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
