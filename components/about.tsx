@@ -49,6 +49,10 @@ export function About() {
                       <p className="text-muted-foreground">University of Patras, Greece</p>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-gray-300">
+                      <div>
+                        <span className="text-sm font-medium text-foreground">Thesis</span>
+                        <p className="text-sm text-muted-foreground">Robot writing via Reinforcement Learning</p>
+                      </div>
                       <div className="space-y-3">
                         <div>
                           <span className="text-sm font-medium text-foreground">Major</span>
@@ -58,10 +62,6 @@ export function About() {
                           <span className="text-sm font-medium text-foreground">Achievement</span>
                           <p className="text-sm text-muted-foreground">Top 2.9% of class</p>
                         </div>
-                      </div>
-                      <div>
-                        <span className="text-sm font-medium text-foreground">Thesis</span>
-                        <p className="text-sm text-muted-foreground">Robot writing via Reinforcement Learning</p>
                       </div>
                     </div>
                   </div>
@@ -121,17 +121,16 @@ export function About() {
                 </div>
                 <div className="space-y-3">
                   <div className="flex justify-between items-start">
-                    <h4 className="text-lg font-semibold leading-tight">Honorable Mention</h4>
+                    <h4 className="text-lg font-semibold leading-tight">Honorable Mention in AI Competition    </h4>
                     <Badge variant="outline" className="text-xs whitespace-nowrap ml-2">
                       2023
                     </Badge>
                   </div>
-                  <p className="text-sm text-muted-foreground">Artificial Intelligence Competition</p>
+                  <p className="text-sm text-muted-foreground">AI-Hub by University of Patras      </p>
                   <div className="space-y-3 pt-3">
                     <div className="border-t border-gray-300" />
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Designed and developed two robotic systems using reinforcement learning algorithms. Researched
-                      multiple papers for the framework we proposed.
+                      {"This project explores Reinforcement Learning methods on robotic systems that mimic human actions. We developed RL-based locomotion control for a biped robot and deep RL algorithm that helps a 2DOF robot learns handwriting. This research aims to advance AI-driven motor learning for robotic applications."}
                     </p>
                   </div>
                 </div>

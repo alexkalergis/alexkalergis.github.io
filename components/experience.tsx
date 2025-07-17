@@ -5,7 +5,7 @@ import Link from "next/link"
 const companies = [
   {
     name: "Ainigma Technologies",
-    logo: "/images/ainigma-logo-clean.png",
+    logo: "/images/ainigma-logo-v2.png", // Updated logo path
     role: "Software Engineer | Product Designer",
     startDate: "Jan 2025",
     endDate: "Present",
@@ -19,7 +19,7 @@ const companies = [
   },
   {
     name: "Family Business",
-    logo: "/images/family-business-logo.png",
+    logo: "/images/family-business-logo-v2.png", // Updated logo path
     role: "IT & Assistant Manager",
     startDate: "Jan 2024",
     endDate: "Dec 2024",
@@ -33,7 +33,7 @@ const companies = [
   },
   {
     name: "BuildUpLabs",
-    logo: "/images/builduplabs-logo-clean.png",
+    logo: "/images/builduplabs-logo-v2.webp", // Updated logo path
     role: "Product Design Intern",
     startDate: "Oct 2023",
     endDate: "Jan 2024",
