@@ -9,16 +9,16 @@ const projects = [
   {
     id: 1,
     title: "ASSETS",
-    subtitle: "Mobile app",
+    subtitle: "Product Design",
     image: "/images/assets-logo.png",
-    tags: ["Product Design", "UX Research", "Figma"],
+    tags: ["Lean UX", "User Research", "Figma"],
     url: "#",
     type: "project",
   },
   {
     id: 2,
     title: "Hapi",
-    subtitle: "Mobile & Web app",
+    subtitle: "Product Design & Development",
     image: "/images/hapi-logo-transparent.png",
     tags: ["Frontend & Design", "React", "Figma"],
     url: "#",
@@ -27,16 +27,16 @@ const projects = [
   {
     id: 3,
     title: "Busifinder",
-    subtitle: "Product Ideation & MVP",
+    subtitle: "Product Ideation, Design & MVP",
     image: "/images/busifinder-new.png",
-    tags: ["Product Design", "Retool", "Figma"],
+    tags: ["Prototyping", "Retool", "Figma"],
     url: "#",
     type: "project",
   },
   {
     id: 4,
     title: "Robot Writing",
-    subtitle: "Master's Thesis Project",
+    subtitle: "AI & Robotics Research",
     image: "/images/robot-writing-hello-world.png",
     tags: ["Reinforcement Learning", "Robotics", "Python"],
     url: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
@@ -45,18 +45,18 @@ const projects = [
   {
     id: 5,
     title: "Komoot", // Changed title
-    subtitle: "UX Research Presentation", // Changed subtitle
+    subtitle: "UX Research", // Changed subtitle
     image: "/images/komoot-logo-new.webp",
-    tags: ["PACT Model", "Heuristic Evaluation", "SUS Questionnaire"], // Updated keywords
+    tags: ["Usability Testing", "Heuristic Evaluation", "User Research"], // Updated keywords
     url: "https://github.com/alexkalergis/Design-and-evaluation-of-a-navigation-app",
     type: "figma",
   },
   {
     id: 6, // New project ID
     title: "myNavigation",
-    subtitle: "Mobile app",
+    subtitle: "UI/UX Design",
     image: "/placeholder.svg?width=300&height=192", // Placeholder image
-    tags: ["UI/UX Design", "UX Research", "Figma"],
+    tags: ["HCI", "Visual Design", "Figma"],
     url: "#", // Placeholder URL
     type: "project",
   },
