@@ -9,34 +9,31 @@ const projects = [
   {
     id: 1,
     title: "ASSETS",
-    subtitle: "Product Design",
+    subtitle: "App design",
     image: "/images/assets-logo.png",
-    tags: ["Lean UX", "User Research", "Figma"],
-    url: "#",
+    tags: ["Product Design", "UX Research", "Figma"],
     type: "project",
   },
   {
     id: 2,
     title: "Hapi",
-    subtitle: "Product Design & Development",
+    subtitle: "App design & development",
     image: "/images/hapi-logo-transparent.png",
     tags: ["Frontend & Design", "React", "Figma"],
-    url: "#",
     type: "project",
   },
   {
     id: 3,
     title: "Busifinder",
-    subtitle: "Product Ideation, Design & MVP",
+    subtitle: "App design & MVP",
     image: "/images/busifinder-new.png",
-    tags: ["Prototyping", "Retool", "Figma"],
-    url: "#",
+    tags: ["Product Design", "Retool", "Figma"],
     type: "project",
   },
   {
     id: 4,
     title: "Robot Writing",
-    subtitle: "AI & Robotics Research",
+    subtitle: "Master's Thesis",
     image: "/images/robot-writing-hello-world.png",
     tags: ["Reinforcement Learning", "Robotics", "Python"],
     url: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
@@ -44,37 +41,36 @@ const projects = [
   },
   {
     id: 5,
-    title: "Komoot", // Changed title
-    subtitle: "UX Research", // Changed subtitle
+    title: "Komoot",
+    subtitle: "App evaluation",
     image: "/images/komoot-logo-new.webp",
-    tags: ["Usability Testing", "Heuristic Evaluation", "User Research"], // Updated keywords
+    tags: ["Heuristic Evaluation", "User Research", "SUS Questionnaire"],
     url: "https://github.com/alexkalergis/Design-and-evaluation-of-a-navigation-app",
     type: "figma",
   },
   {
-    id: 6, // New project ID
+    id: 6,
     title: "myNavigation",
-    subtitle: "UI/UX Design",
-    image: "/placeholder.svg?width=300&height=192", // Placeholder image
-    tags: ["HCI", "Visual Design", "Figma"],
-    url: "#", // Placeholder URL
+    subtitle: "App design",
+    image: "/images/mynavigation-logo.png",
+    tags: ["UI/UX Design", "UX Research", "Figma"],
     type: "project",
   },
   {
-    id: 7, // ID incremented
+    id: 7,
     title: "Clustering with SVMs",
     subtitle: "Machine Learning",
     image: "/images/svm-clustering-new-v3.png",
-    tags: ["Kernel Methods", "Classification", "MatLab"],
+    tags: ["Classification", "Kernel Methods", "MatLab"],
     url: "https://github.com/alexkalergis/Clustering-using-Support-Vector-Machines",
     type: "github",
   },
   {
-    id: 8, // ID incremented
+    id: 8,
     title: "Image recovery with GANs",
     subtitle: "Machine Learning",
     image: "/images/gan-recovery-new-v2.png",
-    tags: ["Image processing", "Gradient Descent Algorithm", "MatLab"],
+    tags: ["Gradient Descent Algorithm", "Image processing", "MatLab"],
     url: "https://github.com/alexkalergis/Image-Recovery-using-Generative-Adversarial-Networks",
     type: "github",
   },
@@ -111,7 +107,7 @@ export function Projects() {
                       project.id === 5 ||
                       project.id === 6 ||
                       project.id === 7 ||
-                      project.id === 8 // Added new project ID
+                      project.id === 8
                         ? "object-contain p-4"
                         : project.id === 2
                           ? "object-cover"
@@ -127,13 +123,15 @@ export function Projects() {
                 </div>
 
                 <CardContent className="p-5 space-y-1 flex-1 flex flex-col">
-                  <h3 className="text-lg font-bold leading-tight">{project.title}</h3>
+                  <h3 className="text-lg font-bold leading-tight font-mono">{project.title}</h3>
                   <p className="text-sm text-muted-foreground mb-2">{project.subtitle}</p>
-                  <div className="flex flex-wrap gap-1.5 flex-grow content-start min-h-[3.5em]">
+                  <div className="border-t border-border/30 my-3" />
+                  <hr className="my-2 border-t border-gray-200" />
+                  <div className="flex flex-col gap-1.5 flex-grow content-start min-h-[3.5em]">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs rounded-full px-2 py-0.5">
+                      <span key={tag} className="text-xs text-muted-foreground px-2 py-0.5">
                         {tag}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
                 </CardContent>

@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const programmingLanguages = ["Python", "Matlab", "JavaScript", "Prolog", "HTML", "Arduino", "LaTeX"]
@@ -36,9 +35,9 @@ export function Skills() {
           <CardContent className="space-y-4">
             <div className="flex flex-wrap gap-2">
               {programmingLanguages.map((skill) => (
-                <Badge key={skill} variant="secondary" className="font-mono text-xs px-2 py-0.5">
+                <span key={skill} className="font-mono text-xs text-muted-foreground px-2 py-0.5">
                   {skill}
-                </Badge>
+                </span>
               ))}
             </div>
           </CardContent>
@@ -50,9 +49,9 @@ export function Skills() {
           <CardContent className="space-y-4">
             <div className="flex flex-wrap gap-2">
               {frameworksTools.map((skill) => (
-                <Badge key={skill} variant="secondary" className="font-mono text-xs px-2 py-0.5">
+                <span key={skill} className="font-mono text-xs text-muted-foreground px-2 py-0.5">
                   {skill}
-                </Badge>
+                </span>
               ))}
             </div>
           </CardContent>
@@ -65,9 +64,7 @@ export function Skills() {
             {languages.map((lang) => (
               <div key={lang.language} className="flex justify-between items-center text-sm">
                 <span className="font-medium">{lang.language}</span>
-                <Badge variant="outline" className="text-xs px-2 py-0.5">
-                  {lang.level}
-                </Badge>
+                <span className="text-xs text-muted-foreground px-2 py-0.5">{lang.level}</span>
               </div>
             ))}
           </CardContent>

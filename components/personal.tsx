@@ -1,7 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { FileText, Video, LinkIcon, ExternalLink } from "lucide-react"
 import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
 
 type LibraryItem = {
   id: number
@@ -115,19 +114,15 @@ export function Personal() {
                   <h3 className="text-2xl font-bold group-hover:underline">{title}</h3>
                   <ExternalLink className="h-5 w-5 mt-1" />
                 </Link>
-                {year && (
-                  <Badge variant="outline" className="self-start sm:self-auto">
-                    {year}
-                  </Badge>
-                )}
+                {year && <span className="text-sm text-muted-foreground self-start sm:self-auto">{year}</span>}
               </div>
               {creator && <p className="text-sm font-mono text-muted-foreground">{creator}</p>}
               <p className="text-muted-foreground leading-relaxed">{description}</p>
               <div className="flex flex-wrap gap-2 pt-2">
                 {tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="text-xs rounded-full">
+                  <span key={tag} className="text-xs text-muted-foreground">
                     {tag}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>
@@ -151,9 +146,9 @@ export function Personal() {
               <p className="text-muted-foreground leading-relaxed">{description}</p>
               <div className="flex flex-wrap gap-2 pt-2">
                 {tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="text-xs rounded-full">
+                  <span key={tag} className="text-xs text-muted-foreground">
                     {tag}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>
@@ -176,9 +171,9 @@ export function Personal() {
               <p className="text-muted-foreground leading-relaxed">{description}</p>
               <div className="flex flex-wrap gap-2 pt-2">
                 {tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="text-xs rounded-full">
+                  <span key={tag} className="text-xs text-muted-foreground">
                     {tag}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>
