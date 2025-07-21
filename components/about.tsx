@@ -88,27 +88,36 @@ export function About() {
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold">Certifications</h3>
                 </div>
-                <div className="space-y-3">
-                  {" "}
-                  {/* Reduced space-y from 6 to 3 */}
-                  {[
-                    { name: "Human-Computer Interaction", org: "Interaction Design Foundation", year: "2025" },
-                    { name: "Design Thinking", org: "Interaction Design Foundation", year: "2025" },
-                    { name: "User Experience", org: "Interaction Design Foundation", year: "2025" },
-                    { name: "Interactive Fiction", org: "University of Patras", year: "2022" },
-                  ].map((cert, idx, arr) => (
-                    <div key={idx} className="space-y-1">
-                      {" "}
-                      {/* Reduced space-y from 2 to 1 */}
-                      <div className="flex justify-between items-start">
-                        <h4 className="text-lg font-semibold leading-tight">{cert.name}</h4>
-                        <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">{cert.year}</span>
+                <div className="space-y-6">
+                  <div className="space-y-4">
+                    <h4 className="text-lg font-semibold">Interaction Design Foundation</h4>
+                    <div className="pl-4 space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">Human-Computer Interaction</span>
+                        <span className="text-xs text-muted-foreground">2025</span>
                       </div>
-                      <p className="text-sm text-muted-foreground">{cert.org}</p>
-                      {idx < arr.length - 1 && <div className="pt-3 border-b border-gray-300" />}{" "}
-                      {/* Reduced pt from 6 to 3 */}
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">Design Thinking</span>
+                        <span className="text-xs text-muted-foreground">2025</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-muted-foreground">User Experience</span>
+                        <span className="text-xs text-muted-foreground">2025</span>
+                      </div>
                     </div>
-                  ))}
+                  </div>
+
+                  <div className="border-t border-gray-200 pt-4">
+                    <div className="space-y-4">
+                      <h4 className="text-lg font-semibold">University of Patras</h4>
+                      <div className="pl-4">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-muted-foreground">Interactive Fiction</span>
+                          <span className="text-xs text-muted-foreground">2022</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
