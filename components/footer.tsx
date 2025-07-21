@@ -7,8 +7,8 @@ import { Github, Linkedin, Mail } from "lucide-react"
 export function Footer() {
   const handleEmailClick = () => {
     const subject = encodeURIComponent("Contact from Portfolio Website")
-    const body = encodeURIComponent("Hi Alex,\n\nI'd like to get in touch with you regarding...\n\nBest regards,")
-    window.open(`mailto:kalergisalex@gmail.com?subject=${subject}&body=${body}`, "_blank")
+    // Removed the 'body' parameter to prevent pre-filled text
+    window.open(`mailto:kalergisalex@gmail.com?subject=${subject}`, "_blank")
   }
 
   return (
