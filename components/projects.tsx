@@ -86,58 +86,65 @@ export function Projects() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projects.map((project) => (
-            <Link
-              key={project.id}
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block h-full group focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-lg"
-            >
-              <Card className="overflow-hidden border bg-card/50 backdrop-blur-sm h-full flex flex-col transition-all duration-300 group-hover:scale-[1.03]">
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={project.image || "/placeholder.svg?width=300&height=192&query=Project+Image"}
-                    alt={project.title}
-                    fill
-                    className={`transition-transform duration-300 group-hover:scale-105 ${
-                      project.id === 1 ||
-                      project.id === 3 ||
-                      project.id === 4 ||
-                      project.id === 5 ||
-                      project.id === 6 ||
-                      project.id === 7 ||
-                      project.id === 8
-                        ? "object-contain p-4"
-                        : project.id === 2
-                          ? "object-cover"
-                          : "object-cover"
-                    }`}
-                  />
-                  <Badge
-                    variant="secondary"
-                    className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm text-xs"
-                  >
-                    {project.year}
-                  </Badge>
-                </div>
+          {projects.map((project) => {
+            const Wrapper: any = project.url ? Link : "div"
+            const wrapperProps = project.url
+              ? {
+                  href: project.url,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  className:
+                    "block h-full group focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-lg",
+                }
+              : { className: "block h-full rounded-lg" }
 
-                <CardContent className="p-5 space-y-1 flex-1 flex flex-col">
-                  <h3 className="text-lg font-bold leading-tight font-mono">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-2">{project.subtitle}</p>
-                  <div className="border-t border-border/30 my-3" />
-                  <hr className="my-2 border-t border-gray-200" />
-                  <div className="flex flex-col gap-1.5 flex-grow content-start min-h-[3.5em]">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="text-xs text-muted-foreground px-2 py-0.5">
-                        {tag}
-                      </span>
-                    ))}
+            return (
+              <Wrapper key={project.id} {...wrapperProps}>
+                <Card className="overflow-hidden border bg-card/50 backdrop-blur-sm h-full flex flex-col transition-all duration-300 group-hover:scale-[1.03]">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={project.image || "/placeholder.svg?width=300&height=192&query=Project+Image"}
+                      alt={project.title}
+                      fill
+                      className={`transition-transform duration-300 group-hover:scale-105 ${
+                        project.id === 1 ||
+                        project.id === 3 ||
+                        project.id === 4 ||
+                        project.id === 5 ||
+                        project.id === 6 ||
+                        project.id === 7 ||
+                        project.id === 8
+                          ? "object-contain p-4"
+                          : project.id === 2
+                            ? "object-cover"
+                            : "object-cover"
+                      }`}
+                    />
+                    <Badge
+                      variant="secondary"
+                      className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm text-xs"
+                    >
+                      {project.year}
+                    </Badge>
                   </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
+
+                  <CardContent className="p-5 space-y-1 flex-1 flex flex-col">
+                    <h3 className="text-lg font-bold leading-tight font-mono">{project.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-2">{project.subtitle}</p>
+                    <div className="border-t border-border/30 my-3" />
+                    <hr className="my-2 border-t border-gray-200" />
+                    <div className="flex flex-col gap-1.5 flex-grow content-start min-h-[3.5em]">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="text-xs text-muted-foreground px-2 py-0.5">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Wrapper>
+            )
+          })}
         </div>
       </div>
     </section>
