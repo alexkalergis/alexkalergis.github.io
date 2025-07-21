@@ -1,19 +1,15 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import dynamic from "next/dynamic"
-
-/* Hydrate the real interactive Header only in the browser */
-const RealHeader = dynamic(() => import("@/components/header").then((m) => m.Header), { ssr: false })
+import { useEffect, useState, type ComponentType } from "react"
 
 export default function HeaderClient() {
-  const [show, setShow] = useState(false)
+  const [Header, setHeader] = useState<ComponentType | null>(null)
 
+  // Lazy-load the interactive Header only after hydration (client side)
   useEffect(() => {
-    /* mount -> swap in the interactive header */
-    setShow(true)
+    import("@/components/header").then((m) => setHeader(() => m.Header))
   }, [])
 
-  if (!show) return null
-  return <RealHeader />
+  if (!Header) return null
+  return <Header />
 }
