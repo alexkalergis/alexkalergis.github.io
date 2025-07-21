@@ -11,7 +11,7 @@ const projects = [
     title: "ASSETS",
     subtitle: "Product Design",
     image: "/images/assets-logo.png",
-    tags: ["User Research", "Lean UX", "Figma"],
+    tags: ["Lean UX", "User Research", "Figma"],
     type: "project",
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     title: "Hapi",
     subtitle: "Product Design & Development",
     image: "/images/hapi-logo-transparent.png",
-    tags: ["Problem Solving", "React", "Figma"],
+    tags: ["Lean UX", "React", "Figma"],
     type: "project",
   },
   {
@@ -32,12 +32,11 @@ const projects = [
   },
   {
     id: 4,
-    title: "Robot Writing",
-    subtitle: "Master's Thesis",
-    image: "/images/robot-writing-hello-world.png",
-    tags: ["Reinforcement Learning", "Robotics", "Python"],
-    url: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
-    type: "github",
+    title: "myNavigation",
+    subtitle: "Mobile app design",
+    image: "/images/mynavigation-logo-new.png", // Updated image path
+    tags: ["Double Diamond", "UI/UX Design", "Figma"],
+    type: "project",
   },
   {
     id: 5,
@@ -50,11 +49,12 @@ const projects = [
   },
   {
     id: 6,
-    title: "myNavigation",
-    subtitle: "Mobile app design",
-    image: "/images/mynavigation-logo.png",
-    tags: ["UI/UX Design", "Double Diamond", "Figma"],
-    type: "project",
+    title: "Robot Writing",
+    subtitle: "Master's Thesis",
+    image: "/images/robot-writing-hello-world.png",
+    tags: ["Reinforcement Learning", "Robotics", "Python"],
+    url: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
+    type: "github",
   },
   {
     id: 7,

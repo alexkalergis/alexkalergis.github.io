@@ -8,7 +8,6 @@ import Link from "next/link"
 export function Contact() {
   const handleEmailClick = () => {
     const subject = encodeURIComponent("Contact from Portfolio Website")
-    const body = encodeURIComponent("Hi Alex,\n\nI'd like to get in touch with you regarding...\n\nBest regards,")
     window.open(`mailto:kalergisalex@gmail.com?subject=${subject}&body=${body}`, "_blank")
   }
 

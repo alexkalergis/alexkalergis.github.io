@@ -42,7 +42,7 @@ const companies = [
     endDate: "Jan 2024",
     location: "Lisbon, Portugal",
     description: [
-      "Led the ideation, design and development of an AI digital product that suggests best business models using Figma.",
+      "Led the ideation and design of an AI digital product that suggests best business models using Figma.",
       "Developed a minimum viable product (MVP) using Retool and OpenAI API to ensure strategic objectives.",
       "Gained experience in digital product lifecycle, UX Design, coding, Agile methodologies, and collaboration skills.",
     ],

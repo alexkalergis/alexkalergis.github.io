@@ -28,7 +28,7 @@ const readingItems = [
     title: "Favorite Books",
     items: ["When Nietzsche Wept", "Ikigai", "Siddhartha", "Logicomix", "Elementary Aesthetics"],
   },
-  { id: 2, title: "Currently Reading", items: ["Creative Act: A Way of Being", "The Cafe on the Edge of the World"] },
+  { id: 2, title: "Currently Reading", items: [] },
   { id: 3, title: "Favorite Genres", items: ["Science Fiction", "Philosophy", "Popular Science"] },
 ]
 
@@ -106,12 +106,8 @@ export function Hobbies() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2"
                 >
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v1h-1v-1zm-3 0h1v1h-1v-1z" />
-                    <path d="M12.5 7c-1.381 0-2.5-1.119-2.5-2.5S11.119 2 12.5 2s2.5 1.119 2.5 2.5S13.881 7 12.5 7z" />
-                    <path d="M12 13c-4.411 0-8 3.589-8 8h16c0-4.411-3.589-8-8-8z" />
-                  </svg>
-                  See more on 500px
+                  <Camera className="h-4 w-4" />
+                  My 500px Profile
                 </Link>
               </Button>
             </div>

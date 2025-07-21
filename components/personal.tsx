@@ -118,9 +118,9 @@ export function Personal() {
               </div>
               {creator && <p className="text-sm font-mono text-muted-foreground">{creator}</p>}
               <p className="text-muted-foreground leading-relaxed">{description}</p>
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-col gap-1.5 pt-2">
                 {tags.map((tag) => (
-                  <span key={tag} className="text-xs text-muted-foreground">
+                  <span key={tag} className="text-xs text-muted-foreground px-2 py-0.5">
                     {tag}
                   </span>
                 ))}
@@ -144,9 +144,9 @@ export function Personal() {
               </Link>
               {creator && <p className="text-sm text-muted-foreground">{creator}</p>}
               <p className="text-muted-foreground leading-relaxed">{description}</p>
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-col gap-1.5 pt-2">
                 {tags.map((tag) => (
-                  <span key={tag} className="text-xs text-muted-foreground">
+                  <span key={tag} className="text-xs text-muted-foreground px-2 py-0.5">
                     {tag}
                   </span>
                 ))}
@@ -169,9 +169,9 @@ export function Personal() {
                 <ExternalLink className="h-5 w-5" />
               </Link>
               <p className="text-muted-foreground leading-relaxed">{description}</p>
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-col gap-1.5 pt-2">
                 {tags.map((tag) => (
-                  <span key={tag} className="text-xs text-muted-foreground">
+                  <span key={tag} className="text-xs text-muted-foreground px-2 py-0.5">
                     {tag}
                   </span>
                 ))}
