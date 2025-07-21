@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import ClientHeader from "./client-header"
 import { Hero } from "@/components/hero"
 import { Experience } from "@/components/experience"
 import { Projects } from "@/components/projects"
@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       {" "}
       {/* Added flex flex-col for footer positioning */}
-      <Header />
+      <ClientHeader />
       <main className="flex-grow">
         {" "}
         {/* Added flex-grow to push footer down */}

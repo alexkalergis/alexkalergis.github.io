@@ -11,9 +11,11 @@ const companies = [
     endDate: "Present",
     location: "Athens, Greece",
     description: [
-      "Led product design for digital health and EU program applications, utilizing Figma for user flows and UI prototypes.",
-      "Developed frontend features for a healthcare platform using React and React Native.",
-      "Gained experience to overall product strategy and design decisions in cross-functional teams.",
+      "Designed the UX/UI for an EU-funded application, mapping user journeys and creating prototypes in Figma.",
+      "Led the Product Design for a cross-platform healthcare app, utilizing Figma for user flows and UI prototypes.",
+      "Maintained Frontend features using React and React Native, contributing to a responsive and accessible UX.",
+      "Assisted in the design and setup of the company’s website using Figma and WordPress.",
+      "Collaborated with cross-functional teams on product strategy, design systems, and feature planning.",
     ],
     website: "https://ainigma.tech",
   },
@@ -25,15 +27,16 @@ const companies = [
     endDate: "Dec 2024",
     location: "Volos, Greece",
     description: [
-      "Supervised the digital presence of the business and managed IT requirements, ensuring optimal operation.",
-      "Developed new ways to engage with customers, improving their overall experience which increased revenue by 23.8%.",
-      "Gained understanding of business operations, budget allocation, expense distribution, and revenue management.",
+      "Supervised the digital presence of our family business and managed IT requirements, ensuring optimal operation.",
+      "Introduced new customer engagement strategies, improving experience and increasing revenue by 23.8%.",
+      "Assisted in the strategic business’s successful transition, gaining experience in exit planning.",
+      "Gained understanding of business operations, budget allocation, expense distribution and revenue management.",
     ],
     website: "#",
   },
   {
     name: "BuildUpLabs",
-    logo: "/images/builduplabs-logo-v2.webp", // Updated logo path
+    logo: "/images/builduplabs-logo-new.webp", // Changed to use the new webp logo
     role: "Product Design Intern",
     startDate: "Oct 2023",
     endDate: "Jan 2024",
@@ -60,7 +63,15 @@ export function Experience() {
           {companies.map((company, index, arr) => (
             <div key={index} className="space-y-6">
               <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-                <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0">
+                <div
+                  className={`relative flex-shrink-0 ${
+                    index === 0
+                      ? "w-14 h-14 sm:w-16 sm:h-16" // Smallest for Ainigma
+                      : index === 1
+                        ? "w-16 h-16 sm:w-20 sm:h-20" // Medium for Family Business
+                        : "w-20 h-20 sm:w-24 sm:h-24" // Default for others
+                  }`}
+                >
                   <Image
                     src={company.logo || "/placeholder.svg?width=96&height=96&query=Company+Logo"}
                     alt={`${company.name} logo`}

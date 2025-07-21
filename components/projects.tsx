@@ -9,25 +9,25 @@ const projects = [
   {
     id: 1,
     title: "ASSETS",
-    subtitle: "App design",
+    subtitle: "Product Design",
     image: "/images/assets-logo.png",
-    tags: ["Product Design", "UX Research", "Figma"],
+    tags: ["User Research", "Lean UX", "Figma"],
     type: "project",
   },
   {
     id: 2,
     title: "Hapi",
-    subtitle: "App design & development",
+    subtitle: "Product Design & Development",
     image: "/images/hapi-logo-transparent.png",
-    tags: ["Frontend & Design", "React", "Figma"],
+    tags: ["Problem Solving", "React", "Figma"],
     type: "project",
   },
   {
     id: 3,
     title: "Busifinder",
-    subtitle: "App design & MVP",
+    subtitle: "Product Design & MVP",
     image: "/images/busifinder-new.png",
-    tags: ["Product Design", "Retool", "Figma"],
+    tags: ["MVP Design", "Retool", "Figma"],
     type: "project",
   },
   {
@@ -42,7 +42,7 @@ const projects = [
   {
     id: 5,
     title: "Komoot",
-    subtitle: "App evaluation",
+    subtitle: "Mobile app evaluation",
     image: "/images/komoot-logo-new.webp",
     tags: ["Heuristic Evaluation", "User Research", "SUS Questionnaire"],
     url: "https://github.com/alexkalergis/Design-and-evaluation-of-a-navigation-app",
@@ -51,9 +51,9 @@ const projects = [
   {
     id: 6,
     title: "myNavigation",
-    subtitle: "App design",
+    subtitle: "Mobile app design",
     image: "/images/mynavigation-logo.png",
-    tags: ["UI/UX Design", "UX Research", "Figma"],
+    tags: ["UI/UX Design", "Double Diamond", "Figma"],
     type: "project",
   },
   {

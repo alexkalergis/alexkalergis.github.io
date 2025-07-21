@@ -88,18 +88,25 @@ export function About() {
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold">Certifications</h3>
                 </div>
-                <div className="space-y-6">
+                <div className="space-y-3">
+                  {" "}
+                  {/* Reduced space-y from 6 to 3 */}
                   {[
                     { name: "Human-Computer Interaction", org: "Interaction Design Foundation", year: "2025" },
+                    { name: "Design Thinking", org: "Interaction Design Foundation", year: "2025" },
+                    { name: "User Experience", org: "Interaction Design Foundation", year: "2025" },
                     { name: "Interactive Fiction", org: "University of Patras", year: "2022" },
                   ].map((cert, idx, arr) => (
-                    <div key={idx} className="space-y-2">
+                    <div key={idx} className="space-y-1">
+                      {" "}
+                      {/* Reduced space-y from 2 to 1 */}
                       <div className="flex justify-between items-start">
                         <h4 className="text-lg font-semibold leading-tight">{cert.name}</h4>
                         <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">{cert.year}</span>
                       </div>
                       <p className="text-sm text-muted-foreground">{cert.org}</p>
-                      {idx < arr.length - 1 && <div className="pt-6 border-b border-gray-300" />}
+                      {idx < arr.length - 1 && <div className="pt-3 border-b border-gray-300" />}{" "}
+                      {/* Reduced pt from 6 to 3 */}
                     </div>
                   ))}
                 </div>
@@ -124,7 +131,7 @@ export function About() {
                     <div className="border-t border-gray-300" />
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {
-                        "This project explores Reinforcement Learning methods on robotic systems that mimic human actions. We developed RL-based locomotion control for a biped robot and deep RL algorithm that helps a 2DOF robot learns handwriting. This research aims to advance AI-driven motor learning for robotic applications."
+                        "This project explores Reinforcement Learning methods in robotic systems that mimic human actions. We developed an RL-based locomotion controller for a 6-DOF robot to learn walking, and implemented a Deep Q-Learning algorithm on a 2-DOF robot to learn handwriting. This research aims to advance AI-driven motor learning for robotic applications."
                       }
                     </p>
                   </div>

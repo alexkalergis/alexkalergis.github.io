@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect } from "react"
-import { Header } from "@/components/header"
+import dynamic from "next/dynamic"
+const Header = dynamic(() => import("@/components/header").then((m) => m.Header), { ssr: false })
 import { Footer } from "@/components/footer"
 import { Personal } from "@/components/personal"
 import { Hobbies } from "@/components/hobbies"
