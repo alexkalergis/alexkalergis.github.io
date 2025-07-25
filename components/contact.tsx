@@ -17,7 +17,7 @@ export function Contact() {
       <div className="container space-y-16">
         <div className="space-y-6">
           <h2 className="text-4xl md:text-5xl font-bold">Get In Touch</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl">Want to work together?</p>
+          <p className="text-muted-foreground max-w-3xl text-lg">Want to work together?</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -29,7 +29,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold">Email Me</h3>
-                  <p className="text-muted-foreground">Let's start a conversation</p>
+                  
                 </div>
               </div>
               <div className="space-y-4 pl-2">
@@ -60,7 +60,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold">Follow My Work</h3>
-                  <p className="text-muted-foreground">Stay updated with my projects</p>
+                  
                 </div>
               </div>
               <div className="space-y-6 pl-2">

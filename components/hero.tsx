@@ -1,9 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react" // Added useRef
 import { Button } from "@/components/ui/button"
 import { FileText } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
 import { TypewriterText } from "./typewriter-text"
 
@@ -61,10 +60,10 @@ export function Hero() {
             <div
               className={`transition-opacity duration-500 ${subtitleComplete ? "opacity-100 delay-300" : "opacity-0"}`}
             >
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-justify pt-2">
-                Crafting innovative solutions at the intersection of technology and design. Specialized in AI, machine
-                learning, and user-centered product development with a focus on creating meaningful digital experiences
-                that solve real-world problems.
+              <p className="text-lg text-muted-foreground leading-relaxed text-justify pt-2 md:text-lg" style={{ textJustify: 'inter-word', hyphens: 'auto' }}>
+                Electrical &amp; Computer Engineering graduate with an interest in Human-Computer Interaction and Design
+                Thinking, bringing a unique combination on creating innovative solutions that are functional, creative,
+                and human-centered.
               </p>
             </div>
             {/* Download CV Button */}
@@ -86,14 +85,7 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Hero Image */}
-          <div
-            className={`relative w-full aspect-square max-w-lg mx-auto transition-opacity duration-500 ${subtitleComplete ? "opacity-100 delay-700" : "opacity-0"}`}
-          >
-            <div className="relative w-full h-full rounded-2xl overflow-hidden border">
-              <Image src="/images/profile-photo.png" alt="Alex Kalergis" fill className="object-cover" priority />
-            </div>
-          </div>
+          {/* Removed Hero Image from here */}
         </div>
       </div>
     </section>

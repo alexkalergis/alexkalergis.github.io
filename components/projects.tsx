@@ -8,8 +8,8 @@ import Link from "next/link"
 const projects = [
   {
     id: 1,
-    title: "ASSETS",
-    subtitle: "Product Design",
+    title: "ASSETS Mobile",
+    subtitle: "Product Design & Development",
     image: "/images/assets-logo.png",
     tags: ["Lean UX", "User Research", "Figma"],
     type: "project",
@@ -34,43 +34,43 @@ const projects = [
     id: 4,
     title: "myNavigation",
     subtitle: "Mobile app design",
-    image: "/images/mynavigation-logo-new.png", // Updated image path
+    image: "/images/mynavigation-logo-new.png",
     tags: ["Double Diamond", "UI/UX Design", "Figma"],
     type: "project",
   },
   {
     id: 5,
-    title: "Komoot",
-    subtitle: "Mobile app evaluation",
-    image: "/images/komoot-logo-new.webp",
-    tags: ["Heuristic Evaluation", "User Research", "SUS Questionnaire"],
-    url: "https://github.com/alexkalergis/Design-and-evaluation-of-a-navigation-app",
-    type: "figma",
-  },
-  {
-    id: 6,
-    title: "Robot Writing",
-    subtitle: "Master's Thesis",
+    title: "Robot learns writing",
+    subtitle: "Thesis Project",
     image: "/images/robot-writing-hello-world.png",
     tags: ["Reinforcement Learning", "Robotics", "Python"],
     url: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
     type: "github",
   },
   {
+    id: 6,
+    title: "'Kommoot' app evaluation",
+    subtitle: "HCI Course",
+    image: "/images/komoot-logo-new.webp",
+    tags: ["Heuristic Evaluation", "User Research", "SUS Questionnaire"],
+    url: "https://github.com/alexkalergis/Design-and-evaluation-of-a-navigation-app",
+    type: "figma",
+  },
+  {
     id: 7,
-    title: "Clustering with SVMs",
-    subtitle: "Machine Learning",
+    title: "Clustering shapes",
+    subtitle: "Machine Learning Course",
     image: "/images/svm-clustering-new-v3.png",
-    tags: ["Classification", "Kernel Methods", "MatLab"],
+    tags: ["Machine Learning", "Kernel Methods", "MatLab"],
     url: "https://github.com/alexkalergis/Clustering-using-Support-Vector-Machines",
     type: "github",
   },
   {
     id: 8,
-    title: "Image recovery with GANs",
-    subtitle: "Machine Learning",
+    title: "Image reconstruction",
+    subtitle: "Machine Learning Course",
     image: "/images/gan-recovery-new-v2.png",
-    tags: ["Gradient Descent Algorithm", "Image processing", "MatLab"],
+    tags: ["Machine Learning", "Gradient Descent Algorithm", "MatLab"],
     url: "https://github.com/alexkalergis/Image-Recovery-using-Generative-Adversarial-Networks",
     type: "github",
   },
@@ -82,7 +82,7 @@ export function Projects() {
       <div className="container space-y-16">
         <div className="space-y-6">
           <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl">My library of academic and personal projects.</p>
+          <p className="text-muted-foreground max-w-3xl text-lg">My library of academic and personal projects.</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

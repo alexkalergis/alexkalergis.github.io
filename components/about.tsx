@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Award, Trophy, GraduationCap } from "lucide-react"
+import Image from "next/image"
 
 export function About() {
   return (
@@ -9,140 +10,142 @@ export function About() {
         <div className="container space-y-12">
           <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold">About</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">A few words about me.</p>
+            <p className="text-muted-foreground leading-relaxed text-lg">A few words about me.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* My Journey Text Content */}
             <div className="space-y-6">
               <h3 className="text-3xl font-bold">My Journey</h3>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p>
+                <p
+                  className="text-muted-foreground leading-relaxed text-justify pt-2 text-base"
+                  style={{ textJustify: "inter-word", hyphens: "auto" }}
+                >
                   My path into technology began with a Master's in Electrical & Computer Engineering from the University
                   of Patras. My academic focus on Cyber-Physical Systems immersed me in the exciting realms of
                   Artificial Intelligence, Machine Learning, and Human-Computer Interaction.
                 </p>
-                <p>
-                  A highlight of my studies was my thesis on "Robot Writing via Reinforcement Learning," a challenge
-                  that perfectly blended my interests in robotics, machine learning, and practical engineering.
-                </p>
               </div>
             </div>
 
-            <Card className="border bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
+            {/* Education Card */}
+              <Card className="border bg-card/50 backdrop-blur-sm flex flex-col">
+                <CardContent className="p-8 flex-1 flex flex-col">
+                  <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-muted rounded-xl">
                       <GraduationCap className="h-6 w-6 text-foreground" />
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold">Education</h3>
                   </div>
-                  <div className="space-y-6">
-                    <div className="space-y-4">
-                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-                        <h4 className="text-xl font-bold leading-tight">MEng in Electrical & Computer Engineering</h4>
-                        <span className="text-xs text-muted-foreground self-start whitespace-nowrap">2018 - 2023</span>
+                  <div className="space-y-6 flex-1 flex flex-col">
+                    <div className="space-y-3">
+                      <h4 className="font-bold leading-tight text-lg">University of Patras, Greece</h4>
+                      <div className="flex justify-between items-start">
+                        <p className="text-muted-foreground text-sm">Electrical & Computer Engineering</p>
+                        <span className="text-muted-foreground text-xs whitespace-nowrap ml-2">2018 - 2023</span>
                       </div>
-                      <p className="text-muted-foreground">University of Patras, Greece</p>
                     </div>
-                    <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-gray-300">
-                      <div className="space-y-3">
-                        <div>
-                          <span className="text-sm font-medium text-foreground">Major</span>
-                          <p className="text-sm text-muted-foreground">Cyber-Physical Systems</p>
-                        </div>
-                        <div>
-                          <span className="text-sm font-medium text-foreground">Achievement</span>
-                          <p className="text-sm text-muted-foreground">Top 2.9% of class</p>
-                        </div>
-                      </div>
+                    <div className="grid gap-4 pt-4 border-t border-gray-300 mt-auto">
                       <div>
                         <span className="text-sm font-medium text-foreground">Thesis</span>
-                        <p className="text-sm text-muted-foreground">Robot writing via Reinforcement Learning</p>
+                        <p className="text-muted-foreground text-sm">Robot writing via Reinforcement Learning</p>
+                      </div>
+                      <div>
+                        <span className="text-sm font-medium text-foreground">Achievement</span>
+                        <p className="text-sm text-muted-foreground">Top 2.9% of class</p>
                       </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
           </div>
         </div>
       </section>
 
-      {/* Credentials & Achievements Section */}
+      {/* Certifications & Achievements Section */}
       <section className="py-24 bg-background">
         <div className="container space-y-16">
           <div className="space-y-6">
-            <h2 className="font-bold text-3xl">Credentials & Achievements</h2>
-            <p className="text-xl text-muted-foreground">
+            <h2 className="font-bold text-3xl">Certifications & Achievements</h2>
+            <p className="text-muted-foreground text-lg">
               My certifications and awards in the field of technology and engineering.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            <Card className="border bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-8">
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            {/* Certifications Card */}
+            <Card className="border bg-card/50 backdrop-blur-sm flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-muted rounded-xl">
-                    <Award className="h-8 w-8 text-foreground" />
+                  <div className="p-3 bg-muted rounded-xl">
+                    <Award className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold">Certifications</h3>
                 </div>
-                <div className="space-y-6">
-                  <div className="space-y-4">
-                    <h4 className="text-lg font-semibold">Interaction Design Foundation</h4>
-                    <div className="pl-4 space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-muted-foreground">Human-Computer Interaction</span>
-                        <span className="text-xs text-muted-foreground">2025</span>
+                <div className="space-y-6 flex-1 flex flex-col">
+                  <div className="space-y-3">
+                    <h4 className="font-bold leading-tight text-lg">Interaction Design Foundation</h4>
+                    <div className="space-y-1">
+                      <div className="flex justify-between items-start">
+                        <p className="text-muted-foreground text-sm">Human-Computer Interaction</p>
+                        <span className="text-muted-foreground text-xs whitespace-nowrap ml-2">2025</span>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-muted-foreground">Design Thinking</span>
-                        <span className="text-xs text-muted-foreground">2025</span>
+                      <div className="flex justify-between items-start">
+                        <p className="text-muted-foreground text-sm">Design Thinking</p>
+                        <span className="text-muted-foreground text-xs whitespace-nowrap ml-2">2025</span>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-muted-foreground">User Experience</span>
-                        <span className="text-xs text-muted-foreground">2025</span>
+                      <div className="flex justify-between items-start">
+                        <p className="text-muted-foreground text-sm">User Experience</p>
+                        <span className="text-muted-foreground text-xs whitespace-nowrap ml-2">2025</span>
                       </div>
                     </div>
                   </div>
-
-                  <div className="border-t border-gray-200 pt-4">
-                    <div className="space-y-4">
-                      <h4 className="text-lg font-semibold">University of Patras</h4>
-                      <div className="pl-4">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm text-muted-foreground">Interactive Fiction</span>
-                          <span className="text-xs text-muted-foreground">2022</span>
-                        </div>
-                      </div>
+                  <div className="grid gap-4 pt-4 border-t border-gray-300 mt-auto">
+                    <div className="space-y-3">
+                      <h4 className="font-bold leading-tight text-lg">University of Patras</h4>
+                    </div>
+                    <div className="flex justify-between items-start">
+                      <p className="text-muted-foreground text-sm">Interactive Fiction</p>
+                      <span className="text-muted-foreground text-xs whitespace-nowrap ml-2">2022</span>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-8">
+            {/* Awards Card */}
+            <Card className="border bg-card/50 backdrop-blur-sm flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-4 bg-muted rounded-xl">
-                    <Trophy className="h-8 w-8 text-foreground" />
+                  <div className="p-3 bg-muted rounded-xl">
+                    <Trophy className="h-6 w-6 text-foreground" />
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold">Awards</h3>
                 </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-start">
-                    <h4 className="text-lg font-semibold leading-tight">Honorable Mention in AI Competition </h4>
-                    <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">2023</span>
+                <div className="space-y-6 flex-1 flex flex-col">
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-start">
+                      <h4 className="text-lg font-semibold leading-tight">University of Patras (AI-Hub)</h4>
+                    </div>
+                    <div className="flex justify-between items-start">
+                      <p className="text-muted-foreground text-sm">Honorable Mention in AI competition</p>
+                      <span className="text-muted-foreground text-xs whitespace-nowrap ml-2">2023</span>
+                    </div>
                   </div>
-                  <p className="text-sm text-muted-foreground">AI-Hub by University of Patras </p>
-                  <div className="space-y-3 pt-3">
-                    <div className="border-t border-gray-300" />
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {
-                        "This project explores Reinforcement Learning methods in robotic systems that mimic human actions. We developed an RL-based locomotion controller for a 6-DOF robot to learn walking, and implemented a Deep Q-Learning algorithm on a 2-DOF robot to learn handwriting. This research aims to advance AI-driven motor learning for robotic applications."
-                      }
-                    </p>
+                  <div className="grid gap-4 pt-4 border-t border-gray-300 mt-auto">
+                    <div>
+                      <span className="text-sm font-medium text-foreground">About</span>
+                      <p
+                        className="text-sm text-muted-foreground leading-relaxed text-justify pt-2 md:text-sm"
+                        style={{ textJustify: "inter-word", hyphens: "auto" }}
+                      >
+                        This project explores Reinforcement Learning methods in robotic systems designed to mimic human
+                        actions. We developed an RL-based locomotion controller for a 6-DOF robot to learn walking and
+                        implemented a Deep Q-Learning algorithm on a 2-DoF robot to learn handwriting. This research
+                        aims to advance AI-driven motor learning in robotic applications.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
