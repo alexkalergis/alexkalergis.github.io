@@ -132,10 +132,10 @@ export function Experience() {
 
                 {/* Expandable Description */}
                 {isExpanded && (
-                  <ul className="space-y-3 pl-0 sm:pl-28 animate-in slide-in-from-top-2 duration-200">
+                  <ul className="space-y-3 pl-0 animate-in slide-in-from-top-2 duration-200 sm:pl-20 text-left text-sm font-normal">
                     {company.description.map((item, idx) => (
-                      <li key={idx} className="text-muted-foreground flex items-start gap-3">
-                        <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
+                      <li key={idx} className="text-muted-foreground flex gap-3 items-center">
+                        <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full flex-shrink-0 mt-0" />
                         <span className="flex-1">{item}</span>
                       </li>
                     ))}

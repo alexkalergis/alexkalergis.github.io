@@ -19,7 +19,7 @@ export function About() {
               <h3 className="text-3xl font-bold">My Journey</h3>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p
-                  className="text-muted-foreground leading-relaxed text-justify pt-2 text-base"
+                  className="text-muted-foreground leading-relaxed text-justify pt-2 text-base font-normal"
                   style={{ textJustify: "inter-word", hyphens: "auto" }}
                 >
                   My path into technology began with a Master's in Electrical & Computer Engineering from the University
