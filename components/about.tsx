@@ -20,7 +20,7 @@ export function About() {
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p
                   className="text-muted-foreground leading-relaxed text-justify pt-2 text-base font-normal"
-                  style={{ textJustify: "inter-word", hyphens: "auto" }}
+                  style={{ textJustify: "inter-word" }}
                 >
                   My path into technology began with a Master's in Electrical & Computer Engineering from the University
                   of Patras. My academic focus on Cyber-Physical Systems immersed me in the exciting realms of
@@ -138,7 +138,7 @@ export function About() {
                       <span className="text-sm font-medium text-foreground">About</span>
                       <p
                         className="text-sm text-muted-foreground leading-relaxed text-justify pt-2 md:text-sm"
-                        style={{ textJustify: "inter-word", hyphens: "auto" }}
+                        style={{ textJustify: "inter-word" }}
                       >
                         This project explores Reinforcement Learning methods in robotic systems designed to mimic human
                         actions. We developed an RL-based locomotion controller for a 6-DOF robot to learn walking and

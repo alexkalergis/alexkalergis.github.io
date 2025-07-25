@@ -60,9 +60,9 @@ export function Hero() {
             <div
               className={`transition-opacity duration-500 ${subtitleComplete ? "opacity-100 delay-300" : "opacity-0"}`}
             >
-              <p className="text-lg text-muted-foreground leading-relaxed pt-2 md:text-lg text-justify" style={{ textJustify: 'inter-word', hyphens: 'auto' }}>
+              <p className="text-lg text-muted-foreground leading-relaxed pt-2 md:text-lg text-justify" style={{ textJustify: 'inter-word' }}>
                 Electrical &amp; Computer Engineering graduate with an interest in Human-Computer Interaction and Design
-                Thinking, bringing a unique combination on creating innovative solutions that are functional, creative,
+                Thinking, bringing a unique combination on creating innovative solutions that are functional, creative 
                 and human-centered.
               </p>
             </div>
