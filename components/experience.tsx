@@ -65,7 +65,7 @@ export function Experience() {
     <section id="experience" className="py-24">
       <div className="container space-y-16">
         <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold">Experience</h2>
+          <h2 className="font-bold text-5xl">Experience</h2>
           <p className="text-muted-foreground max-w-3xl text-lg">My professional journey and career highlights.</p>
         </div>
 

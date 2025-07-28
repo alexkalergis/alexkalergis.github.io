@@ -81,7 +81,7 @@ export function Projects() {
     <section id="projects" className="py-24">
       <div className="container space-y-16">
         <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
+          <h2 className="font-bold text-5xl">Projects</h2>
           <p className="text-muted-foreground max-w-3xl text-lg">My library of academic and personal projects.</p>
         </div>
 

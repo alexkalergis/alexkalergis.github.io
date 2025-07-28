@@ -9,14 +9,14 @@ export function About() {
       <section id="about" className="py-24 bg-background">
         <div className="container space-y-12">
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold">About</h2>
+            <h2 className="font-bold text-5xl">About</h2>
             <p className="text-muted-foreground leading-relaxed text-lg">A few words about me.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* My Journey Text Content */}
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold">My Journey</h3>
+              <h3 className="font-bold text-3xl">My Journey</h3>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p
                   className="text-muted-foreground leading-relaxed text-justify pt-2 text-base font-normal"
@@ -36,7 +36,7 @@ export function About() {
                     <div className="p-3 bg-muted rounded-xl">
                       <GraduationCap className="h-6 w-6 text-foreground" />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold">Education</h3>
+                    <h3 className="font-bold text-3xl">Education</h3>
                   </div>
                   <div className="space-y-6 flex-1 flex flex-col">
                     <div className="space-y-3">
@@ -81,7 +81,7 @@ export function About() {
                   <div className="p-3 bg-muted rounded-xl">
                     <Award className="h-6 w-6 text-foreground" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold">Certifications</h3>
+                  <h3 className="font-bold text-3xl">Certifications</h3>
                 </div>
                 <div className="space-y-6 flex-1 flex flex-col">
                   <div className="space-y-3">
@@ -121,7 +121,7 @@ export function About() {
                   <div className="p-3 bg-muted rounded-xl">
                     <Trophy className="h-6 w-6 text-foreground" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold">Awards</h3>
+                  <h3 className="text-2xl font-bold md:text-3xl">Awards</h3>
                 </div>
                 <div className="space-y-6 flex-1 flex flex-col">
                   <div className="space-y-3">

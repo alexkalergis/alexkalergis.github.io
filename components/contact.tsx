@@ -16,7 +16,7 @@ export function Contact() {
     <section id="contact" className="py-24">
       <div className="container space-y-16">
         <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold">Get In Touch</h2>
+          <h2 className="font-bold text-5xl">Get In Touch</h2>
           <p className="text-muted-foreground max-w-3xl text-lg">Want to work together?</p>
         </div>
 
@@ -28,7 +28,7 @@ export function Contact() {
                   <Mail className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold">Email Me</h3>
+                  <h3 className="font-bold text-3xl">Email Me</h3>
                   
                 </div>
               </div>
@@ -59,7 +59,7 @@ export function Contact() {
                   <Share2 className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-bold">Follow My Work</h3>
+                  <h3 className="font-bold text-3xl">Follow My Work</h3>
                   
                 </div>
               </div>
