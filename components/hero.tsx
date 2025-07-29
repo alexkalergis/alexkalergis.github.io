@@ -61,9 +61,9 @@ export function Hero() {
               className={`transition-opacity duration-500 ${subtitleComplete ? "opacity-100 delay-300" : "opacity-0"}`}
             >
               <p className="text-lg text-muted-foreground leading-relaxed pt-2 md:text-lg text-justify" style={{ textJustify: 'inter-word' }}>
-                Electrical &amp; Computer Engineering graduate with an interest in Human-Computer Interaction and Design
+                Electrical &amp; Computer Engineering graduate with an interest in Human Computer Interaction and Design
                 Thinking, bringing a unique combination on creating innovative solutions that are functional, creative 
-                and human-centered.
+                and human centered.
               </p>
             </div>
             {/* Download CV Button */}
@@ -72,10 +72,10 @@ export function Hero() {
             >
               <Button variant="outline" className="rounded-md px-6 bg-transparent" asChild>
                 <Link
-                  href="Kalergis_CV.pdf"
+                  href="/files/Alexandros_Kalergis_CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  download="Kalergis_CV.pdf"
+                  download="Alexandros_Kalergis_CV.pdf"
                   className="inline-flex items-center gap-2"
                 >
                   <FileText className="h-4 w-4" />

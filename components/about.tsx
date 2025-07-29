@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Award, Trophy, GraduationCap } from "lucide-react"
-import Image from "next/image"
+import { Award, Trophy, GraduationCap, Map } from "lucide-react"
 
 export function About() {
   return (
@@ -13,52 +12,61 @@ export function About() {
             <p className="text-muted-foreground leading-relaxed text-lg">A few words about me.</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* My Journey Text Content */}
-            <div className="space-y-6">
-              <h3 className="font-bold text-3xl">My Journey</h3>
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p
-                  className="text-muted-foreground leading-relaxed text-justify pt-2 text-base font-normal"
-                  style={{ textJustify: "inter-word" }}
-                >
-                  My path into technology began with a Master's in Electrical & Computer Engineering from the University
-                  of Patras. My academic focus on Cyber-Physical Systems immersed me in the exciting realms of
-                  Artificial Intelligence, Machine Learning, and Human-Computer Interaction.
-                </p>
-              </div>
-            </div>
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            {/* My Journey Card */}
+            <Card className="border bg-card/50 backdrop-blur-sm flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-muted rounded-xl">
+                    <Map className="h-6 w-6 text-foreground" />
+                  </div>
+                  <h3 className="font-bold text-3xl">My Journey</h3>
+                </div>
+                <div className="space-y-6 flex-1 flex flex-col">
+                  <div className="space-y-3">
+                    <p
+                      className="text-muted-foreground leading-relaxed text-justify text-sm"
+                      style={{ textJustify: "inter-word" }}
+                    >
+                      My path into technology began with a Master's in Electrical & Computer Engineering from the
+                      University of Patras. My academic focus on Cyber-Physical Systems immersed me in the exciting
+                      realms of Artificial Intelligence, Machine Learning, and Human-Computer Interaction.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
             {/* Education Card */}
-              <Card className="border bg-card/50 backdrop-blur-sm flex flex-col">
-                <CardContent className="p-8 flex-1 flex flex-col">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="p-3 bg-muted rounded-xl">
-                      <GraduationCap className="h-6 w-6 text-foreground" />
-                    </div>
-                    <h3 className="font-bold text-3xl">Education</h3>
+            <Card className="border bg-card/50 backdrop-blur-sm flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 bg-muted rounded-xl">
+                    <GraduationCap className="h-6 w-6 text-foreground" />
                   </div>
-                  <div className="space-y-6 flex-1 flex flex-col">
-                    <div className="space-y-3">
-                      <h4 className="font-bold leading-tight text-lg">University of Patras, Greece</h4>
-                      <div className="flex justify-between items-start">
-                        <p className="text-muted-foreground text-sm">Electrical & Computer Engineering</p>
-                        <span className="text-muted-foreground text-xs whitespace-nowrap ml-2">2018 - 2023</span>
-                      </div>
-                    </div>
-                    <div className="grid gap-4 pt-4 border-t border-gray-300 mt-auto">
-                      <div>
-                        <span className="text-sm font-medium text-foreground">Thesis</span>
-                        <p className="text-muted-foreground text-sm">Robot writing via Reinforcement Learning</p>
-                      </div>
-                      <div>
-                        <span className="text-sm font-medium text-foreground">Achievement</span>
-                        <p className="text-sm text-muted-foreground">Top 2.9% of class</p>
-                      </div>
+                  <h3 className="font-bold text-3xl">Education</h3>
+                </div>
+                <div className="space-y-6 flex-1 flex flex-col">
+                  <div className="space-y-3">
+                    <h4 className="font-bold leading-tight text-lg">University of Patras, Greece</h4>
+                    <div className="flex justify-between items-start">
+                      <p className="text-muted-foreground text-sm">Electrical & Computer Engineering</p>
+                      <span className="text-muted-foreground text-xs whitespace-nowrap ml-2">2018 - 2023</span>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                  <div className="grid gap-4 pt-4 border-t border-gray-300 mt-auto">
+                    <div>
+                      <span className="text-sm font-medium text-foreground">Thesis</span>
+                      <p className="text-muted-foreground text-sm">Robot writing via Reinforcement Learning</p>
+                    </div>
+                    <div>
+                      <span className="text-sm font-medium text-foreground">Achievement</span>
+                      <p className="text-sm text-muted-foreground">Top 2.9% of class</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

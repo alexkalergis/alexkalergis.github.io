@@ -69,7 +69,7 @@ export function Experience() {
           <p className="text-muted-foreground max-w-3xl text-lg">My professional journey and career highlights.</p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-8">
           {companies.map((company, index, arr) => {
             const isExpanded = expandedItems.includes(index)
 
@@ -142,7 +142,7 @@ export function Experience() {
                   </ul>
                 )}
 
-                {index < arr.length - 1 && <div className="pt-12 border-b border-gray-200" />}
+                {index < arr.length - 1 && <div className="pt-4 border-b border-gray-200" />}
               </div>
             )
           })}
