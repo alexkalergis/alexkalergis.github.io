@@ -89,29 +89,29 @@ export function Experience() {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row justify-between items-start mb-3">
-                      <div>
-                        <h3 className="text-2xl font-bold mb-1">{company.role}</h3>
+                      <div className="flex-1">
+                        <h3 className="font-bold mb-1 font-mono text-xl">{company.role}</h3>
                         <div className="flex items-center gap-2">
                           {company.website !== "#" ? (
                             <Link
                               href={company.website}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-lg font-medium hover:text-foreground transition-colors inline-flex items-center gap-1"
+                              className="font-medium hover:text-foreground transition-colors inline-flex items-center gap-1 text-base"
                             >
                               {company.name}
                               <ExternalLink className="h-4 w-4" />
                             </Link>
                           ) : (
-                            <span className="text-lg font-medium">{company.name}</span>
+                            <span className="font-medium text-base">{company.name}</span>
                           )}
                         </div>
-                        <p className="text-muted-foreground mt-1 text-sm">{company.location}</p>
                       </div>
-                      <div className="text-left sm:text-right mt-2 sm:mt-0">
+                      <div className="text-left sm:text-right mt-2 sm:mt-0 flex flex-col">
                         <span className="text-muted-foreground whitespace-nowrap">
                           {company.startDate} - {company.endDate}
                         </span>
+                        <span className="text-muted-foreground text-sm mt-1">{company.location}</span>
                       </div>
                     </div>
 
@@ -136,7 +136,7 @@ export function Experience() {
                     {company.description.map((item, idx) => (
                       <li key={idx} className="text-muted-foreground flex gap-3 items-center">
                         <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full flex-shrink-0 mt-0" />
-                        <span className="flex-1">{item}</span>
+                        <span className="flex-1 text-black">{item}</span>
                       </li>
                     ))}
                   </ul>
