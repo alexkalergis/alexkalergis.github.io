@@ -72,10 +72,10 @@ export function Hero() {
             >
               <Button variant="outline" className="rounded-md px-6 bg-transparent" asChild>
                 <Link
-                  href="/files/Alexandros_Kalergis_CV.pdf"
+                  href="Kalergis_CV.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  download="Alexandros_Kalergis_CV.pdf"
+                  download="Kalergis_CV.pdf"
                   className="inline-flex items-center gap-2"
                 >
                   <FileText className="h-4 w-4" />
