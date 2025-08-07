@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Github, Linkedin, MapPin, Clock, Globe, Users, Share2 } from "lucide-react"
+import { Mail, Github, Linkedin, MapPin, Clock, Globe, Users, Share2 } from 'lucide-react'
 import Link from "next/link"
 
 export function Contact() {
@@ -36,11 +36,11 @@ export function Contact() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <Clock className="h-4 w-4 text-foreground" />
-                    <span>Usually respond within 24 hours</span>
+                    <span className="font-medium">Usually respond within 24 hours</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <Users className="h-4 w-4 text-foreground" />
-                    <span>Open to freelance opportunities</span>
+                    <span className="font-medium">Open to freelance opportunities</span>
                   </div>
                 </div>
                 <div className="pt-4">
@@ -67,11 +67,11 @@ export function Contact() {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <MapPin className="h-4 w-4 text-foreground" />
-                    <span>Based in Athens, Greece</span>
+                    <span className="font-medium">Based in Athens, Greece</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <Globe className="h-4 w-4 text-foreground" />
-                    <span>Available for remote work worldwide</span>
+                    <span className="font-medium">Available for remote work worldwide</span>
                   </div>
                 </div>
                 <div className="pt-4">

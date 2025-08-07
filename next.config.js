@@ -11,7 +11,7 @@ const nextConfig = {
   },
   trailingSlash: true, // Recommended for static hosting
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuildBuiilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react" // Added useRef
 import { Button } from "@/components/ui/button"
-import { FileText } from "lucide-react"
+import { FileText } from 'lucide-react'
 import Link from "next/link"
 import { TypewriterText } from "./typewriter-text"
 

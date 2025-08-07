@@ -64,7 +64,9 @@ export function Skills() {
             {languages.map((lang) => (
               <div key={lang.language} className="flex justify-between items-center text-sm">
                 <span className="font-medium">{lang.language}</span>
-                <span className="text-xs text-muted-foreground px-2 py-0.5">{lang.level}</span>
+                <span className="text-xs text-muted-foreground px-2 py-0.5">
+                  {lang.level}
+                </span>
               </div>
             ))}
           </CardContent>

@@ -2,7 +2,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileText, Video, LinkIcon, ExternalLink, Camera, Book, Music, Bike } from "lucide-react"
+import { FileText, Video, LinkIcon, ExternalLink, Camera, Book, Music, Bike } from 'lucide-react'
 import Link from "next/link"
 import Image from "next/image"
 

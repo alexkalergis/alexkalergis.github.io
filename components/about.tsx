@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Award, Trophy, GraduationCap, Map } from "lucide-react"
+import { Award, Trophy, GraduationCap, Map } from 'lucide-react'
 
 export function About() {
   return (
@@ -143,7 +143,7 @@ export function About() {
                   </div>
                   <div className="grid gap-4 pt-4 border-t border-gray-300 mt-auto">
                     <div>
-                      <span className="text-sm font-medium text-foreground">About</span>
+                      <span className="text-sm text-foreground font-semiboldldldldldout">About</span>
                       <p
                         className="text-sm text-muted-foreground leading-relaxed text-justify pt-2 md:text-sm"
                         style={{ textJustify: "inter-word" }}

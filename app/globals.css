@@ -145,7 +145,7 @@ html {
   /* Adjusted text contrast for a lighter feel */
   .text-muted-foreground {
     color: hsl(var(--muted-foreground)) !important;
-    font-weight: 500 !important; /* Adjusted for consistency */
+    font-weight: 550 !important; /* Adjusted for consistency */
   }
 
   /* Adjusted link styling for a lighter feel */
@@ -162,7 +162,7 @@ html {
   /* Ensure text elements have good contrast */
   .text-foreground {
     color: hsl(var(--foreground)) !important;
-    font-weight: 500 !important;
+    font-weight: 1000 !important;
   }
 
   /* Adjusted emphasis for important text */

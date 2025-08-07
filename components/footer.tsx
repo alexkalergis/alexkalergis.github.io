@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 export function Footer() {
   const handleEmailClick = () => {
@@ -49,7 +49,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t mt-8 pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Alex Kalergis. All rights reserved.</p>
+          <p className="font-semibold">&copy; {new Date().getFullYear()} Alex Kalergis. All rights reserved.</p>
         </div>
       </div>
     </footer>
