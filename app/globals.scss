@@ -1,0 +1,221 @@
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-v20-latin-regular.woff2") format("woff2"),
+    url("/fonts/ibm-plex-mono-v20-latin-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-v20-latin-500.woff2") format("woff2"),
+    url("/fonts/ibm-plex-mono-v20-latin-500.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-v20-latin-600.woff2") format("woff2"),
+    url("/fonts/ibm-plex-mono-v20-latin-600.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/ibm-plex-mono-v20-latin-700.woff2") format("woff2"),
+    url("/fonts/ibm-plex-mono-v20-latin-700.ttf") format("truetype");
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 48 2% 98%;
+    --foreground: 0 0% 18%; /* Slightly lighter than previous, still good contrast */
+    --card: 48 2% 98%;
+    --card-foreground: 0 0% 18%; /* Adjusted for consistency */
+    --popover: 448 2% 98%;
+    --popover-foreground: 0 0% 18%; /* Adjusted for consistency */
+    --primary: 0 0% 12%; /* Lighter primary for the name */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 18%; /* Adjusted for consistency */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 38%; /* Lighter muted text */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 18%; /* Adjusted for consistency */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 96%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 214.3 31.8% 91.4%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 90%; /* Slightly lighter for dark theme */
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 90%; /* Adjusted for consistency */
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 90%; /* Adjusted for consistency */
+    --primary: 0 0% 94%; /* Lighter primary for dark mode */
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 90%; /* Adjusted for consistency */
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 70%; /* Lighter muted text for dark theme */
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 90%; /* Adjusted for consistency */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 25%;
+    --input: 0 0% 14.9%;
+    --ring: 214.3 31.8% 91.4%;
+  }
+
+  /* Hide default cursor completely */
+  * {
+    cursor: none !important;
+  }
+
+  /* Show default cursor on mobile devices */
+  @media (hover: none) and (pointer: coarse) {
+    * {
+      cursor: auto !important;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: hsl(var(--foreground));
+  }
+
+  /* Special styling for the main name/title */
+  h1 {
+    font-weight: 700;
+    color: hsl(var(--primary));
+  }
+
+  .font-mono {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+  }
+
+  .font-sans {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+  }
+
+  .font-heading {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+  }
+
+  code,
+  pre,
+  .code {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    @apply bg-secondary px-1.5 py-0.5 rounded-sm text-sm;
+    color: hsl(var(--foreground));
+  }
+
+  p,
+  span,
+  div,
+  li,
+  a,
+  button {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+  }
+
+  .font-roboto {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+  }
+
+  /* Adjusted text contrast */
+  .text-muted-foreground {
+    color: hsl(var(--muted-foreground)) !important;
+    font-weight: 500 !important;
+  }
+
+  /* Link styling */
+  a {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1;
+    font-weight: 600 !important;
+  }
+
+  /* Button text weight */
+  button {
+    font-weight: 600 !important;
+  }
+
+  /* Text elements contrast */
+  .text-foreground {
+    color: hsl(var(--foreground)) !important;
+    font-weight: 700 !important;
+  }
+
+  /* Emphasis for important text */
+  .font-bold {
+    font-weight: 700 !important;
+  }
+
+  .font-semibold {
+    font-weight: 600 !important;
+  }
+
+  .font-medium {
+    font-weight: 500 !important;
+  }
+}

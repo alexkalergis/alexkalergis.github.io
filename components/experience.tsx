@@ -1,15 +1,30 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ExternalLink, ChevronDown, ChevronUp } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import Link from "next/link"
+import { useState } from "react";
+import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
 
 const companies = [
   {
+    name: "maMEDS",
+    logo: "/images/Experience/mameds.png",
+    role: "Software Engineer | Product Designer",
+    startDate: "Jul 2025",
+    endDate: "Present",
+    location: "Athens, Greece",
+    description: [
+      "Led the Product Design of maMEDS, using Figma for user flows and UI prototypes.",
+      "Maintained Frontend features using React and React Native, contributing to a responsive and accessible UX.",
+      "Assisted in the design and setup of the company's website using Figma and React.",
+      "Collaborated with cross-functional teams on product strategy, design systems, and feature planning.",
+    ],
+    website: "https://mameds.gr",
+  },
+  {
     name: "Ainigma Technologies",
-    logo: "/images/ainigma-technologies.png",
+    logo: "/images/Experience/AinigmaTechnologies.png",
     role: "Software Engineer | Product Designer",
     startDate: "Jan 2025",
     endDate: "Present",
@@ -19,13 +34,12 @@ const companies = [
       "Led the Product Design for a cross-platform healthcare app, utilizing Figma for user flows and UI prototypes.",
       "Maintained Frontend features using React and React Native, contributing to a responsive and accessible UX.",
       "Assisted in the design and setup of the company's website using Figma and WordPress.",
-      "Collaborated with cross-functional teams on product strategy, design systems, and feature planning.",
     ],
     website: "https://ainigma.tech",
   },
   {
     name: "Family Business",
-    logo: "/images/family-business.png",
+    logo: "/images/Experience/FamilyBusiness.png",
     role: "IT & Assistant Manager",
     startDate: "Jan 2024",
     endDate: "Dec 2024",
@@ -40,7 +54,7 @@ const companies = [
   },
   {
     name: "BuildUpLabs",
-    logo: "/images/builduplabs.png",
+    logo: "/images/Experience/BuildUpLabs.png",
     role: "Product Design Intern",
     startDate: "Oct 2023",
     endDate: "Jan 2024",
@@ -52,26 +66,30 @@ const companies = [
     ],
     website: "https://builduplabs.com",
   },
-]
+];
 
 export function Experience() {
-  const [expandedItems, setExpandedItems] = useState<number[]>([])
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
 
   const toggleExpanded = (index: number) => {
-    setExpandedItems((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]))
-  }
+    setExpandedItems((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
 
   return (
     <section id="experience" className="py-24">
       <div className="container space-y-16">
         <div className="space-y-6">
           <h2 className="font-bold text-5xl">Experience</h2>
-          <p className="text-muted-foreground max-w-3xl text-lg">My professional journey and career highlights.</p>
+          <p className="text-muted-foreground max-w-3xl text-lg">
+            My professional journey and career highlights.
+          </p>
         </div>
 
         <div className="space-y-8">
           {companies.map((company, index, arr) => {
-            const isExpanded = expandedItems.includes(index)
+            const isExpanded = expandedItems.includes(index);
 
             return (
               <div key={index} className="space-y-6">
@@ -80,7 +98,10 @@ export function Experience() {
                   <div className="relative flex-shrink-0 w-20 h-20 sm:w-14 sm:h-14 flex items-center justify-center">
                     <div className="relative w-full h-full">
                       <Image
-                        src={company.logo || "/placeholder.svg?width=96&height=96&query=Company+Logo"}
+                        src={
+                          company.logo ||
+                          "/placeholder.svg?width=96&height=96&query=Company+Logo"
+                        }
                         alt={`${company.name} logo`}
                         fill
                         className="object-contain"
@@ -90,7 +111,9 @@ export function Experience() {
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row justify-between items-start mb-3">
                       <div className="flex-1">
-                        <h3 className="font-bold mb-1 font-mono text-xl">{company.role}</h3>
+                        <h3 className="font-bold mb-1 font-mono text-xl">
+                          {company.role}
+                        </h3>
                         <div className="flex items-center gap-2">
                           {company.website !== "#" ? (
                             <Link
@@ -103,7 +126,9 @@ export function Experience() {
                               <ExternalLink className="h-4 w-4" />
                             </Link>
                           ) : (
-                            <span className="font-medium text-base">{company.name}</span>
+                            <span className="font-medium text-base">
+                              {company.name}
+                            </span>
                           )}
                         </div>
                       </div>
@@ -111,7 +136,9 @@ export function Experience() {
                         <span className="text-muted-foreground whitespace-nowrap">
                           {company.startDate} - {company.endDate}
                         </span>
-                        <span className="text-muted-foreground text-sm mt-1">{company.location}</span>
+                        <span className="text-muted-foreground text-sm mt-1">
+                          {company.location}
+                        </span>
                       </div>
                     </div>
 
@@ -123,8 +150,14 @@ export function Experience() {
                         onClick={() => toggleExpanded(index)}
                         className="text-muted-foreground p-0 h-auto font-normal hover:bg-transparent"
                       >
-                        <span className="text-sm">View {isExpanded ? "less" : "more"}</span>
-                        {isExpanded ? <ChevronUp className="h-4 w-4 ml-1" /> : <ChevronDown className="h-4 w-4 ml-1" />}
+                        <span className="text-sm">
+                          View {isExpanded ? "less" : "more"}
+                        </span>
+                        {isExpanded ? (
+                          <ChevronUp className="h-4 w-4 ml-1" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4 ml-1" />
+                        )}
                       </Button>
                     </div>
                   </div>
@@ -134,7 +167,10 @@ export function Experience() {
                 {isExpanded && (
                   <ul className="space-y-3 pl-0 animate-in slide-in-from-top-2 duration-200 sm:pl-20 text-left text-sm font-normal">
                     {company.description.map((item, idx) => (
-                      <li key={idx} className="text-muted-foreground flex gap-3 items-center">
+                      <li
+                        key={idx}
+                        className="text-muted-foreground flex gap-3 items-center"
+                      >
                         <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full flex-shrink-0 mt-0" />
                         <span className="flex-1 text-black">{item}</span>
                       </li>
@@ -142,12 +178,14 @@ export function Experience() {
                   </ul>
                 )}
 
-                {index < arr.length - 1 && <div className="pt-4 border-b border-gray-200" />}
+                {index < arr.length - 1 && (
+                  <div className="pt-4 border-b border-gray-200" />
+                )}
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

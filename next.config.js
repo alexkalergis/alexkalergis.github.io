@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const isGithubPages = process.env.GITHUB_PAGES === "true"
+const isGithubPages = process.env.GITHUB_PAGES === "true";
 
 const nextConfig = {
   output: "export",
@@ -11,11 +11,11 @@ const nextConfig = {
   },
   trailingSlash: true, // Recommended for static hosting
   eslint: {
-    ignoreDuringBuildBuiilds: true,
+    ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
