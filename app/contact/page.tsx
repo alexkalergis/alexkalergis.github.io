@@ -1,6 +1,6 @@
-import { InteractiveHeader } from "@/components/interactive-header";
-import { Contact } from "@/components/contact";
-import { Footer } from "@/components/footer";
+import { InteractiveHeader } from "@/components/header/interactive-header";
+import { Contact } from "@/app/contact/contact";
+import { Footer } from "@/components/footer/footer";
 
 export default function ContactPage() {
   return (

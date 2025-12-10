@@ -1,6 +1,6 @@
-import { InteractiveHeader } from "@/components/interactive-header";
-import { Projects } from "@/components/projects";
-import { Footer } from "@/components/footer";
+import { InteractiveHeader } from "@/components/header/interactive-header";
+import { Projects } from "@/app/projects/projects";
+import { Footer } from "@/components/footer/footer";
 
 export default function ProjectsPage() {
   return (
@@ -8,8 +8,8 @@ export default function ProjectsPage() {
       <InteractiveHeader />
       <main className="flex-grow overflow-auto">
         <Projects />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

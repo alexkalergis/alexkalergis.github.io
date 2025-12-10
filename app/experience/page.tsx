@@ -1,6 +1,6 @@
-import { InteractiveHeader } from "@/components/interactive-header";
-import { Experience } from "@/components/experience";
-import { Footer } from "@/components/footer";
+import { InteractiveHeader } from "@/components/header/interactive-header";
+import { Experience } from "@/app/experience/experience";
+import { Footer } from "@/components/footer/footer";
 
 export default function ExperiencePage() {
   return (
@@ -8,8 +8,8 @@ export default function ExperiencePage() {
       <InteractiveHeader />
       <main className="flex-grow overflow-auto">
         <Experience />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

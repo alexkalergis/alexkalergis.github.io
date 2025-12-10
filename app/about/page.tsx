@@ -1,7 +1,7 @@
-import { InteractiveHeader } from "@/components/interactive-header";
-import { About } from "@/components/about";
-import { Contact } from "@/components/contact";
-import { Footer } from "@/components/footer";
+import { InteractiveHeader } from "@/components/header/interactive-header";
+import { About } from "@/app/about/about";
+import { Contact } from "@/app/contact/contact";
+import { Footer } from "@/components/footer/footer";
 
 export default function AboutPage() {
   return (
@@ -10,8 +10,8 @@ export default function AboutPage() {
       <main className="flex-grow overflow-auto">
         <About />
         <Contact />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

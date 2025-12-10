@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { InteractiveHeader } from "@/components/interactive-header";
-import { Footer } from "@/components/footer";
+import { InteractiveHeader } from "@/components/header/interactive-header";
+import { Footer } from "@/components/footer/footer";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 type LibraryItem = {
@@ -226,7 +226,7 @@ export default function PersonalLibraryPage() {
                         key={item.id}
                         className="flex p-[10px] flex-col items-start gap-[25px] h-[342px] rounded-lg border border-[#D9D9D9]"
                       >
-                        <div className="flex-1 self-stretch relative bg-white rounded overflow-hidden">
+                        <div className="flex-1 self-stretch relative bg-transparent rounded overflow-hidden">
                           <Image
                             src={item.image}
                             alt={item.title}
@@ -321,7 +321,7 @@ export default function PersonalLibraryPage() {
                         rel="noopener noreferrer"
                         className="flex p-[10px] flex-col items-start gap-[25px] h-[342px] rounded-lg border border-[#D9D9D9] hover:border-[#999] transition-colors"
                       >
-                        <div className="flex-1 self-stretch relative bg-white rounded overflow-hidden">
+                        <div className="flex-1 self-stretch relative bg-transparent rounded overflow-hidden">
                           <Image
                             src={item.image || "/placeholder.svg"}
                             alt={item.title}
@@ -362,8 +362,8 @@ export default function PersonalLibraryPage() {
             </Tabs>
           </section>
         </div>
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }
