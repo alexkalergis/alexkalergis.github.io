@@ -1,50 +1,62 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Mail, Github, Linkedin, MapPin, Clock, Globe, Users, Share2 } from 'lucide-react'
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  MapPin,
+  Clock,
+  Globe,
+  Users,
+  Share2,
+} from "lucide-react";
+import Link from "next/link";
+import "./contact.scss";
 
 export function Contact() {
   const handleEmailClick = () => {
-    const subject = encodeURIComponent("Contact from Portfolio Website")
+    const subject = encodeURIComponent("Contact from Portfolio Website");
     // Removed the 'body' parameter to prevent pre-filled text
-    window.open(`mailto:kalergisalex@gmail.com?subject=${subject}`, "_blank")
-  }
+    window.open(`mailto:kalergisalex@gmail.com?subject=${subject}`, "_blank");
+  };
 
   return (
-    <section id="contact" className="py-24">
-      <div className="container space-y-16">
-        <div className="space-y-6">
-          <h2 className="font-bold text-5xl">Get In Touch</h2>
-          <p className="text-muted-foreground max-w-3xl text-lg">Want to work together?</p>
+    <section id="contact" className="contact">
+      <div className="container contact__container">
+        <div className="contact__header">
+          <h2 className="contact__title">Get In Touch</h2>
+          <p className="contact__subtitle">Want to work together?</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <Card className="border bg-card/50 backdrop-blur-sm">
-            <CardContent className="p-8 space-y-8">
-              <div className="flex items-center gap-4">
-                <div className="bg-muted p-3 rounded-lg">
+        <div className="contact__grid">
+          <Card className="contact__card">
+            <CardContent className="contact__card-content">
+              <div className="contact__card-header">
+                <div className="contact__card-icon-wrapper">
                   <Mail className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-3xl">Email Me</h3>
-                  
+                  <h3 className="contact__card-title">Email Me</h3>
                 </div>
               </div>
-              <div className="space-y-4 pl-2">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="contact__card-body">
+                <div className="contact__card-info">
+                  <div className="contact__card-info-item">
                     <Clock className="h-4 w-4 text-foreground" />
-                    <span className="font-medium">Usually respond within 24 hours</span>
+                    <span>Usually respond within 24 hours</span>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <div className="contact__card-info-item">
                     <Users className="h-4 w-4 text-foreground" />
-                    <span className="font-medium">Open to freelance opportunities</span>
+                    <span>Open to freelance opportunities</span>
                   </div>
                 </div>
-                <div className="pt-4">
-                  <Button className="w-full sm:w-auto px-8" onClick={handleEmailClick}>
+                <div className="contact__card-actions">
+                  <Button
+                    className="contact__button"
+                    onClick={handleEmailClick}
+                  >
                     Send Message
                   </Button>
                 </div>
@@ -52,36 +64,35 @@ export function Contact() {
             </CardContent>
           </Card>
 
-          <Card className="border bg-card/50 backdrop-blur-sm">
-            <CardContent className="p-8 space-y-8">
-              <div className="flex items-center gap-4">
-                <div className="bg-muted p-3 rounded-lg">
+          <Card className="contact__card">
+            <CardContent className="contact__card-content">
+              <div className="contact__card-header">
+                <div className="contact__card-icon-wrapper">
                   <Share2 className="h-6 w-6 text-foreground" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-3xl">Follow My Work</h3>
-                  
+                  <h3 className="contact__card-title">Follow My Work</h3>
                 </div>
               </div>
-              <div className="space-y-6 pl-2">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="contact__card-body">
+                <div className="contact__card-info">
+                  <div className="contact__card-info-item">
                     <MapPin className="h-4 w-4 text-foreground" />
-                    <span className="font-medium">Based in Athens, Greece</span>
+                    <span>Based in Athens, Greece</span>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <div className="contact__card-info-item">
                     <Globe className="h-4 w-4 text-foreground" />
-                    <span className="font-medium">Available for remote work worldwide</span>
+                    <span>Available for remote work worldwide</span>
                   </div>
                 </div>
-                <div className="pt-4">
-                  <div className="grid grid-cols-2 gap-3">
+                <div className="contact__card-actions">
+                  <div className="contact__social-grid">
                     <Button variant="outline" asChild>
                       <Link
                         href="https://github.com/alexkalergis"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center"
+                        className="contact__social-link"
                       >
                         <Github className="h-4 w-4 mr-2" />
                         GitHub
@@ -92,7 +103,7 @@ export function Contact() {
                         href="https://www.linkedin.com/in/alexandros-kalergis/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center"
+                        className="contact__social-link"
                       >
                         <Linkedin className="h-4 w-4 mr-2" />
                         LinkedIn
@@ -106,5 +117,5 @@ export function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

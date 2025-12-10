@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import "./projects.scss";
 
 const projects = [
   {
@@ -84,16 +85,16 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24">
-      <div className="container space-y-16">
-        <div className="space-y-6">
-          <h2 className="font-bold text-5xl">Projects</h2>
-          <p className="text-muted-foreground max-w-3xl text-lg">
+    <section id="projects" className="projects">
+      <div className="container projects__container">
+        <div className="projects__header">
+          <h2 className="projects__title">Projects</h2>
+          <p className="projects__subtitle">
             My library of academic and personal projects.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="projects__grid">
           {projects.map((project) => {
             const Wrapper: any = project.url ? Link : "div";
             const wrapperProps = project.url
@@ -101,18 +102,18 @@ export function Projects() {
                   href: project.url,
                   target: "_blank",
                   rel: "noopener noreferrer",
-                  className: "block",
+                  className: "projects__link",
                 }
               : {};
 
             return (
               <Wrapper key={project.id} {...wrapperProps}>
                 <div
-                  className={`flex flex-col gap-[25px] p-2.5 rounded-lg border border-[#D9D9D9] h-[288px] transition-transform ${
-                    project.url ? "hover:scale-105" : ""
+                  className={`projects__card ${
+                    project.url ? "projects__card--interactive" : ""
                   }`}
                 >
-                  <div className="flex-1 relative">
+                  <div className="projects__image-wrapper">
                     <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
@@ -120,11 +121,11 @@ export function Projects() {
                       className="object-contain"
                     />
                   </div>
-                  <div className="flex flex-col gap-2.5">
-                    <div className="text-sm font-bold text-center text-black font-mono">
+                  <div className="projects__info">
+                    <div className="projects__project-title">
                       {project.title} | {project.year}
                     </div>
-                    <div className="text-sm font-medium text-center text-black font-mono">
+                    <div className="projects__project-subtitle">
                       {project.subtitle}
                     </div>
                   </div>

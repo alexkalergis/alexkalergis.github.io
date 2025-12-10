@@ -1,9 +1,36 @@
+"use client";
+
+import { Heart } from "lucide-react";
+import Link from "next/link";
+import "./footer.scss";
+
 export function Footer() {
   return (
-    <footer className="border-t border-slate-100">
-      <div className="container py-4 text-center text-sm text-muted-foreground">
-        <p>
-          &copy; {new Date().getFullYear()} Alex Kalergis. All rights reserved.
+    <footer className="footer">
+      <div className="footer__container container">
+        <p className="footer__text">
+          <span> Made with </span>
+          <Heart className="footer__heart" />
+          <span> by Alex Kalergis using </span>
+          <span />
+          <Link
+            href="https://www.figma.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__link"
+          >
+            Figma
+          </Link>
+          <span> and </span>
+          <Link
+            href="https://react.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer__link"
+          >
+            React
+          </Link>
+          <span> | &copy; {new Date().getFullYear()} All rights reserved.</span>
         </p>
       </div>
     </footer>

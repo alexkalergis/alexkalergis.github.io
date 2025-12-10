@@ -1,0 +1,620 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./app/about/about.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.about {
+  padding: var(--spacing-3xl) 0;
+  background: hsl(var(--background));
+}
+.about__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+}
+.about__title {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: hsl(var(--foreground));
+}
+.about__subtitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--muted-foreground));
+  max-width: 48rem;
+}
+.about__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+.about__text {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--foreground));
+  text-align: justify;
+  width: 100%;
+}
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./app/contact/contact.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.contact {
+  padding: var(--spacing-3xl) 0;
+}
+.contact__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+.contact__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+.contact__title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-5xl);
+  color: hsl(var(--foreground));
+}
+.contact__subtitle {
+  color: hsl(var(--muted-foreground));
+  max-width: 48rem;
+  font-size: var(--font-size-lg);
+}
+.contact__grid {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+@media (min-width: 1024px) {
+  .contact__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.contact__card {
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card)/0.5);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius);
+}
+.contact__card-content {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+.contact__card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+.contact__card-icon-wrapper {
+  background: hsl(var(--muted));
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-lg);
+}
+.contact__card-icon-wrapper svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  color: hsl(var(--foreground));
+}
+.contact__card-title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-3xl);
+  color: hsl(var(--foreground));
+}
+.contact__card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding-left: var(--spacing-xs);
+}
+.contact__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+.contact__card-info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  color: hsl(var(--muted-foreground));
+}
+.contact__card-info-item svg {
+  height: 1rem;
+  width: 1rem;
+  color: hsl(var(--foreground));
+}
+.contact__card-info-item span {
+  font-weight: var(--font-weight-medium);
+}
+.contact__card-actions {
+  padding-top: var(--spacing-md);
+}
+.contact__button {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .contact__button {
+    width: auto;
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+  }
+}
+.contact__social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
+}
+.contact__social-link {
+  display: inline-flex;
+  align-items: center;
+}
+.contact__social-link svg {
+  height: 1rem;
+  width: 1rem;
+  margin-right: var(--spacing-xs);
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./app/education/education.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.education {
+  padding: var(--spacing-3xl) 0;
+  background: hsl(var(--background));
+}
+.education__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 100px;
+  width: 100%;
+}
+.education__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+}
+.education__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  width: 100%;
+}
+.education__title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-5xl);
+  color: hsl(var(--foreground));
+}
+.education__subtitle {
+  color: hsl(var(--muted-foreground));
+  max-width: 48rem;
+  font-size: var(--font-size-lg);
+}
+.education__items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+.education__item {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+}
+.education__item-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+@media (min-width: 640px) {
+  .education__item-header {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+}
+.education__item-logo {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 640px) {
+  .education__item-logo {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+.education__item-logo img {
+  object-fit: contain;
+}
+.education__item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+.education__item-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+.education__item-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--foreground));
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+}
+.education__item-date {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--muted-foreground));
+  white-space: nowrap;
+}
+.education__item-subtitle {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--foreground));
+}
+.education__item-detail {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--foreground));
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./app/experience/experience.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.experience {
+  padding: var(--spacing-3xl) 0;
+}
+.experience__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+.experience__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+.experience__title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-5xl);
+  color: hsl(var(--foreground));
+}
+.experience__subtitle {
+  color: hsl(var(--muted-foreground));
+  max-width: 48rem;
+  font-size: var(--font-size-lg);
+}
+.experience__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+.experience__item {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+.experience__item-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+@media (min-width: 640px) {
+  .experience__item-header {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+}
+.experience__logo-container {
+  position: relative;
+  flex-shrink: 0;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 640px) {
+  .experience__logo-container {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+.experience__logo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.experience__logo-wrapper img {
+  object-fit: contain;
+}
+.experience__content {
+  flex: 1;
+}
+.experience__content-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-sm);
+}
+@media (min-width: 640px) {
+  .experience__content-header {
+    flex-direction: row;
+  }
+}
+.experience__content-left {
+  flex: 1;
+}
+.experience__role {
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0.25rem;
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: var(--font-size-xl);
+  color: hsl(var(--foreground));
+}
+.experience__company-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+.experience__company-link {
+  font-weight: var(--font-weight-medium);
+  color: hsl(var(--foreground));
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--font-size-base);
+}
+.experience__company-link:hover {
+  color: hsl(var(--foreground));
+}
+.experience__company-link svg {
+  height: 1rem;
+  width: 1rem;
+}
+.experience__company-name {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-base);
+  color: hsl(var(--foreground));
+}
+.experience__content-right {
+  text-align: left;
+  margin-top: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 640px) {
+  .experience__content-right {
+    text-align: right;
+    margin-top: 0;
+  }
+}
+.experience__date {
+  color: hsl(var(--muted-foreground));
+  white-space: nowrap;
+}
+.experience__location {
+  color: hsl(var(--muted-foreground));
+  font-size: var(--font-size-sm);
+  margin-top: 0.25rem;
+}
+.experience__toggle {
+  margin-top: var(--spacing-md);
+}
+.experience__toggle-button {
+  color: hsl(var(--muted-foreground));
+  padding: 0;
+  height: auto;
+  font-weight: var(--font-weight-normal);
+}
+.experience__toggle-button:hover {
+  background: transparent;
+}
+.experience__toggle-button span {
+  font-size: var(--font-size-sm);
+}
+.experience__toggle-button svg {
+  height: 1rem;
+  width: 1rem;
+  margin-left: 0.25rem;
+}
+.experience__description {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  padding-left: 0;
+  animation: slideInFromTop 200ms ease-out;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+}
+@media (min-width: 640px) {
+  .experience__description {
+    padding-left: 5rem;
+  }
+}
+.experience__description-item {
+  color: hsl(var(--muted-foreground));
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+.experience__bullet {
+  width: 0.375rem;
+  height: 0.375rem;
+  background: hsl(var(--muted-foreground));
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0;
+}
+.experience__description-text {
+  flex: 1;
+  color: hsl(var(--foreground));
+}
+.experience__divider {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./app/projects/projects.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.projects {
+  padding: var(--spacing-3xl) 0;
+}
+.projects__container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xl);
+}
+.projects__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+.projects__title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-5xl);
+  color: hsl(var(--foreground));
+}
+.projects__subtitle {
+  color: hsl(var(--muted-foreground));
+  max-width: 48rem;
+  font-size: var(--font-size-lg);
+}
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--spacing-lg);
+}
+@media (min-width: 640px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .projects__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.projects__link {
+  display: block;
+}
+.projects__card {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 0.625rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  height: 288px;
+  transition: transform 0.2s;
+}
+.projects__card--interactive:hover {
+  transform: scale(1.05);
+}
+.projects__image-wrapper {
+  flex: 1;
+  position: relative;
+}
+.projects__image-wrapper img {
+  object-fit: contain;
+}
+.projects__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+.projects__project-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  color: hsl(var(--foreground));
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+}
+.projects__project-subtitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  color: hsl(var(--foreground));
+  font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./components/footer/footer.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.footer {
+  border-top: var(--border-width) solid rgb(241, 245, 249);
+}
+.footer__container {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--muted-foreground));
+}
+.footer__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+.footer__heart {
+  height: var(--spacing-md);
+  width: var(--spacing-md);
+  transition: color var(--transition-base);
+}
+.footer__heart:hover {
+  color: rgb(239, 68, 68);
+  fill: rgb(239, 68, 68);
+}
+.footer__link {
+  transition: color var(--transition-base);
+}
+.footer__link:hover {
+  color: hsl(var(--foreground));
+}

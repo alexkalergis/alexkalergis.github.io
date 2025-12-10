@@ -1,4 +1,174 @@
-// Personal page styles
-.personal-page {
-  padding: 2rem 0;
+.personal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+    flex: 1;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    align-self: stretch;
+  }
+
+  &__title {
+    align-self: stretch;
+    color: hsl(var(--foreground));
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-normal);
+  }
+
+  &__subtitle {
+    align-self: stretch;
+    color: hsl(var(--foreground));
+    text-align: justify;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+  }
+
+  &__tabs {
+    display: flex;
+    padding: 15px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 50px;
+    border-radius: var(--radius-lg);
+    border-bottom: 1px solid #d9d9d9;
+    align-self: stretch;
+  }
+
+  &__tab-button {
+    text-align: center;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-normal);
+    color: hsl(var(--foreground));
+    font-weight: var(--font-weight-normal);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    &--active {
+      font-weight: var(--font-weight-bold);
+      text-decoration: underline;
+    }
+  }
+
+  &__content {
+    display: flex;
+    height: 342px;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+  }
+
+  &__card {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    flex: 1;
+    align-self: stretch;
+    border-radius: var(--radius-lg);
+    border: 1px solid #d9d9d9;
+    transition: border-color 0.2s;
+
+    &--link {
+      &:hover {
+        border-color: #999;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    flex: 1;
+    align-self: stretch;
+    position: relative;
+    background: hsl(var(--muted));
+    border-radius: var(--radius);
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+  }
+
+  &__card-title {
+    align-self: stretch;
+    color: hsl(var(--foreground));
+    text-align: center;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-normal);
+  }
+
+  &__card-description {
+    align-self: stretch;
+    color: hsl(var(--foreground));
+    text-align: center;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-normal);
+  }
+
+  &__card-tags {
+    align-self: stretch;
+    color: hsl(var(--foreground));
+    text-align: center;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+  }
+
+  &__button {
+    display: flex;
+    padding: 15px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: var(--radius-lg);
+    border: 1px solid #d9d9d9;
+    color: hsl(var(--foreground));
+    text-align: justify;
+    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-normal);
+  }
 }

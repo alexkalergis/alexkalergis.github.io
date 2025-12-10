@@ -5,6 +5,7 @@ import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import "./experience.scss";
 
 const companies = [
   {
@@ -78,25 +79,25 @@ export function Experience() {
   };
 
   return (
-    <section id="experience" className="py-24">
-      <div className="container space-y-16">
-        <div className="space-y-6">
-          <h2 className="font-bold text-5xl">Experience</h2>
-          <p className="text-muted-foreground max-w-3xl text-lg">
+    <section id="experience" className="experience">
+      <div className="container experience__container">
+        <div className="experience__header">
+          <h2 className="experience__title">Experience</h2>
+          <p className="experience__subtitle">
             My professional journey and career highlights.
           </p>
         </div>
 
-        <div className="space-y-8">
+        <div className="experience__list">
           {companies.map((company, index, arr) => {
             const isExpanded = expandedItems.includes(index);
 
             return (
-              <div key={index} className="space-y-6">
-                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+              <div key={index} className="experience__item">
+                <div className="experience__item-header">
                   {/* Fixed container size for all logos */}
-                  <div className="relative flex-shrink-0 w-20 h-20 sm:w-14 sm:h-14 flex items-center justify-center">
-                    <div className="relative w-full h-full">
+                  <div className="experience__logo-container">
+                    <div className="experience__logo-wrapper">
                       <Image
                         src={
                           company.logo ||
@@ -108,51 +109,47 @@ export function Experience() {
                       />
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row justify-between items-start mb-3">
-                      <div className="flex-1">
-                        <h3 className="font-bold mb-1 font-mono text-xl">
-                          {company.role}
-                        </h3>
-                        <div className="flex items-center gap-2">
+                  <div className="experience__content">
+                    <div className="experience__content-header">
+                      <div className="experience__content-left">
+                        <h3 className="experience__role">{company.role}</h3>
+                        <div className="experience__company-wrapper">
                           {company.website !== "#" ? (
                             <Link
                               href={company.website}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="font-medium hover:text-foreground transition-colors inline-flex items-center gap-1 text-base"
+                              className="experience__company-link"
                             >
                               {company.name}
                               <ExternalLink className="h-4 w-4" />
                             </Link>
                           ) : (
-                            <span className="font-medium text-base">
+                            <span className="experience__company-name">
                               {company.name}
                             </span>
                           )}
                         </div>
                       </div>
-                      <div className="text-left sm:text-right mt-2 sm:mt-0 flex flex-col">
-                        <span className="text-muted-foreground whitespace-nowrap">
+                      <div className="experience__content-right">
+                        <span className="experience__date">
                           {company.startDate} - {company.endDate}
                         </span>
-                        <span className="text-muted-foreground text-sm mt-1">
+                        <span className="experience__location">
                           {company.location}
                         </span>
                       </div>
                     </div>
 
                     {/* View More Button */}
-                    <div className="mt-4">
+                    <div className="experience__toggle">
                       <Button
                         variant="ghost"
                         size="sm"
                         onClick={() => toggleExpanded(index)}
-                        className="text-muted-foreground p-0 h-auto font-normal hover:bg-transparent"
+                        className="experience__toggle-button"
                       >
-                        <span className="text-sm">
-                          View {isExpanded ? "less" : "more"}
-                        </span>
+                        <span>View {isExpanded ? "less" : "more"}</span>
                         {isExpanded ? (
                           <ChevronUp className="h-4 w-4 ml-1" />
                         ) : (
@@ -165,21 +162,16 @@ export function Experience() {
 
                 {/* Expandable Description */}
                 {isExpanded && (
-                  <ul className="space-y-3 pl-0 animate-in slide-in-from-top-2 duration-200 sm:pl-20 text-left text-sm font-normal">
+                  <ul className="experience__description">
                     {company.description.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="text-muted-foreground flex gap-3 items-center"
-                      >
-                        <span className="w-1.5 h-1.5 bg-muted-foreground rounded-full flex-shrink-0 mt-0" />
-                        <span className="flex-1 text-black">{item}</span>
+                      <li key={idx} className="experience__description-item">
+                        <span className="experience__bullet" />
+                        <span className="experience__description-text">
+                          {item}
+                        </span>
                       </li>
                     ))}
                   </ul>
-                )}
-
-                {index < arr.length - 1 && (
-                  <div className="pt-4 border-b border-gray-200" />
                 )}
               </div>
             );

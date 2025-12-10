@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import "./personal.scss";
 
 type LibraryItem = {
   id: number;
@@ -158,25 +159,21 @@ export function Personal() {
     interestsTabs.find((tab) => tab.value === interestsTab)?.items || [];
 
   return (
-    <div className="flex justify-center items-center gap-[10px] self-stretch">
-      <div className="flex flex-col items-start gap-[100px] flex-1">
-        <div className="flex flex-col items-start gap-[25px] self-stretch">
-          <h2 className="self-stretch text-[#000] font-mono text-[40px] font-bold leading-normal">
-            Hobbies
-          </h2>
-          <p className="self-stretch text-[#000] text-justify font-mono text-[18px] font-normal leading-normal">
+    <div className="personal">
+      <div className="personal__container">
+        <div className="personal__section">
+          <h2 className="personal__title">Hobbies</h2>
+          <p className="personal__subtitle">
             Creative activities that excites me.
           </p>
 
-          <div className="flex p-[15px] justify-end items-center gap-[50px] rounded-lg border-b border-[#D9D9D9] self-stretch">
+          <div className="personal__tabs">
             {hobbiesTabs.map((tab) => (
               <button
                 key={tab.value}
                 onClick={() => setHobbiesTab(tab.value)}
-                className={`text-center font-mono text-[18px] leading-normal ${
-                  hobbiesTab === tab.value
-                    ? "font-bold underline text-[#000]"
-                    : "font-normal text-[#000]"
+                className={`personal__tab-button ${
+                  hobbiesTab === tab.value ? "personal__tab-button--active" : ""
                 }`}
               >
                 {tab.label}
@@ -184,13 +181,10 @@ export function Personal() {
             ))}
           </div>
 
-          <div className="flex h-[342px] items-start gap-[10px] self-stretch">
+          <div className="personal__content">
             {currentHobbyItems.slice(0, 2).map((item) => (
-              <div
-                key={item.id}
-                className="flex p-[10px] flex-col items-start gap-[25px] flex-1 self-stretch rounded-lg border border-[#D9D9D9]"
-              >
-                <div className="flex-1 self-stretch relative bg-gray-100 rounded overflow-hidden">
+              <div key={item.id} className="personal__card">
+                <div className="personal__image-wrapper">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -198,14 +192,12 @@ export function Personal() {
                     className="object-cover"
                   />
                 </div>
-                <div className="flex flex-col items-start gap-[10px] self-stretch">
-                  <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-bold leading-normal">
-                    {item.title}
-                  </div>
-                  <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-medium leading-normal">
+                <div className="personal__card-info">
+                  <div className="personal__card-title">{item.title}</div>
+                  <div className="personal__card-description">
                     {item.description}
                   </div>
-                  <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-normal leading-normal">
+                  <div className="personal__card-tags">
                     {hobbiesTab === "photography"
                       ? "Photography"
                       : hobbiesTab === "drawing"
@@ -219,17 +211,12 @@ export function Personal() {
             ))}
           </div>
 
-          <div className="flex flex-col justify-center items-center gap-[10px] self-stretch">
-            <Button
-              variant="outline"
-              asChild
-              className="flex p-[15px_25px] justify-center items-center gap-[10px] rounded-lg border border-[#D9D9D9]"
-            >
+          <div className="personal__actions">
+            <Button variant="outline" asChild className="personal__button">
               <Link
                 href="https://500px.com/p/alexkalergis?view=photos"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#000] text-justify font-mono text-[16px] font-medium leading-normal"
               >
                 Follow me on 500px
               </Link>
@@ -237,23 +224,21 @@ export function Personal() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-[25px] self-stretch">
-          <h2 className="self-stretch text-[#000] font-mono text-[40px] font-bold leading-normal">
-            Interests
-          </h2>
-          <p className="self-stretch text-[#000] text-justify font-mono text-[18px] font-normal leading-normal">
+        <div className="personal__section">
+          <h2 className="personal__title">Interests</h2>
+          <p className="personal__subtitle">
             A curated collection that inspires me.
           </p>
 
-          <div className="flex p-[15px] justify-end items-center gap-[50px] rounded-lg border-b border-[#D9D9D9] self-stretch">
+          <div className="personal__tabs">
             {interestsTabs.map((tab) => (
               <button
                 key={tab.value}
                 onClick={() => setInterestsTab(tab.value)}
-                className={`text-center font-mono text-[18px] leading-normal ${
+                className={`personal__tab-button ${
                   interestsTab === tab.value
-                    ? "font-bold underline text-[#000]"
-                    : "font-normal text-[#000]"
+                    ? "personal__tab-button--active"
+                    : ""
                 }`}
               >
                 {tab.label}
@@ -261,16 +246,16 @@ export function Personal() {
             ))}
           </div>
 
-          <div className="flex h-[342px] items-start gap-[10px] self-stretch">
+          <div className="personal__content">
             {currentInterestItems.slice(0, 2).map((item) => (
               <Link
                 key={item.id}
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex p-[10px] flex-col items-start gap-[25px] flex-1 self-stretch rounded-lg border border-[#D9D9D9] hover:border-[#999] transition-colors"
+                className="personal__card personal__card--link"
               >
-                <div className="flex-1 self-stretch relative bg-gray-100 rounded overflow-hidden">
+                <div className="personal__image-wrapper">
                   <Image
                     src="/placeholder.svg"
                     alt={item.title}
@@ -278,15 +263,15 @@ export function Personal() {
                     className="object-cover"
                   />
                 </div>
-                <div className="flex flex-col items-start gap-[10px] self-stretch">
-                  <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-bold leading-normal">
+                <div className="personal__card-info">
+                  <div className="personal__card-title">
                     {item.title}
                     {item.year && ` | ${item.year}`}
                   </div>
-                  <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-medium leading-normal">
+                  <div className="personal__card-description">
                     {item.creator || item.description}
                   </div>
-                  <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-normal leading-normal">
+                  <div className="personal__card-tags">
                     {item.tags.slice(0, 3).join(" | ")}
                   </div>
                 </div>
@@ -294,14 +279,9 @@ export function Personal() {
             ))}
           </div>
 
-          <div className="flex flex-col justify-center items-center gap-[10px] self-stretch">
-            <Button
-              variant="outline"
-              className="flex p-[15px_25px] justify-center items-center gap-[10px] rounded-lg border border-[#D9D9D9]"
-            >
-              <span className="text-[#000] text-justify font-mono text-[16px] font-medium leading-normal">
-                Show more
-              </span>
+          <div className="personal__actions">
+            <Button variant="outline" className="personal__button">
+              <span>Show more</span>
             </Button>
           </div>
         </div>

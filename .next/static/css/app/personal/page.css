@@ -1,0 +1,36 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./components/footer/footer.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.footer {
+  border-top: var(--border-width) solid rgb(241, 245, 249);
+}
+.footer__container {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--muted-foreground));
+}
+.footer__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+.footer__heart {
+  height: var(--spacing-md);
+  width: var(--spacing-md);
+  transition: color var(--transition-base);
+}
+.footer__heart:hover {
+  color: rgb(239, 68, 68);
+  fill: rgb(239, 68, 68);
+}
+.footer__link {
+  transition: color var(--transition-base);
+}
+.footer__link:hover {
+  color: hsl(var(--foreground));
+}

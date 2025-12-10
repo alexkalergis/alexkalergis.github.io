@@ -6,7 +6,7 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: var(--spacing-sm);
   position: relative;
 }
 .hero__content {
@@ -15,45 +15,42 @@
   gap: 100px;
   flex: 1 0 0;
   max-width: 1400px;
-  padding: 0 2rem;
+  padding: 0 var(--spacing-xl);
   margin: 0 auto;
 }
 .hero__bio {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 25px;
+  gap: var(--spacing-lg);
   flex: 1 0 0;
 }
 .hero__name {
   align-self: stretch;
-  color: #000;
+  color: hsl(var(--foreground));
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
   margin: 0;
 }
 .hero__subtitle {
   align-self: stretch;
-  color: #000;
+  color: hsl(var(--foreground));
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
   margin: 0;
 }
 .hero__description {
   align-self: stretch;
-  color: #000;
+  color: hsl(var(--foreground));
   text-align: justify;
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
   margin: 0;
 }
 .hero__button {
@@ -61,28 +58,27 @@
   padding: 15px 25px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  border: 1px solid #d9d9d9;
+  gap: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--border-color);
   text-decoration: none;
   background-color: transparent;
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
 }
 .hero__button:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 .hero__button:focus {
-  outline: 2px solid #000;
+  outline: 2px solid hsl(var(--foreground));
   outline-offset: 2px;
 }
 .hero__button-text {
-  color: #000;
+  color: hsl(var(--foreground));
   text-align: justify;
   font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
 }
 .hero__image {
   flex: 1 0 0;
@@ -100,10 +96,10 @@
     padding: 0 40px;
   }
   .hero__name {
-    font-size: 36px;
+    font-size: var(--font-size-4xl);
   }
   .hero__subtitle {
-    font-size: 22px;
+    font-size: var(--font-size-xl);
   }
 }
 @media (max-width: 1024px) {
@@ -122,11 +118,11 @@
     max-width: 700px;
   }
   .hero__name {
-    font-size: 36px;
+    font-size: var(--font-size-4xl);
     text-align: center;
   }
   .hero__subtitle {
-    font-size: 22px;
+    font-size: var(--font-size-xl);
     text-align: center;
   }
   .hero__description {
@@ -144,19 +140,19 @@
   }
   .hero__content {
     gap: 40px;
-    padding: 0 25px;
+    padding: 0 var(--spacing-lg);
   }
   .hero__bio {
-    gap: 20px;
+    gap: var(--spacing-md);
   }
   .hero__name {
-    font-size: 32px;
+    font-size: var(--font-size-3xl);
   }
   .hero__subtitle {
-    font-size: 20px;
+    font-size: var(--font-size-xl);
   }
   .hero__description {
-    font-size: 16px;
+    font-size: var(--font-size-base);
   }
   .hero__button {
     padding: 12px 20px;
@@ -164,7 +160,7 @@
     max-width: 280px;
   }
   .hero__button-text {
-    font-size: 15px;
+    font-size: var(--font-size-sm);
   }
   .hero__image {
     min-height: 300px;
@@ -177,27 +173,27 @@
   }
   .hero__content {
     gap: 30px;
-    padding: 0 20px;
+    padding: 0 var(--spacing-md);
   }
   .hero__bio {
-    gap: 18px;
+    gap: var(--spacing-lg);
   }
   .hero__name {
-    font-size: 28px;
+    font-size: var(--font-size-2xl);
   }
   .hero__subtitle {
-    font-size: 18px;
+    font-size: var(--font-size-lg);
   }
   .hero__description {
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
   }
   .hero__button {
     padding: 12px 18px;
     width: 100%;
   }
   .hero__button-text {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
   }
   .hero__image {
     min-height: 250px;
@@ -206,18 +202,54 @@
 }
 @media (max-width: 360px) {
   .hero__name {
-    font-size: 24px;
+    font-size: var(--font-size-2xl);
   }
   .hero__subtitle {
-    font-size: 16px;
+    font-size: var(--font-size-base);
   }
   .hero__description {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
   }
   .hero__button-text {
-    font-size: 13px;
+    font-size: var(--font-size-xs);
   }
   .hero__image {
     min-height: 200px;
   }
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/.pnpm/next@15.2.4_react-dom@19.0.0_react@19.0.0__react@19.0.0_sass@1.95.0/node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./components/footer/footer.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.footer {
+  border-top: var(--border-width) solid rgb(241, 245, 249);
+}
+.footer__container {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+  color: hsl(var(--muted-foreground));
+}
+.footer__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+.footer__heart {
+  height: var(--spacing-md);
+  width: var(--spacing-md);
+  transition: color var(--transition-base);
+}
+.footer__heart:hover {
+  color: rgb(239, 68, 68);
+  fill: rgb(239, 68, 68);
+}
+.footer__link {
+  transition: color var(--transition-base);
+}
+.footer__link:hover {
+  color: hsl(var(--foreground));
 }

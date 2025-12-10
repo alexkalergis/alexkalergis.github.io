@@ -3,7 +3,7 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: var(--spacing-sm);
   position: relative;
 
   &__content {
@@ -12,7 +12,7 @@
     gap: 100px;
     flex: 1 0 0;
     max-width: 1400px;
-    padding: 0 2rem;
+    padding: 0 var(--spacing-xl);
     margin: 0 auto;
   }
 
@@ -20,41 +20,38 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 25px;
+    gap: var(--spacing-lg);
     flex: 1 0 0;
   }
 
   &__name {
     align-self: stretch;
-    color: #000;
+    color: hsl(var(--foreground));
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-normal);
     margin: 0;
   }
 
   &__subtitle {
     align-self: stretch;
-    color: #000;
+    color: hsl(var(--foreground));
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-normal);
     margin: 0;
   }
 
   &__description {
     align-self: stretch;
-    color: #000;
+    color: hsl(var(--foreground));
     text-align: justify;
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
     margin: 0;
   }
 
@@ -63,31 +60,30 @@
     padding: 15px 25px;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    border-radius: 8px;
-    border: 1px solid #d9d9d9;
+    gap: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    border: var(--border-width) solid var(--border-color);
     text-decoration: none;
     background-color: transparent;
-    transition: all 0.2s ease;
+    transition: all var(--transition-base);
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.05);
     }
 
     &:focus {
-      outline: 2px solid #000;
+      outline: 2px solid hsl(var(--foreground));
       outline-offset: 2px;
     }
   }
 
   &__button-text {
-    color: #000;
+    color: hsl(var(--foreground));
     text-align: justify;
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-normal);
   }
 
   &__image {
@@ -107,11 +103,11 @@
     }
 
     &__name {
-      font-size: 36px;
+      font-size: var(--font-size-4xl);
     }
 
     &__subtitle {
-      font-size: 22px;
+      font-size: var(--font-size-xl);
     }
   }
 
@@ -132,12 +128,12 @@
     }
 
     &__name {
-      font-size: 36px;
+      font-size: var(--font-size-4xl);
       text-align: center;
     }
 
     &__subtitle {
-      font-size: 22px;
+      font-size: var(--font-size-xl);
       text-align: center;
     }
 
@@ -157,23 +153,23 @@
 
     &__content {
       gap: 40px;
-      padding: 0 25px;
+      padding: 0 var(--spacing-lg);
     }
 
     &__bio {
-      gap: 20px;
+      gap: var(--spacing-md);
     }
 
     &__name {
-      font-size: 32px;
+      font-size: var(--font-size-3xl);
     }
 
     &__subtitle {
-      font-size: 20px;
+      font-size: var(--font-size-xl);
     }
 
     &__description {
-      font-size: 16px;
+      font-size: var(--font-size-base);
     }
 
     &__button {
@@ -183,7 +179,7 @@
     }
 
     &__button-text {
-      font-size: 15px;
+      font-size: var(--font-size-sm);
     }
 
     &__image {
@@ -197,24 +193,24 @@
 
     &__content {
       gap: 30px;
-      padding: 0 20px;
+      padding: 0 var(--spacing-md);
     }
 
     &__bio {
-      gap: 18px;
+      gap: var(--spacing-lg);
     }
 
     &__name {
-      font-size: 28px;
+      font-size: var(--font-size-2xl);
     }
 
     &__subtitle {
-      font-size: 18px;
+      font-size: var(--font-size-lg);
     }
 
     &__description {
-      font-size: 15px;
-      line-height: 1.5;
+      font-size: var(--font-size-sm);
+      line-height: var(--line-height-relaxed);
     }
 
     &__button {
@@ -223,7 +219,7 @@
     }
 
     &__button-text {
-      font-size: 14px;
+      font-size: var(--font-size-sm);
     }
 
     &__image {
@@ -234,19 +230,19 @@
 
   @media (max-width: 360px) {
     &__name {
-      font-size: 24px;
+      font-size: var(--font-size-2xl);
     }
 
     &__subtitle {
-      font-size: 16px;
+      font-size: var(--font-size-base);
     }
 
     &__description {
-      font-size: 14px;
+      font-size: var(--font-size-sm);
     }
 
     &__button-text {
-      font-size: 13px;
+      font-size: var(--font-size-xs);
     }
 
     &__image {

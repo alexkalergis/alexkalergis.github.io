@@ -1,5 +1,6 @@
 import { InteractiveHeader } from "@/components/header/interactive-header";
 import { Hero } from "@/app/hero/hero";
+import { Footer } from "@/components/footer/footer";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="flex-grow overflow-hidden">
         <Hero />
       </main>
+      <Footer />
     </div>
   );
 }

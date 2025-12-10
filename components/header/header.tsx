@@ -37,25 +37,13 @@ export function Header() {
       <div className="container flex h-16 items-center justify-center">
         <nav className="hidden md:flex gap-6">
           <Link href="/" className={navLinkClasses(normalizedPath === "/")}>
-            Home
+            Home Page
           </Link>
           <Link
-            href="/experience"
-            className={navLinkClasses(normalizedPath === "/experience")}
+            href="/professional"
+            className={navLinkClasses(normalizedPath === "/professional")}
           >
-            Experience
-          </Link>
-          <Link
-            href="/projects"
-            className={navLinkClasses(normalizedPath === "/projects")}
-          >
-            Projects
-          </Link>
-          <Link
-            href="/about"
-            className={navLinkClasses(normalizedPath === "/about")}
-          >
-            About
+            Professional Library
           </Link>
           <Link
             href="/personal"
@@ -89,28 +77,16 @@ export function Header() {
               className={mobileNavLinkClasses(normalizedPath === "/")}
               onClick={toggleMenu}
             >
-              Home
+              Home Page
             </Link>
             <Link
-              href="/experience"
-              className={mobileNavLinkClasses(normalizedPath === "/experience")}
+              href="/professional"
+              className={mobileNavLinkClasses(
+                normalizedPath === "/professional"
+              )}
               onClick={toggleMenu}
             >
-              Experience
-            </Link>
-            <Link
-              href="/projects"
-              className={mobileNavLinkClasses(normalizedPath === "/projects")}
-              onClick={toggleMenu}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/about"
-              className={mobileNavLinkClasses(normalizedPath === "/about")}
-              onClick={toggleMenu}
-            >
-              About
+              Professional Library
             </Link>
             <Link
               href="/personal"
