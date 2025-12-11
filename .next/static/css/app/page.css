@@ -223,6 +223,10 @@
 .footer {
   border-top: var(--border-width) solid rgb(241, 245, 249);
 }
+.footer:hover .footer__heart {
+  color: rgb(239, 68, 68);
+  fill: rgb(239, 68, 68);
+}
 .footer__container {
   padding-top: var(--spacing-md);
   padding-bottom: var(--spacing-md);
@@ -242,10 +246,6 @@
   height: var(--spacing-md);
   width: var(--spacing-md);
   transition: color var(--transition-base);
-}
-.footer__heart:hover {
-  color: rgb(239, 68, 68);
-  fill: rgb(239, 68, 68);
 }
 .footer__link {
   transition: color var(--transition-base);

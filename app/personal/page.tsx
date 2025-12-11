@@ -197,7 +197,7 @@ export default function PersonalLibraryPage() {
         <div className="container py-24 space-y-24">
           <section id="hobbies" className="space-y-16" ref={hobbiesRef}>
             <div className="space-y-6">
-              <h2 className="font-bold text-5xl">Hobbies</h2>
+              <h2 className="font-bold text-[2.5rem]">Hobbies</h2>
               <p className="text-muted-foreground max-w-3xl text-lg">
                 Creative activities that excites me.
               </p>
@@ -289,7 +289,7 @@ export default function PersonalLibraryPage() {
 
           <section id="interests" className="space-y-16" ref={interestsRef}>
             <div className="space-y-6">
-              <h2 className="font-bold text-5xl">Interests</h2>
+              <h2 className="font-bold text-[2.5rem]">Interests</h2>
               <p className="text-muted-foreground max-w-3xl text-lg">
                 A curated collection that inspires me.
               </p>
