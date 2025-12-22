@@ -1,5 +1,4 @@
 {
-  "/professional/page": "app/professional/page.js",
-  "/page": "app/page.js",
-  "/personal/page": "app/personal/page.js"
+  "/personal/page": "app/personal/page.js",
+  "/professional/page": "app/professional/page.js"
 }
