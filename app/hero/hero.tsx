@@ -20,7 +20,7 @@ export function Hero() {
       <div className="hero__split">
         <div className="hero__name-col">
           <h1 className="hero__name">
-            <span className="hero__name-line">Alexandros</span>
+            <span className="hero__name-line">Alex</span>
             <span className="hero__name-line hero__name-line--outlined">Kalergis</span>
           </h1>
         </div>

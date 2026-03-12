@@ -2,18 +2,21 @@
   padding: 7rem 0;
   border-top: 1px solid hsl(var(--border));
 
-  // ─── Header: two-column, matches About / Education / Experience ────────────
-  &__header {
+  // ─── Two-column layout (matches Experience / Education / About) ───────────
+  &__container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem 4rem;
+    padding: 0 2rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 5rem;
-    align-items: end;
+    align-items: start;
   }
 
-  &__header-left {
+  // ─── Left column: sticky number + title ───────────────────────────────────
+  &__left {
+    position: sticky;
+    top: 6rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -37,27 +40,20 @@
     margin: 0;
   }
 
-  &__header-right {
-    padding-bottom: 0.35rem;
+  // ─── Right column ────────────────────────────────────────────────────────
+  &__right {
+    min-width: 0;
   }
 
   &__intro {
     font-size: var(--font-size-base);
     line-height: var(--line-height-relaxed);
     color: hsl(var(--muted-foreground));
-    margin: 0;
+    margin: 0 0 2rem;
     max-width: 48ch;
   }
 
-  // ─── Catalog grid ──────────────────────────────────────────────────────────
-  // Wrapper handles max-width + horizontal padding
-  &__grid-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  // 1px gap + border-color background = hairline separators between cells
+  // ─── Catalog grid ────────────────────────────────────────────────────────
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -104,7 +100,7 @@
     }
   }
 
-  // ─── Image frame ───────────────────────────────────────────────────────────
+  // ─── Image frame ─────────────────────────────────────────────────────────
   &__card-frame {
     position: relative;
     aspect-ratio: 4 / 3;
@@ -115,7 +111,7 @@
     flex-shrink: 0;
   }
 
-  // ─── Caption ───────────────────────────────────────────────────────────────
+  // ─── Caption ─────────────────────────────────────────────────────────────
   &__card-caption {
     display: flex;
     flex-direction: column;
@@ -128,13 +124,6 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0.3rem;
-  }
-
-  &__card-num {
-    font-size: 0.6875rem;
-    color: hsl(var(--accent));
-    letter-spacing: 0.15em;
-    font-weight: var(--font-weight-medium);
   }
 
   &__card-arrow {
@@ -156,28 +145,28 @@
   }
 
   &__card-type {
-    font-size: 0.6875rem;
+    font-size: var(--font-size-xs);
     color: hsl(var(--muted-foreground));
     letter-spacing: 0.04em;
     margin: 0;
   }
 
   &__card-keywords {
-    font-size: 0.6875rem;
+    font-size: var(--font-size-xs);
     color: hsl(var(--muted-foreground) / 0.65);
     letter-spacing: 0.04em;
     margin: 0;
   }
 
-  // ─── Responsive ────────────────────────────────────────────────────────────
+  // ─── Responsive ──────────────────────────────────────────────────────────
   @media (max-width: 900px) {
-    &__header {
+    &__container {
       grid-template-columns: 1fr;
       gap: 2.5rem;
-      padding-bottom: 3rem;
     }
 
-    &__header-left {
+    &__left {
+      position: static;
       flex-direction: row;
       align-items: flex-end;
       gap: 1rem;
@@ -193,10 +182,8 @@
   }
 
   @media (max-width: 600px) {
-    &__header,
-    &__grid-wrapper {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+    &__container {
+      padding: 0 1.5rem;
     }
 
     &__grid {

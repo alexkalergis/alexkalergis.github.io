@@ -56,7 +56,7 @@
   }
 
   &__role {
-    font-size: 0.6875rem;
+    font-size: var(--font-size-xs);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: hsl(var(--accent));
@@ -160,7 +160,7 @@
   }
 
   &__ticker-item {
-    font-size: 0.6875rem;
+    font-size: var(--font-size-xs);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: hsl(var(--muted-foreground));
@@ -170,7 +170,7 @@
 
   &__ticker-sep {
     color: hsl(var(--accent));
-    font-size: 0.6875rem;
+    font-size: var(--font-size-xs);
     flex-shrink: 0;
   }
 

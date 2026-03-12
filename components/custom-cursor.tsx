@@ -8,12 +8,11 @@ interface TrailPoint {
   t: number;
 }
 
-const TRAIL_DURATION = 180;
+const TRAIL_DURATION = 200;
 const TRAIL_COLOR = "92, 108, 66";
 
 export function CustomCursor() {
-  const dotRef = useRef<HTMLDivElement>(null);
-  const ringRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mousePos = useRef({ x: 0, y: 0 });
   const isHovering = useRef(false);
@@ -42,55 +41,38 @@ export function CustomCursor() {
 
     const drawTrail = () => {
       const now = performance.now();
-      trail.current = trail.current.filter(
-        (p) => now - p.t < TRAIL_DURATION
-      );
-
+      trail.current = trail.current.filter((p) => now - p.t < TRAIL_DURATION);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const pts = trail.current;
       if (pts.length > 2) {
-        ctx.beginPath();
-        ctx.moveTo(pts[0].x, pts[0].y);
-
-        for (let i = 1; i < pts.length - 1; i++) {
-          const mx = (pts[i].x + pts[i + 1].x) / 2;
-          const my = (pts[i].y + pts[i + 1].y) / 2;
-          ctx.quadraticCurveTo(pts[i].x, pts[i].y, mx, my);
+        for (let i = 1; i < pts.length; i++) {
+          const age = now - pts[i].t;
+          const progress = i / pts.length;
+          const alpha = Math.max(0, 1 - age / TRAIL_DURATION) * progress * 0.4;
+          ctx.beginPath();
+          ctx.moveTo(pts[i - 1].x, pts[i - 1].y);
+          ctx.lineTo(pts[i].x, pts[i].y);
+          ctx.strokeStyle = `rgba(${TRAIL_COLOR}, ${alpha})`;
+          ctx.lineWidth = progress * 1.5;
+          ctx.lineCap = "round";
+          ctx.stroke();
         }
-
-        const last = pts[pts.length - 1];
-        ctx.lineTo(last.x, last.y);
-
-        const first = pts[0];
-        const age = now - first.t;
-        const alphaStart = Math.max(0, 1 - age / TRAIL_DURATION) * 0.08;
-        const alphaEnd = 0.55;
-
-        const grad = ctx.createLinearGradient(first.x, first.y, last.x, last.y);
-        grad.addColorStop(0, `rgba(${TRAIL_COLOR}, ${alphaStart})`);
-        grad.addColorStop(1, `rgba(${TRAIL_COLOR}, ${alphaEnd})`);
-
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.5;
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-        ctx.stroke();
       }
     };
 
     const tick = () => {
       drawTrail();
 
-      if (dotRef.current && ringRef.current) {
+      if (cursorRef.current) {
         const { x, y } = mousePos.current;
-        const clickScale = isClicking.current ? 0.8 : 1;
-        const hoverScale = isHovering.current ? 1.5 : 1;
-        const hoverOpacity = isHovering.current ? 0.8 : 0.3;
-
-        dotRef.current.style.transform = `translate3d(${x - 3}px, ${y - 3}px, 0) scale(${clickScale})`;
-        ringRef.current.style.transform = `translate3d(${x - 12}px, ${y - 12}px, 0) scale(${hoverScale})`;
-        ringRef.current.style.opacity = String(hoverOpacity);
+        const size = isHovering.current ? 28 : isClicking.current ? 14 : 20;
+        const opacity = isClicking.current ? 0.7 : 1;
+        // centre the crosshair on the mouse
+        cursorRef.current.style.transform = `translate3d(${x - size / 2}px, ${y - size / 2}px, 0)`;
+        cursorRef.current.style.width = `${size}px`;
+        cursorRef.current.style.height = `${size}px`;
+        cursorRef.current.style.opacity = String(opacity);
       }
 
       rafId.current = requestAnimationFrame(tick);
@@ -142,24 +124,36 @@ export function CustomCursor() {
         className="fixed top-0 left-0 pointer-events-none"
         style={{ zIndex: 9997 }}
       />
+
       <div
-        ref={dotRef}
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full pointer-events-none z-[9999]"
+        ref={cursorRef}
+        className="fixed top-0 left-0 pointer-events-none z-[9999]"
         style={{
-          backgroundColor: "hsl(var(--foreground))",
-          willChange: "transform",
-          transition: "transform 0.05s linear",
+          width: "20px",
+          height: "20px",
+          willChange: "transform, width, height",
+          transition: "width 0.15s ease-out, height 0.15s ease-out, opacity 0.1s ease-out",
         }}
-      />
-      <div
-        ref={ringRef}
-        className="fixed top-0 left-0 w-6 h-6 rounded-full pointer-events-none z-[9998]"
-        style={{
-          border: "1px solid hsl(var(--muted-foreground))",
-          willChange: "transform, opacity",
-          transition: "transform 0.15s ease-out, opacity 0.15s ease-out",
-        }}
-      />
+      >
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Horizontal left arm */}
+          <line x1="0" y1="10" x2="7" y2="10" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
+          {/* Horizontal right arm */}
+          <line x1="13" y1="10" x2="20" y2="10" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
+          {/* Vertical top arm */}
+          <line x1="10" y1="0" x2="10" y2="7" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
+          {/* Vertical bottom arm */}
+          <line x1="10" y1="13" x2="10" y2="20" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
+          {/* Centre dot — accent color */}
+          <circle cx="10" cy="10" r="1.5" fill="hsl(var(--accent))" />
+        </svg>
+      </div>
     </>
   );
 }

@@ -14,11 +14,11 @@ export function Education() {
 
         <div className="education__right">
           {/* ── Degree ────────────────────────────────────────────────────── */}
-          <div className="education__list">
-            <div className="education__row">
-              <div className="education__row-left">
-                <span className="education__date">2018–2023</span>
-                <div className="education__logo-wrap">
+          <div className="education__group">
+            <span className="education__group-label">University Degree</span>
+            <div className="education__flat-list">
+              <div className="education__flat-item">
+                <div className="education__flat-logo">
                   <Image
                     src="/images/Education/UniversityOfPatras.png"
                     alt="University of Patras logo"
@@ -26,13 +26,12 @@ export function Education() {
                     className="object-contain"
                   />
                 </div>
-              </div>
-              <div className="education__row-right">
-                <span className="education__group-label">University Degree</span>
-                <h3 className="education__institution">University of Patras, Greece</h3>
-                <span className="education__degree">Electrical &amp; Computer Engineering</span>
-                <span className="education__detail">Thesis — Robot writing via Reinforcement Learning</span>
-                <span className="education__detail">Distinction — Top 3% of class</span>
+                <div className="education__flat-body">
+                  <span className="education__flat-org">University of Patras, Greece</span>
+                  <span className="education__flat-detail">Electrical &amp; Computer Engineering · 2018–2023</span>
+                  <span className="education__flat-detail">Thesis — Robot writing via Reinforcement Learning</span>
+                  <span className="education__flat-detail">Distinction — Top 3% of class</span>
+                </div>
               </div>
             </div>
           </div>

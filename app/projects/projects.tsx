@@ -86,70 +86,61 @@ const projects = [
 export function Projects() {
   return (
     <section id="projects" className="projects" data-section>
-
-      {/* ── Header: two-column, matches other sections ─────────────────── */}
-      <div className="projects__header">
-        <div className="projects__header-left">
+      <div className="projects__container">
+        <div className="projects__left">
           <span className="projects__num" aria-hidden="true">02</span>
           <h2 className="projects__title">Projects</h2>
         </div>
-        <div className="projects__header-right">
-          <p className="projects__intro">
-            Selected work spanning product design, software engineering, and research.
-          </p>
-        </div>
-      </div>
 
-      {/* ── Catalog grid ───────────────────────────────────────────────── */}
-      <div className="projects__grid-wrapper">
-        <div className="projects__grid">
-          {projects.map((project) => {
-            const isLinked = Boolean(project.url);
+        <div className="projects__right">
+          <div className="projects__grid">
+            {projects.map((project) => {
+              const isLinked = Boolean(project.url);
 
-            const content = (
-              <>
-                <div className="projects__card-frame">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
+              const content = (
+                <>
+                  <div className="projects__card-frame">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
 
-                <div className="projects__card-caption">
-                  {isLinked && (
-                    <div className="projects__card-caption-top">
-                      <span className="projects__card-arrow" aria-hidden="true">↗</span>
-                    </div>
+                  <div className="projects__card-caption">
+                    {isLinked && (
+                      <div className="projects__card-caption-top">
+                        <span className="projects__card-arrow" aria-hidden="true">↗</span>
+                      </div>
+                    )}
+                    <h3 className="projects__card-title">{project.title}</h3>
+                    <p className="projects__card-type">{project.year} · {project.type}</p>
+                    <p className="projects__card-keywords">{project.keywords}</p>
+                  </div>
+                </>
+              );
+
+              return (
+                <article key={project.id} className="projects__card">
+                  {isLinked ? (
+                    <Link
+                      href={project.url!}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="projects__card-inner"
+                    >
+                      {content}
+                    </Link>
+                  ) : (
+                    <div className="projects__card-inner">{content}</div>
                   )}
-                  <h3 className="projects__card-title">{project.title}</h3>
-                  <p className="projects__card-type">{project.year} · {project.type}</p>
-                  <p className="projects__card-keywords">{project.keywords}</p>
-                </div>
-              </>
-            );
-
-            return (
-              <article key={project.id} className="projects__card">
-                {isLinked ? (
-                  <Link
-                    href={project.url!}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="projects__card-inner"
-                  >
-                    {content}
-                  </Link>
-                ) : (
-                  <div className="projects__card-inner">{content}</div>
-                )}
-              </article>
-            );
-          })}
+                </article>
+              );
+            })}
+          </div>
         </div>
       </div>
-
     </section>
   );
 }

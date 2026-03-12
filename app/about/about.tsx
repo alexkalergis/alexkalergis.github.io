@@ -4,12 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import "./about.scss";
 
-const skills = [
-  "React", "TypeScript", "React Native", "Python", "Figma",
-  "UX Design", "Product Design", "Machine Learning", "HCI",
-  "Reinforcement Learning", "Agile",
-];
-
 const drawings = [
   "/images/PersonalLibrary/Hobbies/Drawing/IMG_8711.jpeg",
   "/images/PersonalLibrary/Hobbies/Drawing/IMG_8712.jpeg",
@@ -39,11 +33,8 @@ export function About() {
         </div>
 
         <div className="about__right">
-          <p className="about__pullquote">
-            Engineering rigour meets user-centered design — from production code
-            to end-to-end product experiences.
-          </p>
-
+          <div className="about__group about__group--bio">
+            <span className="about__group-label">A few words</span>
           <div className="about__text-block">
             <p className="about__text">
               My path into technology began with a degree in Electrical &amp;
@@ -59,46 +50,44 @@ export function About() {
               empathy for the people using them.
             </p>
           </div>
-
-          <div className="about__skills">
-            {skills.map((skill) => (
-              <span key={skill} className="about__skill">
-                {skill}
-              </span>
-            ))}
           </div>
 
           {/* ── Personal ───────────────────────────────────────────────────── */}
           <div className="about__personal">
-            <span className="about__personal-eyebrow">Personal</span>
 
-            {/* Drawings grid */}
-            <div className="about__drawings">
-              {drawings.map((src, i) => (
-                <div key={i} className="about__drawing-frame">
-                  <Image
-                    src={src}
-                    alt={`Drawing ${i + 1}`}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-              ))}
+            {/* Drawings */}
+            <div className="about__group">
+              <span className="about__group-label">Drawings</span>
+              <div className="about__drawings">
+                {drawings.map((src, i) => (
+                  <div key={i} className="about__drawing-frame">
+                    <Image
+                      src={src}
+                      alt={`Drawing ${i + 1}`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Photography */}
-            <Link
-              href="https://500px.com/p/alexkalergis?view=photos"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="about__photography-link"
-            >
-              Photography on 500px <span aria-hidden="true">↗</span>
-            </Link>
+            <div className="about__group">
+              <span className="about__group-label">Photography</span>
+              <Link
+                href="https://500px.com/p/alexkalergis?view=photos"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="about__photography-link"
+              >
+                500px <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
 
-            {/* Reads */}
-            <div className="about__reads">
-              <span className="about__reads-label">Reads &amp; Watches</span>
+            {/* Reads & Watches */}
+            <div className="about__group">
+              <span className="about__group-label">Reads &amp; Watches</span>
               <ul className="about__reads-list">
                 {reads.map((item) => (
                   <li key={item.title}>
@@ -115,6 +104,7 @@ export function About() {
                 ))}
               </ul>
             </div>
+
           </div>
         </div>
       </div>
