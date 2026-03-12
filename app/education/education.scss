@@ -1,135 +1,208 @@
 .education {
-  padding: var(--spacing-3xl) 0;
-  background: hsl(var(--background));
+  padding: 7rem 0;
+  border-top: 1px solid hsl(var(--border));
 
   &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 100px;
-    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: start;
   }
 
-  &__section {
+  // ─── Left column: sticky number + title ───────────────────────────────────
+  &__left {
+    position: sticky;
+    top: 6rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 50px;
-    width: 100%;
+    gap: 0.75rem;
   }
 
-  &__header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 25px;
-    width: 100%;
+  &__num {
+    display: block;
+    font-size: clamp(5rem, 9vw, 8rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: hsl(var(--foreground) / 0.07);
+    user-select: none;
   }
 
   &__title {
-    font-size: var(--font-size-5xl);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-tight);
-    color: hsl(var(--foreground));
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0;
   }
 
-  &__subtitle {
-    color: hsl(var(--muted-foreground));
-    max-width: 48rem;
-    font-size: var(--font-size-lg);
-  }
-
-  &__items {
+  // ─── Right column ──────────────────────────────────────────────────────────
+  &__right {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-lg);
-    width: 100%;
+    gap: 3rem;
   }
 
-  &__item {
-    width: 100%;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: var(--spacing-lg);
+  // ─── Degree row ────────────────────────────────────────────────────────────
+  &__list {
+    border-top: 1px solid hsl(var(--border));
   }
 
-  &__item-header {
+  &__row {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 2.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  &__row-left {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-md);
-
-    @media (min-width: 640px) {
-      flex-direction: row;
-      gap: var(--spacing-lg);
-    }
+    gap: 0.75rem;
+    padding-top: 0.15rem;
   }
 
-  &__item-logo {
+  &__date {
+    font-size: 0.6875rem;
+    color: hsl(var(--accent));
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__logo-wrap {
     position: relative;
-    width: 5rem;
-    height: 5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0;
+    overflow: hidden;
+    background: hsl(var(--secondary));
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media (min-width: 640px) {
-      width: 3.5rem;
-      height: 3.5rem;
-    }
-
-    img {
-      object-fit: contain;
-    }
   }
 
-  &__item-content {
+  &__row-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
-    flex: 1;
+    gap: 0.4rem;
   }
 
-  &__item-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
-  }
-
-  &__item-title {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-normal);
+  &__institution {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
     color: hsl(var(--foreground));
-    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    letter-spacing: 0.01em;
+    margin: 0;
   }
 
-  &__item-date {
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-normal);
+  &__degree {
+    font-size: var(--font-size-sm);
+    color: hsl(var(--foreground));
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__detail {
+    font-size: var(--font-size-xs);
     color: hsl(var(--muted-foreground));
-    white-space: nowrap;
+    letter-spacing: 0.02em;
   }
 
-  &__item-subtitle {
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-normal);
-    color: hsl(var(--foreground));
+  // ─── Certifications & Awards groups ────────────────────────────────────────
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  &__item-detail {
-    font-size: var(--font-size-base);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-normal);
+  &__group-label {
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  &__flat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  &__flat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__flat-logo {
+    position: relative;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0;
+    overflow: hidden;
+    background: hsl(var(--secondary));
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  &__flat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  &__flat-org {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
     color: hsl(var(--foreground));
+    letter-spacing: 0.02em;
+  }
+
+  &__flat-detail {
+    font-size: var(--font-size-xs);
+    color: hsl(var(--muted-foreground));
+    letter-spacing: 0.02em;
+  }
+
+  // ─── Responsive ────────────────────────────────────────────────────────────
+  @media (max-width: 900px) {
+    &__container {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    &__left {
+      position: static;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+
+    &__num {
+      font-size: 4rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    &__container {
+      padding: 0 1.5rem;
+    }
+
+    &__row {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      padding: 1.5rem 0;
+    }
+
+    &__row-left {
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
   }
 }

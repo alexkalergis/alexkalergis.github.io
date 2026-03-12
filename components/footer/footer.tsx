@@ -12,7 +12,6 @@ export function Footer() {
           <span> Made with </span>
           <Heart className="footer__heart" />
           <span> by Alex Kalergis using </span>
-          <span />
           <Link
             href="https://www.figma.com"
             target="_blank"

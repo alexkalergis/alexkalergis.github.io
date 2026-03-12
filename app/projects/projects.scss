@@ -1,95 +1,206 @@
 .projects {
-  padding: var(--spacing-3xl) 0;
+  padding: 7rem 0;
+  border-top: 1px solid hsl(var(--border));
 
-  &__container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2xl);
+  // ─── Header: two-column, matches About / Education / Experience ────────────
+  &__header {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: end;
   }
 
-  &__header {
+  &__header-left {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: 0.75rem;
+  }
+
+  &__num {
+    display: block;
+    font-size: clamp(5rem, 9vw, 8rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: hsl(var(--foreground) / 0.07);
+    user-select: none;
   }
 
   &__title {
-    font-size: var(--font-size-5xl);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-tight);
-    color: hsl(var(--foreground));
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0;
   }
 
-  &__subtitle {
+  &__header-right {
+    padding-bottom: 0.35rem;
+  }
+
+  &__intro {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
     color: hsl(var(--muted-foreground));
-    max-width: 48rem;
-    font-size: var(--font-size-lg);
+    margin: 0;
+    max-width: 48ch;
   }
 
+  // ─── Catalog grid ──────────────────────────────────────────────────────────
+  // Wrapper handles max-width + horizontal padding
+  &__grid-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  // 1px gap + border-color background = hairline separators between cells
   &__grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: var(--spacing-lg);
-
-    @media (min-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  &__link {
-    display: block;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: hsl(var(--border));
+    outline: 1px solid hsl(var(--border));
+    overflow: hidden;
   }
 
   &__card {
+    background: hsl(var(--background));
+  }
+
+  &__card-inner {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    padding: 0.625rem;
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--border-color);
-    height: 288px;
-    transform: scale(1);
-    transition: transform 0.2s;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
+    height: 100%;
+    transition: background 200ms var(--ease);
 
-    &--interactive {
+    &[href] {
+      cursor: pointer;
+
       &:hover {
-        transform: scale(1.05);
+        background: hsl(var(--accent) / 0.04);
+
+        .projects__card-frame {
+          border-color: hsl(var(--accent) / 0.55);
+        }
+
+        .projects__card-title {
+          color: hsl(var(--accent));
+        }
+
+        .projects__card-arrow {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
       }
     }
   }
 
-  &__image-wrapper {
-    flex: 1;
+  // ─── Image frame ───────────────────────────────────────────────────────────
+  &__card-frame {
     position: relative;
+    aspect-ratio: 4 / 3;
+    background: hsl(var(--secondary));
+    border: 1px solid hsl(var(--border));
+    overflow: hidden;
+    transition: border-color 250ms var(--ease);
+    flex-shrink: 0;
+  }
 
-    img {
-      object-fit: contain;
+  // ─── Caption ───────────────────────────────────────────────────────────────
+  &__card-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  &__card-caption-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+  }
+
+  &__card-num {
+    font-size: 0.6875rem;
+    color: hsl(var(--accent));
+    letter-spacing: 0.15em;
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__card-arrow {
+    font-size: 0.875rem;
+    color: hsl(var(--accent));
+    opacity: 0;
+    transform: translate(-3px, 3px);
+    transition: all 200ms var(--ease);
+  }
+
+  &__card-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin: 0;
+    color: hsl(var(--foreground));
+    transition: color 200ms var(--ease);
+  }
+
+  &__card-type {
+    font-size: 0.6875rem;
+    color: hsl(var(--muted-foreground));
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  &__card-keywords {
+    font-size: 0.6875rem;
+    color: hsl(var(--muted-foreground) / 0.65);
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  // ─── Responsive ────────────────────────────────────────────────────────────
+  @media (max-width: 900px) {
+    &__header {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding-bottom: 3rem;
+    }
+
+    &__header-left {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+
+    &__num {
+      font-size: 4rem;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  &__info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-  }
+  @media (max-width: 600px) {
+    &__header,
+    &__grid-wrapper {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
 
-  &__project-title {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-bold);
-    text-align: center;
-    color: hsl(var(--foreground));
-    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-  }
-
-  &__project-subtitle {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
-    text-align: center;
-    color: hsl(var(--foreground));
-    font-family: "IBM Plex Mono", "Roboto Mono", monospace;
+    &__grid {
+      grid-template-columns: 1fr;
+    }
   }
 }

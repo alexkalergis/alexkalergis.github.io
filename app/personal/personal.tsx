@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { InteractiveHeader } from "@/components/header/interactive-header";
 import { Footer } from "@/components/footer/footer";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -16,7 +15,7 @@ type LibraryItem = {
   description: string;
   creator?: string;
   year?: number;
-  image?: string;
+  image: string;
 };
 
 const papers: LibraryItem[] = [
@@ -157,8 +156,6 @@ export default function PersonalLibraryPage() {
   const [hasMoreInterests, setHasMoreInterests] = useState(false);
   const hobbiesRef = useRef<HTMLDivElement>(null);
   const interestsRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
-
   const hobbiesTabs = [
     { value: "photography", label: "Photography", items: photographyItems },
     { value: "drawing", label: "Drawing", items: drawingItems },
@@ -228,7 +225,7 @@ export default function PersonalLibraryPage() {
                     {tab.items.map((item) => (
                       <div
                         key={item.id}
-                        className={`flex p-[10px] flex-col items-start gap-[25px] rounded-lg border border-[#D9D9D9] ${
+                        className={`flex p-[10px] flex-col items-start gap-[25px] rounded-lg border border-border ${
                           hobbiesTab === "drawing" ? "h-[500px]" : "h-[342px]"
                         }`}
                       >
@@ -251,16 +248,16 @@ export default function PersonalLibraryPage() {
                         {(item.title || item.description || hobbiesTab) && (
                           <div className="flex flex-col items-start gap-[10px] self-stretch">
                             {item.title && (
-                              <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-bold leading-normal">
+                              <div className="self-stretch text-foreground text-center font-mono text-[14px] font-bold leading-normal">
                                 {item.title}
                               </div>
                             )}
                             {item.description && (
-                              <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-medium leading-normal">
+                              <div className="self-stretch text-foreground text-center font-mono text-[14px] font-medium leading-normal">
                                 {item.description}
                               </div>
                             )}
-                            <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-normal leading-normal">
+                            <div className="self-stretch text-foreground text-center font-mono text-[14px] font-normal leading-normal">
                               {hobbiesTab === "photography"
                                 ? "Photography"
                                 : "Art"}
@@ -277,9 +274,9 @@ export default function PersonalLibraryPage() {
                         href="https://500px.com/p/alexkalergis?view=photos"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex px-[25px] py-[15px] justify-center items-center gap-[10px] rounded-lg border border-[#D9D9D9] hover:bg-gray-50 transition-colors"
+                        className="flex px-[25px] py-[15px] justify-center items-center gap-[10px] rounded-lg border border-border hover:bg-secondary transition-colors"
                       >
-                        <span className="text-[#000] text-justify font-mono text-[16px] font-medium leading-normal">
+                        <span className="text-foreground text-justify font-mono text-[16px] font-medium leading-normal">
                           Follow me on 500px
                         </span>
                       </Link>
@@ -322,25 +319,25 @@ export default function PersonalLibraryPage() {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex p-[10px] flex-col items-start gap-[25px] h-[342px] rounded-lg border border-[#D9D9D9] hover:border-[#999] transition-colors"
+                        className="flex p-[10px] flex-col items-start gap-[25px] h-[342px] rounded-lg border border-border hover:border-muted-foreground transition-colors"
                       >
                         <div className="flex-1 self-stretch relative bg-transparent rounded overflow-hidden">
                           <Image
-                            src={item.image || "/placeholder.svg"}
+                            src={item.image}
                             alt={item.title}
                             fill
                             className="object-contain"
                           />
                         </div>
                         <div className="flex flex-col items-start gap-[10px] self-stretch">
-                          <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-bold leading-normal">
+                          <div className="self-stretch text-foreground text-center font-mono text-[14px] font-bold leading-normal">
                             {item.title}
                             {item.year && ` | ${item.year}`}
                           </div>
-                          <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-medium leading-normal">
+                          <div className="self-stretch text-foreground text-center font-mono text-[14px] font-medium leading-normal">
                             {item.creator || item.description}
                           </div>
-                          <div className="self-stretch text-[#000] text-center font-mono text-[14px] font-normal leading-normal">
+                          <div className="self-stretch text-foreground text-center font-mono text-[14px] font-normal leading-normal">
                             {item.tags.slice(0, 3).join(" | ")}
                           </div>
                         </div>

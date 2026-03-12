@@ -5,88 +5,20 @@ import "./education.scss";
 
 export function Education() {
   return (
-    <section id="education" className="education">
-      <div className="container education__container">
-        <div className="education__section">
-          <div className="education__header">
-            <h2 className="education__title">Education</h2>
-            <p className="education__subtitle">
-              My academic journey including degrees, certifications and
-              achievements.
-            </p>
-          </div>
-
-          <div className="education__item">
-            <div className="education__item-header">
-              <div className="education__item-logo">
-                <Image
-                  src="/images/Education/UniversityOfPatras.png"
-                  alt="University of Patras logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="education__item-content">
-                <div className="education__item-info">
-                  <div className="education__item-title">
-                    University of Patras, Greece
-                  </div>
-                  <div className="education__item-date">2018 - 2023</div>
-                </div>
-                <div className="education__item-subtitle">
-                  Electrical & Computer Engineering
-                </div>
-                <div className="education__item-detail">
-                  Thesis: Robot writing via Reinforcement Learning
-                </div>
-                <div className="education__item-detail">
-                  Distinction: Top 3% of class
-                </div>
-              </div>
-            </div>
-          </div>
+    <section id="education" className="education" data-section>
+      <div className="education__container">
+        <div className="education__left">
+          <span className="education__num" aria-hidden="true">03</span>
+          <h2 className="education__title">Education</h2>
         </div>
 
-        <div className="education__section">
-          <div className="education__header">
-            <h2 className="education__title">Certifications</h2>
-            <p className="education__subtitle">
-              My academic journey including degrees, certifications and
-              achievements.
-            </p>
-          </div>
-
-          <div className="education__items">
-            <div className="education__item">
-              <div className="education__item-header">
-                <div className="education__item-logo">
-                  <Image
-                    src="/images/Education/IXDF.png"
-                    alt="Interaction Design Foundation logo"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div className="education__item-content">
-                  <div className="education__item-info">
-                    <div className="education__item-title">
-                      Interaction Design Foundation
-                    </div>
-                    <div className="education__item-date">Present</div>
-                  </div>
-
-                  <div className="education__item-detail">
-                    Human-Computer Interaction
-                  </div>
-                  <div className="education__item-detail">Design Thinking</div>
-                  <div className="education__item-detail">User Experience</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="education__item">
-              <div className="education__item-header">
-                <div className="education__item-logo">
+        <div className="education__right">
+          {/* ── Degree ────────────────────────────────────────────────────── */}
+          <div className="education__list">
+            <div className="education__row">
+              <div className="education__row-left">
+                <span className="education__date">2018–2023</span>
+                <div className="education__logo-wrap">
                   <Image
                     src="/images/Education/UniversityOfPatras.png"
                     alt="University of Patras logo"
@@ -94,50 +26,73 @@ export function Education() {
                     className="object-contain"
                   />
                 </div>
-                <div className="education__item-content">
-                  <div className="education__item-info">
-                    <div className="education__item-title">
-                      University of Patras, Greece
-                    </div>
-                    <div className="education__item-date">2022</div>
-                  </div>
-                  <div className="education__item-detail">
-                    Interactive Fiction
-                  </div>
+              </div>
+              <div className="education__row-right">
+                <span className="education__group-label">University Degree</span>
+                <h3 className="education__institution">University of Patras, Greece</h3>
+                <span className="education__degree">Electrical &amp; Computer Engineering</span>
+                <span className="education__detail">Thesis — Robot writing via Reinforcement Learning</span>
+                <span className="education__detail">Distinction — Top 3% of class</span>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Certifications ────────────────────────────────────────────── */}
+          <div className="education__group">
+            <span className="education__group-label">Certifications</span>
+            <div className="education__flat-list">
+              <div className="education__flat-item">
+                <div className="education__flat-logo">
+                  <Image
+                    src="/images/Education/IXDF.png"
+                    alt="Interaction Design Foundation logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="education__flat-body">
+                  <span className="education__flat-org">Interaction Design Foundation</span>
+                  <span className="education__flat-detail">
+                    Human-Computer Interaction · Design Thinking · User Experience · Ongoing
+                  </span>
+                </div>
+              </div>
+
+              <div className="education__flat-item">
+                <div className="education__flat-logo">
+                  <Image
+                    src="/images/Education/UniversityOfPatras.png"
+                    alt="University of Patras logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="education__flat-body">
+                  <span className="education__flat-org">University of Patras, Greece</span>
+                  <span className="education__flat-detail">Interactive Fiction · 2022</span>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="education__section">
-          <div className="education__header">
-            <h2 className="education__title">Awards</h2>
-            <p className="education__subtitle">
-              My academic journey including degrees, certifications and
-              achievements.
-            </p>
-          </div>
-
-          <div className="education__item">
-            <div className="education__item-header">
-              <div className="education__item-logo">
-                <Image
-                  src="/images/Education/AIHUB.png"
-                  alt="Award logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="education__item-content">
-                <div className="education__item-info">
-                  <div className="education__item-title">
-                    Honorable Mention in AI
-                  </div>
-                  <div className="education__item-date">2023</div>
+          {/* ── Awards ────────────────────────────────────────────────────── */}
+          <div className="education__group">
+            <span className="education__group-label">Awards</span>
+            <div className="education__flat-list">
+              <div className="education__flat-item">
+                <div className="education__flat-logo">
+                  <Image
+                    src="/images/Education/AIHUB.png"
+                    alt="AI HUB logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-                <div className="education__item-detail">
-                  AI HUB, University of Patras
+                <div className="education__flat-body">
+                  <span className="education__flat-org">Honorable Mention in AI</span>
+                  <span className="education__flat-detail">
+                    AI HUB, University of Patras · 2023
+                  </span>
                 </div>
               </div>
             </div>

@@ -1,101 +1,81 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import "./header.scss";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Normalize pathname by removing trailing slash for comparison
-  const normalizedPath =
-    pathname.endsWith("/") && pathname !== "/"
-      ? pathname.slice(0, -1)
-      : pathname;
-
-  const toggleMenu = useCallback(() => {
-    setIsMenuOpen((prev) => !prev);
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinkClasses = (isActive: boolean) =>
-    `text-sm font-medium hover:text-foreground transition-colors relative pb-1 ${
-      isActive
-        ? "text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground"
-        : "text-muted-foreground"
-    }`;
+  const toggleMenu = useCallback(() => setIsMenuOpen((p) => !p), []);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
 
-  const mobileNavLinkClasses = (isActive: boolean) =>
-    `text-sm font-medium hover:text-foreground transition-colors text-left ${
-      isActive ? "text-foreground" : "text-muted-foreground"
-    }`;
+  const isHome = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-center">
-        <nav className="hidden md:flex gap-6">
-          <Link href="/" className={navLinkClasses(normalizedPath === "/")}>
-            Home Page
-          </Link>
-          <Link
-            href="/professional"
-            className={navLinkClasses(normalizedPath === "/professional")}
-          >
-            Professional Library
-          </Link>
-          <Link
-            href="/personal"
-            className={navLinkClasses(normalizedPath === "/personal")}
-          >
-            Personal Library
-          </Link>
+    <header className={`header${isScrolled ? " header--scrolled" : ""}`}>
+      <div className="header__inner">
+        <Link href="/" className="header__logo" onClick={closeMenu}>
+          Alex Kalergis
+        </Link>
+
+        <nav className="header__nav" aria-label="Primary navigation">
+          {isHome ? (
+            <>
+              <a href="#experience" className="header__link">Experience</a>
+              <a href="#projects" className="header__link">Projects</a>
+              <a href="#education" className="header__link">Education</a>
+              <a href="#about" className="header__link">About</a>
+              <a href="#contact" className="header__link">Contact</a>
+            </>
+          ) : (
+            <>
+              <Link href="/" className="header__link">Home</Link>
+              <Link href="/professional" className="header__link">Professional</Link>
+              <Link href="/personal" className="header__link">Personal</Link>
+            </>
+          )}
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
-          <Button
-            variant="ghost"
-            size="icon"
+        <div className="header__actions">
+          <button
+            className="header__menu-toggle"
             onClick={toggleMenu}
-            aria-label="Toggle menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
           >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </Button>
+            {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="container md:hidden py-4 pb-6">
-          <nav className="flex flex-col gap-4">
-            <Link
-              href="/"
-              className={mobileNavLinkClasses(normalizedPath === "/")}
-              onClick={toggleMenu}
-            >
-              Home Page
-            </Link>
-            <Link
-              href="/professional"
-              className={mobileNavLinkClasses(
-                normalizedPath === "/professional"
-              )}
-              onClick={toggleMenu}
-            >
-              Professional Library
-            </Link>
-            <Link
-              href="/personal"
-              className={mobileNavLinkClasses(normalizedPath === "/personal")}
-              onClick={toggleMenu}
-            >
-              Personal Library
-            </Link>
-          </nav>
+        <div className="header__mobile-nav">
+          {isHome ? (
+            <>
+              <a href="#experience" className="header__mobile-link" onClick={closeMenu}>Experience</a>
+              <a href="#projects" className="header__mobile-link" onClick={closeMenu}>Projects</a>
+              <a href="#education" className="header__mobile-link" onClick={closeMenu}>Education</a>
+              <a href="#about" className="header__mobile-link" onClick={closeMenu}>About</a>
+              <a href="#contact" className="header__mobile-link" onClick={closeMenu}>Contact</a>
+            </>
+          ) : (
+            <>
+              <Link href="/" className="header__mobile-link" onClick={closeMenu}>Home</Link>
+              <Link href="/professional" className="header__mobile-link" onClick={closeMenu}>Professional</Link>
+              <Link href="/personal" className="header__mobile-link" onClick={closeMenu}>Personal</Link>
+            </>
+          )}
         </div>
       )}
     </header>

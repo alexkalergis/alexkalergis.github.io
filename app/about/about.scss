@@ -1,45 +1,242 @@
 .about {
-  padding-top: 6rem;
-  padding-bottom: var(--spacing-3xl);
-  background: hsl(var(--background));
+  padding: 7rem 0;
+  border-top: 1px solid hsl(var(--border));
 
   &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  // ─── Left column: sticky number + title ───────────────────────────────────
+  &__left {
+    position: sticky;
+    top: 6rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: var(--spacing-lg);
+    gap: 0.75rem;
+  }
+
+  &__num {
+    display: block;
+    font-size: clamp(5rem, 9vw, 8rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: hsl(var(--foreground) / 0.07);
+    user-select: none;
   }
 
   &__title {
-    font-size: var(--font-size-5xl);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-tight);
-    color: hsl(var(--foreground));
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0;
   }
 
-  &__subtitle {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-normal);
-    color: hsl(var(--muted-foreground));
-    max-width: 48rem;
-  }
-
-  &__content {
+  // ─── Right column: pull quote + body + skills ──────────────────────────────
+  &__right {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-sm);
-    width: 100%;
+    gap: 2.5rem;
+  }
+
+  &__pullquote {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    color: hsl(var(--foreground));
+    margin: 0;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
   &__text {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-normal);
-    line-height: var(--line-height-normal);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+    color: hsl(var(--muted-foreground));
+    margin: 0;
+  }
+
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__skill {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: hsl(var(--foreground));
-    text-align: justify;
-    width: 100%;
+    background: hsl(var(--secondary));
+    border: 1px solid hsl(var(--border));
+    padding: 0.3rem 0.75rem;
+    border-radius: 0;
+    white-space: nowrap;
+  }
+
+  &__library-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--accent));
+    text-decoration: none;
+    border-bottom: 1px solid hsl(var(--accent) / 0.3);
+    padding-bottom: 2px;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+
+    &:hover {
+      color: hsl(var(--foreground));
+      border-color: hsl(var(--foreground));
+    }
+  }
+
+  // ─── Personal ──────────────────────────────────────────────────────────────
+  &__personal {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid hsl(var(--border));
+  }
+
+  &__personal-eyebrow {
+    font-size: 0.6875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--accent));
+    font-weight: var(--font-weight-medium);
+  }
+
+  &__drawings {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 0.375rem;
+
+    @media (max-width: 640px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__drawing-frame {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: hsl(var(--secondary));
+    overflow: hidden;
+    border: 1px solid hsl(var(--border));
+  }
+
+  &__photography-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+
+    &:hover {
+      color: hsl(var(--accent));
+      }
+  }
+
+  &__reads {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__reads-label {
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(var(--muted-foreground));
+    font-weight: var(--font-weight-medium);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  &__reads-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__reads-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid hsl(var(--border) / 0.5);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+
+    &:hover {
+  
+      .about__reads-title { color: hsl(var(--accent)); }
+    }
+
+    li:last-child & { border-bottom: none; }
+  }
+
+  &__reads-title {
+    font-size: var(--font-size-sm);
+    color: hsl(var(--foreground));
+    transition: color var(--transition-fast);
+  }
+
+  &__reads-meta {
+    font-size: var(--font-size-xs);
+    color: hsl(var(--muted-foreground));
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  // ─── Responsive ────────────────────────────────────────────────────────────
+  @media (max-width: 900px) {
+    &__container {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    &__left {
+      position: static;
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+
+    &__num {
+      font-size: 4rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__container {
+      padding: 0 1.5rem;
+    }
   }
 }

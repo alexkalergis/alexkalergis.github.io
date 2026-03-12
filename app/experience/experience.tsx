@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import "./experience.scss";
@@ -70,112 +68,65 @@ const companies = [
 ];
 
 export function Experience() {
-  const [expandedItems, setExpandedItems] = useState<number[]>([]);
-
-  const toggleExpanded = (index: number) => {
-    setExpandedItems((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
-  };
-
   return (
-    <section id="experience" className="experience">
-      <div className="container experience__container">
-        <div className="experience__header">
+    <section id="experience" className="experience" data-section>
+      <div className="experience__container">
+        <div className="experience__left">
+          <span className="experience__num" aria-hidden="true">01</span>
           <h2 className="experience__title">Experience</h2>
-          <p className="experience__subtitle">
-            My professional journey and career highlights.
-          </p>
         </div>
 
-        <div className="experience__list">
-          {companies.map((company, index, arr) => {
-            const isExpanded = expandedItems.includes(index);
+        <div className="experience__right">
+          <div className="experience__list">
+            {companies.map((company) => (
+              <div key={company.name} className="experience__item">
+                <div className="experience__item-left">
+                  <span className="experience__date">
+                    {company.startDate}<br />{company.endDate}
+                  </span>
+                  <span className="experience__location">{company.location}</span>
+                </div>
 
-            return (
-              <div key={index} className="experience__item">
-                <div className="experience__item-header">
-                  {/* Fixed container size for all logos */}
-                  <div className="experience__logo-container">
+                <div className="experience__item-right">
+                  <div className="experience__item-top">
                     <div className="experience__logo-wrapper">
                       <Image
-                        src={
-                          company.logo ||
-                          "/placeholder.svg?width=96&height=96&query=Company+Logo"
-                        }
+                        src={company.logo}
                         alt={`${company.name} logo`}
                         fill
                         className="object-contain"
                       />
                     </div>
-                  </div>
-                  <div className="experience__content">
-                    <div className="experience__content-header">
-                      <div className="experience__content-left">
-                        <h3 className="experience__role">{company.role}</h3>
-                        <div className="experience__company-wrapper">
-                          {company.website !== "#" ? (
-                            <Link
-                              href={company.website}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="experience__company-link"
-                            >
-                              {company.name}
-                              <ExternalLink className="h-4 w-4" />
-                            </Link>
-                          ) : (
-                            <span className="experience__company-name">
-                              {company.name}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <div className="experience__content-right">
-                        <span className="experience__date">
-                          {company.startDate} - {company.endDate}
-                        </span>
-                        <span className="experience__location">
-                          {company.location}
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* View More Button */}
-                    <div className="experience__toggle">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => toggleExpanded(index)}
-                        className="experience__toggle-button"
-                      >
-                        <span>View {isExpanded ? "less" : "more"}</span>
-                        {isExpanded ? (
-                          <ChevronUp className="h-4 w-4 ml-1" />
-                        ) : (
-                          <ChevronDown className="h-4 w-4 ml-1" />
-                        )}
-                      </Button>
+                    <div className="experience__item-info">
+                      <h3 className="experience__role">{company.role}</h3>
+                      {company.website !== "#" ? (
+                        <Link
+                          href={company.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="experience__company-link"
+                        >
+                          {company.name}
+                          <ExternalLink className="h-3 w-3" />
+                        </Link>
+                      ) : (
+                        <span className="experience__company-name">{company.name}</span>
+                      )}
                     </div>
                   </div>
-                </div>
 
-                {/* Expandable Description */}
-                {isExpanded && (
                   <ul className="experience__description">
                     {company.description.map((item, idx) => (
                       <li key={idx} className="experience__description-item">
                         <span className="experience__bullet" />
-                        <span className="experience__description-text">
-                          {item}
-                        </span>
+                        <span className="experience__description-text">{item}</span>
                       </li>
                     ))}
                   </ul>
-                )}
+                </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>

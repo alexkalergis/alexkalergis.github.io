@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST="{\"components/header/interactive-header.tsx -> @/components/header/header\":{\"id\":\"components/header/interactive-header.tsx -> @/components/header/header\",\"files\":[\"static/chunks/_app-pages-browser_components_header_header_tsx.js\"]}}"

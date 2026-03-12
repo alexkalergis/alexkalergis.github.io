@@ -34,64 +34,52 @@
     url("/fonts/ibm-plex-mono-v20-latin-700.ttf") format("truetype");
 }
 
-// Design Tokens - Typography
+// Design Tokens
 :root {
-  // Font Sizes
-  --font-size-xs: 0.75rem; // 12px
-  --font-size-sm: 0.875rem; // 14px
-  --font-size-base: 1rem; // 16px
-  --font-size-lg: 1.125rem; // 18px
-  --font-size-xl: 1.25rem; // 20px
-  --font-size-2xl: 1.5rem; // 24px
-  --font-size-3xl: 1.875rem; // 30px
-  --font-size-4xl: 2.25rem; // 36px
-  --font-size-5xl: 2.5rem; // 40px
-  --font-size-6xl: 3rem; // 48px
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 2.5rem;
+  --font-size-6xl: 3rem;
 
-  // Font Weights
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  // Line Heights
   --line-height-tight: 1.2;
   --line-height-normal: 1.5;
-  --line-height-relaxed: 1.6;
+  --line-height-relaxed: 1.7;
 
-  // Spacing
-  --spacing-xs: 0.25rem; // 4px
-  --spacing-sm: 0.5rem; // 8px
-  --spacing-md: 1rem; // 16px
-  --spacing-lg: 1.5rem; // 24px
-  --spacing-xl: 2rem; // 32px
-  --spacing-2xl: 3rem; // 48px
-  --spacing-3xl: 4rem; // 64px
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
 
-  // Border Radius
-  --radius-sm: 0.25rem; // 4px
-  --radius-md: 0.5rem; // 8px
-  --radius-lg: 0.75rem; // 12px
-  --radius-xl: 1rem; // 16px
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 
-  // Transitions
   --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 300ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
 
-  // Borders
   --border-width: 1px;
-  --border-color: #d9d9d9;
+  --border-color: hsl(var(--border));
 }
 
 html {
-  overflow: hidden;
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 @tailwind base;
@@ -105,65 +93,62 @@ body {
 }
 
 @layer base {
+  // Earthy green, black & cream
   :root {
-    --background: 48 2% 98%;
-    --foreground: 0 0% 18%; /* Slightly lighter than previous, still good contrast */
-    --card: 48 2% 98%;
-    --card-foreground: 0 0% 18%; /* Adjusted for consistency */
-    --popover: 448 2% 98%;
-    --popover-foreground: 0 0% 18%; /* Adjusted for consistency */
-    --primary: 0 0% 12%; /* Lighter primary for the name */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 18%; /* Adjusted for consistency */
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 38%; /* Lighter muted text */
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 18%; /* Adjusted for consistency */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 96%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 214.3 31.8% 91.4%;
-    --radius: 0.5rem;
+    --background: 43 18% 95%;
+    --foreground: 140 15% 8%;
+    --card: 80 10% 91%;
+    --card-foreground: 140 15% 8%;
+    --popover: 43 18% 95%;
+    --popover-foreground: 140 15% 8%;
+    --primary: 140 15% 8%;
+    --primary-foreground: 43 18% 95%;
+    --secondary: 85 10% 88%;
+    --secondary-foreground: 130 10% 22%;
+    --muted: 85 10% 88%;
+    --muted-foreground: 110 8% 42%;
+    --accent: 92 30% 33%;
+    --accent-foreground: 43 18% 95%;
+    --destructive: 0 72% 52%;
+    --destructive-foreground: 43 18% 95%;
+    --border: 85 12% 82%;
+    --input: 85 12% 82%;
+    --ring: 92 30% 33%;
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 90%; /* Slightly lighter for dark theme */
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 90%; /* Adjusted for consistency */
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 90%; /* Adjusted for consistency */
-    --primary: 0 0% 94%; /* Lighter primary for dark mode */
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 90%; /* Adjusted for consistency */
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 70%; /* Lighter muted text for dark theme */
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 90%; /* Adjusted for consistency */
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 25%;
-    --input: 0 0% 14.9%;
-    --ring: 214.3 31.8% 91.4%;
+    --background: 140 15% 8%;
+    --foreground: 43 18% 92%;
+    --card: 140 12% 12%;
+    --card-foreground: 43 18% 92%;
+    --popover: 140 15% 8%;
+    --popover-foreground: 43 18% 92%;
+    --primary: 43 18% 92%;
+    --primary-foreground: 140 15% 8%;
+    --secondary: 140 10% 14%;
+    --secondary-foreground: 85 10% 75%;
+    --muted: 140 10% 14%;
+    --muted-foreground: 85 8% 58%;
+    --accent: 92 30% 42%;
+    --accent-foreground: 43 18% 95%;
+    --destructive: 0 72% 52%;
+    --destructive-foreground: 43 18% 95%;
+    --border: 140 10% 18%;
+    --input: 140 10% 18%;
+    --ring: 92 30% 42%;
   }
 
-  /* Hide default cursor completely */
   * {
     cursor: none !important;
   }
 
-  /* Show default cursor on mobile devices */
   @media (hover: none) and (pointer: coarse) {
     * {
       cursor: auto !important;
     }
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -173,99 +158,87 @@ body {
     font-family: "IBM Plex Mono", monospace;
     font-weight: 400;
     line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: radial-gradient(
+      ellipse 70% 55% at 16% 0%,
+      hsl(var(--accent) / 0.09) 0%,
+      transparent 60%
+    );
+    background-attachment: fixed;
+
+    // Grain texture overlay for printed/editorial feel
+    &::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 300px 300px;
+    }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: "IBM Plex Mono", monospace;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
     color: hsl(var(--foreground));
   }
 
-  /* Special styling for the main name/title */
-  h1 {
-    font-weight: 700;
-    color: hsl(var(--primary));
-  }
-
-  .font-mono {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 500;
-  }
-
-  .font-sans {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 400;
-  }
-
-  .font-heading {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 700;
-  }
-
-  code,
-  pre,
-  .code {
+  code, pre, .code {
     font-family: "IBM Plex Mono", monospace;
     font-weight: 500;
     @apply bg-secondary px-1.5 py-0.5 rounded-sm text-sm;
     color: hsl(var(--foreground));
   }
 
-  p,
-  span,
-  div,
-  li,
-  a,
-  button {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 400;
-  }
-
-  .font-roboto {
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 500;
-  }
-
-  /* Adjusted text contrast */
-  .text-muted-foreground {
-    color: hsl(var(--muted-foreground)) !important;
-    font-weight: 500 !important;
-  }
-
-  /* Link styling */
   a {
-    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1;
-    font-weight: 600 !important;
+    @apply focus:outline-none focus:ring-1 focus:ring-ring focus:ring-offset-1;
   }
+}
 
-  /* Button text weight */
-  button {
-    font-weight: 600 !important;
+// ─── Scroll-reveal system ──────────────────────────────────────────────────
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
   }
-
-  /* Text elements contrast */
-  .text-foreground {
-    color: hsl(var(--foreground)) !important;
-    font-weight: 700 !important;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  /* Emphasis for important text */
-  .font-bold {
-    font-weight: 700 !important;
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
-
-  .font-semibold {
-    font-weight: 600 !important;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-  .font-medium {
-    font-weight: 500 !important;
+.will-animate {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.will-animate.is-visible {
+  animation: fadeUp 0.6s var(--ease) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .will-animate,
+  .will-animate.is-visible {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
