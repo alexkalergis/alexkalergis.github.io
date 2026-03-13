@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/images/profile-photo.png",
   },
+  other: {
+    "referrer": "strict-origin-when-cross-origin",
+  },
 };
 
 export default function RootLayout({
