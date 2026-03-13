@@ -4,6 +4,11 @@ import { useEffect } from "react";
 
 export function ScrollAnimations() {
   useEffect(() => {
+    history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const sections = document.querySelectorAll("[data-section]");
@@ -17,7 +22,7 @@ export function ScrollAnimations() {
           }
         });
       },
-      { threshold: 0.07, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.07, rootMargin: "0px 0px 120px 0px" }
     );
 
     sections.forEach((el) => {
