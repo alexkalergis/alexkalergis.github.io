@@ -44,7 +44,7 @@ export function About() {
             </p>
             <p className="about__text">
               I specialise in bridging engineering rigour with user-centered
-              design — from building production-grade React applications to
+              design from building production-grade React applications to
               crafting end-to-end product experiences in Figma. I believe the
               best digital products emerge where technical depth meets genuine
               empathy for the people using them.
