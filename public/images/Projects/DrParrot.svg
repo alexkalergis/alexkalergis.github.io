@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="transparent"/>
+  <text x="200" y="140" font-family="monospace" font-size="32" font-weight="bold" fill="#000000" text-anchor="middle">Dr.Parrot</text>
+  <text x="200" y="180" font-family="monospace" font-size="14" fill="#333333" text-anchor="middle">Coming Soon</text>
+</svg>

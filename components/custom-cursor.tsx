@@ -8,8 +8,8 @@ interface TrailPoint {
   t: number;
 }
 
-const TRAIL_DURATION = 200;
-const TRAIL_COLOR = "92, 108, 66";
+const TRAIL_DURATION = 600;
+const TRAIL_COLOR = "82, 109, 59";
 
 export function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export function CustomCursor() {
   const isClicking = useRef(false);
   const trail = useRef<TrailPoint[]>([]);
   const rafId = useRef<number>(0);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
     if ("ontouchstart" in window) {
@@ -49,12 +49,12 @@ export function CustomCursor() {
         for (let i = 1; i < pts.length; i++) {
           const age = now - pts[i].t;
           const progress = i / pts.length;
-          const alpha = Math.max(0, 1 - age / TRAIL_DURATION) * progress * 0.4;
+          const alpha = Math.max(0, 1 - age / TRAIL_DURATION) * progress * 0.85;
           ctx.beginPath();
           ctx.moveTo(pts[i - 1].x, pts[i - 1].y);
           ctx.lineTo(pts[i].x, pts[i].y);
           ctx.strokeStyle = `rgba(${TRAIL_COLOR}, ${alpha})`;
-          ctx.lineWidth = progress * 1.5;
+          ctx.lineWidth = progress * 2.5;
           ctx.lineCap = "round";
           ctx.stroke();
         }
@@ -66,13 +66,10 @@ export function CustomCursor() {
 
       if (cursorRef.current) {
         const { x, y } = mousePos.current;
-        const size = isHovering.current ? 28 : isClicking.current ? 14 : 20;
-        const opacity = isClicking.current ? 0.7 : 1;
-        // centre the crosshair on the mouse
+        const size = isClicking.current ? 5 : isHovering.current ? 10 : 8;
         cursorRef.current.style.transform = `translate3d(${x - size / 2}px, ${y - size / 2}px, 0)`;
         cursorRef.current.style.width = `${size}px`;
         cursorRef.current.style.height = `${size}px`;
-        cursorRef.current.style.opacity = String(opacity);
       }
 
       rafId.current = requestAnimationFrame(tick);
@@ -80,27 +77,19 @@ export function CustomCursor() {
 
     rafId.current = requestAnimationFrame(tick);
 
+    const handleMouseDown = () => { isClicking.current = true; };
+    const handleMouseUp = () => { isClicking.current = false; };
+    const INTERACTIVE = 'a, button, [role="button"], input, textarea, select, label, [tabindex], .cursor-hover';
+
     const handleMouseMove = (e: MouseEvent) => {
       mousePos.current = { x: e.clientX, y: e.clientY };
       trail.current.push({ x: e.clientX, y: e.clientY, t: performance.now() });
+      isHovering.current = !!(e.target as Element)?.closest(INTERACTIVE);
     };
-
-    const handleMouseDown = () => { isClicking.current = true; };
-    const handleMouseUp = () => { isClicking.current = false; };
-    const handleMouseEnter = () => { isHovering.current = true; };
-    const handleMouseLeave = () => { isHovering.current = false; };
 
     document.addEventListener("mousemove", handleMouseMove, { passive: true });
     document.addEventListener("mousedown", handleMouseDown);
     document.addEventListener("mouseup", handleMouseUp);
-
-    const interactiveElements = document.querySelectorAll(
-      'a, button, [role="button"], input, textarea, select, .cursor-hover'
-    );
-    interactiveElements.forEach((el) => {
-      el.addEventListener("mouseenter", handleMouseEnter);
-      el.addEventListener("mouseleave", handleMouseLeave);
-    });
 
     return () => {
       cancelAnimationFrame(rafId.current);
@@ -108,10 +97,6 @@ export function CustomCursor() {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mousedown", handleMouseDown);
       document.removeEventListener("mouseup", handleMouseUp);
-      interactiveElements.forEach((el) => {
-        el.removeEventListener("mouseenter", handleMouseEnter);
-        el.removeEventListener("mouseleave", handleMouseLeave);
-      });
     };
   }, [isTouchDevice]);
 
@@ -129,31 +114,14 @@ export function CustomCursor() {
         ref={cursorRef}
         className="fixed top-0 left-0 pointer-events-none z-[9999]"
         style={{
-          width: "20px",
-          height: "20px",
+          width: "8px",
+          height: "8px",
           willChange: "transform, width, height",
-          transition: "width 0.15s ease-out, height 0.15s ease-out, opacity 0.1s ease-out",
+          transition: "width 0.1s ease-out, height 0.1s ease-out",
+          borderRadius: "50%",
+          background: "hsl(var(--foreground))",
         }}
-      >
-        <svg
-          width="100%"
-          height="100%"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Horizontal left arm */}
-          <line x1="0" y1="10" x2="7" y2="10" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
-          {/* Horizontal right arm */}
-          <line x1="13" y1="10" x2="20" y2="10" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
-          {/* Vertical top arm */}
-          <line x1="10" y1="0" x2="10" y2="7" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
-          {/* Vertical bottom arm */}
-          <line x1="10" y1="13" x2="10" y2="20" stroke="hsl(var(--foreground))" strokeWidth="1.5" strokeLinecap="round" />
-          {/* Centre dot — accent color */}
-          <circle cx="10" cy="10" r="1.5" fill="hsl(var(--accent))" />
-        </svg>
-      </div>
+      />
     </>
   );
 }

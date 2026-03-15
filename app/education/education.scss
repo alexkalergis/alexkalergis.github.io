@@ -8,7 +8,6 @@
     padding: 0 2rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 5rem;
     align-items: start;
   }
 
@@ -37,6 +36,8 @@
     letter-spacing: -0.03em;
     line-height: 1.1;
     margin: 0;
+    color: transparent;
+    -webkit-text-stroke: 1.5px hsl(var(--accent) / 0.5);
   }
 
   // ─── Right column ──────────────────────────────────────────────────────────
@@ -68,7 +69,7 @@
 
   &__date {
     font-size: var(--font-size-xs);
-    color: hsl(var(--accent));
+    color: hsl(var(--muted-foreground));
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-weight: var(--font-weight-medium);
@@ -80,7 +81,7 @@
     height: 2.5rem;
     border-radius: 0;
     overflow: hidden;
-    background: hsl(var(--secondary));
+    background: hsl(var(--background));
     flex-shrink: 0;
   }
 
@@ -91,7 +92,7 @@
   }
 
   &__institution {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight-semibold);
     color: hsl(var(--foreground));
     letter-spacing: 0.01em;
@@ -99,7 +100,7 @@
   }
 
   &__degree {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     color: hsl(var(--foreground));
     font-weight: var(--font-weight-medium);
   }
@@ -124,7 +125,7 @@
     text-transform: uppercase;
     color: hsl(var(--foreground));
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid hsl(var(--border));
+    border-bottom: 1px solid hsl(var(--accent) / 0.4);
   }
 
   &__flat-list {
@@ -145,7 +146,7 @@
     height: 1.75rem;
     border-radius: 0;
     overflow: hidden;
-    background: hsl(var(--secondary));
+    background: hsl(var(--background));
     flex-shrink: 0;
     margin-top: 0.1rem;
   }
@@ -157,7 +158,7 @@
   }
 
   &__flat-org {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
     color: hsl(var(--foreground));
     letter-spacing: 0.02em;

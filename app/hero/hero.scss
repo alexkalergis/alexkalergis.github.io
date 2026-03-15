@@ -15,7 +15,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: end;
+    align-content: center;
     animation: heroFadeUp 0.7s var(--ease) 0.05s both;
 
     @media (prefers-reduced-motion: reduce) { animation: none; }
@@ -24,6 +25,7 @@
   &__name-col {
     display: flex;
     align-items: center;
+    transform: translateY(0.5em);
   }
 
   &__name {
@@ -40,7 +42,7 @@
     display: block;
 
     &--outlined {
-      -webkit-text-stroke: 1.5px hsl(var(--foreground));
+      -webkit-text-stroke: 1.5px hsl(var(--accent));
       color: transparent;
     }
   }
@@ -59,7 +61,7 @@
     font-size: var(--font-size-xs);
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: hsl(var(--accent));
+    color: hsl(var(--muted-foreground));
     font-weight: var(--font-weight-medium);
   }
 
@@ -68,7 +70,7 @@
     line-height: var(--line-height-relaxed);
     color: hsl(var(--muted-foreground));
     margin: 0;
-    max-width: 44ch;
+    max-width: 64ch;
   }
 
   // Buttons fused side-by-side

@@ -5,9 +5,9 @@ import Link from "next/link";
 import "./hero.scss";
 
 const tickerSkills = [
-  "React", "TypeScript", "Python", "Figma", "Product Design",
-  "Machine Learning", "React Native", "HCI", "UX Design",
-  "Reinforcement Learning", "Agile",
+  "Frontend Development", "React", "React Native", "Python", "Claude Code",
+  "Human-Computer Interaction", "Product Design", "UX Design", "Figma", 
+  "Machine Learning", "Agile", 
 ];
 
 export function Hero() {
@@ -28,8 +28,8 @@ export function Hero() {
         <div className="hero__info-col">
           <span className="hero__role">Engineer &amp; Designer</span>
           <p className="hero__description">
-            ECE graduate bridging technical depth and design thinking to build
-            innovative, human-centered digital products.
+            Exploring the intersection of Technology, Design, and Human-Computer Interaction.
+            I bring a unique combination of technical background and design-thinking skills.
           </p>
           <div className="hero__actions">
             <Link
@@ -44,11 +44,6 @@ export function Hero() {
             <a href="#experience" className="hero__btn hero__btn--ghost">
               View Work <span aria-hidden="true">↓</span>
             </a>
-          </div>
-          <div className="hero__meta">
-            <span className="hero__meta-item">Athens, Greece</span>
-            <span className="hero__meta-sep" aria-hidden="true">·</span>
-            <span className="hero__meta-item">Open to opportunities</span>
           </div>
         </div>
       </div>

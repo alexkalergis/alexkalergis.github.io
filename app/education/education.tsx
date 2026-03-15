@@ -27,10 +27,9 @@ export function Education() {
                   />
                 </div>
                 <div className="education__flat-body">
-                  <span className="education__flat-org">University of Patras, Greece</span>
+                  <span className="education__flat-org">University of Patras, Greece </span>
                   <span className="education__flat-detail">Electrical &amp; Computer Engineering · 2018–2023</span>
-                  <span className="education__flat-detail">Thesis — Robot writing via Reinforcement Learning</span>
-                  <span className="education__flat-detail">Distinction — Top 3% of class</span>
+                  <span className="education__flat-detail">Top 3% of class</span>
                 </div>
               </div>
             </div>
@@ -52,7 +51,12 @@ export function Education() {
                 <div className="education__flat-body">
                   <span className="education__flat-org">Interaction Design Foundation</span>
                   <span className="education__flat-detail">
-                    Human-Computer Interaction · Design Thinking · User Experience · Ongoing
+                    Human-Computer Interaction · Ongoing
+                  </span>
+                  <span className="education__flat-detail">
+                    Design Thinking · Ongoing 
+                  </span><span className="education__flat-detail">
+                    User Experience · Ongoing
                   </span>
                 </div>
               </div>
@@ -84,13 +88,13 @@ export function Education() {
                     src="/images/Education/AIHUB.png"
                     alt="AI HUB logo"
                     fill
-                    className="object-contain"
+                    className="oanabject-contain"
                   />
                 </div>
                 <div className="education__flat-body">
                   <span className="education__flat-org">Honorable Mention in AI</span>
                   <span className="education__flat-detail">
-                    AI HUB, University of Patras · 2023
+                    AI HUB · 2023
                   </span>
                 </div>
               </div>

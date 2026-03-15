@@ -15,6 +15,7 @@ export function Contact() {
       <div className="contact__container">
         <div className="contact__left">
           <span className="contact__num" aria-hidden="true">05</span>
+          <h2 className="contact__label">Contact</h2>
         </div>
 
         <div className="contact__right">

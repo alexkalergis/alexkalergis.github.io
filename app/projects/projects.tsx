@@ -7,75 +7,68 @@ import "./projects.scss";
 const projects = [
   {
     id: 1,
-    title: "maMEDS",
-    year: "2025–present",
-    type: "Product Design & Engineering",
-    image: "/images/Projects/maMEDS.png",
-    keywords: "React · Figma · React Native",
+    title: "Dr.Parrot",
+    type: "Product Design & Development",
+    image: "/images/Projects/DrParrot.svg",
+    keywords: "Figma · React · Claude Code",
   },
   {
     id: 2,
-    title: "ASSETS",
-    year: "2025",
-    type: "Product Design & Engineering",
-    image: "/images/Projects/Assets.png",
-    keywords: "React · Figma",
+    title: "maMEDS",
+    type: "Product Design & Development",
+    image: "/images/Projects/maMEDS.png",
+    keywords: "Figma · React · React Native",
+    url: "https://mameds.gr"
   },
   {
     id: 3,
-    title: "Hapi",
-    year: "2025",
-    type: "Product Design & Engineering",
-    image: "/images/Projects/Hapi.png",
-    keywords: "Lean UX · React · Figma",
+    title: "HIVE",
+    type: "Mobile App Design",
+    image: "/images/Projects/HIVE.webp",
+    keywords: "Figma · Claude Code",
   },
   {
     id: 4,
-    title: "Busifinder",
-    year: "2024",
-    type: "Product Design & MVP",
-    image: "/images/Projects/Busifinder.png",
-    keywords: "MVP Design · Retool · Figma",
+    title: "ASSETS",
+    type: "Mobile App Design",
+    image: "/images/Projects/Assets.png",
+    keywords: "Figma · React Native",
   },
   {
     id: 5,
-    title: "myNavigation",
-    year: "2024",
-    type: "Mobile App Design",
-    image: "/images/Projects/myNavigation.png",
-    keywords: "Double Diamond · UI/UX Design",
+    title: "Busifinder",
+    type: "Web App Design",
+    image: "/images/Projects/Busifinder.png",
+    keywords: "Figma · Retool",
   },
   {
     id: 6,
-    title: "Robot learns writing",
-    year: "2023",
-    type: "Thesis Project",
-    image: "/images/Projects/RobotWriting.png",
-    keywords: "Reinforcement Learning · Robotics",
-    url: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
+    title: "Navigation App Evaluation",
+    type: "Design & Research",
+    image: "/images/Projects/myNavigation.png",
+    keywords: "Double Diamond · Heuristic",
+    url: "https://github.com/alexkalergis/Design-and-evaluation-of-a-navigation-app",
+
   },
   {
     id: 7,
-    title: "Kommoot",
-    year: "2023",
-    type: "HCI Evaluation",
-    image: "/images/Projects/Komoot.png",
-    keywords: "Heuristic Evaluation · SUS",
-    url: "https://github.com/alexkalergis/Design-and-evaluation-of-a-navigation-app",
+    title: "Robot writing",
+    type: "Machine Learning",
+    image: "/images/Projects/RobotWriting.png",
+    keywords: "Machine Learning · Robotics",
+    url: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
   },
   {
     id: 8,
     title: "Clustering shapes",
-    year: "2023",
     type: "Machine Learning",
     image: "/images/Projects/Clustering.png",
-    keywords: "Kernel Methods · SVM",
+    keywords: "SVM · Kernel Methods",
     url: "https://github.com/alexkalergis/Clustering-using-Support-Vector-Machines",
   },
   {
     id: 9,
     title: "Image reconstruction",
-    year: "2023",
     type: "Machine Learning",
     image: "/images/Projects/GanRecovery.png",
     keywords: "GANs · Gradient Descent",
@@ -106,16 +99,12 @@ export function Projects() {
                       fill
                       className="object-contain"
                     />
+                    {isLinked && <span className="projects__card-arrow" aria-hidden="true">↗</span>}
                   </div>
 
                   <div className="projects__card-caption">
-                    {isLinked && (
-                      <div className="projects__card-caption-top">
-                        <span className="projects__card-arrow" aria-hidden="true">↗</span>
-                      </div>
-                    )}
                     <h3 className="projects__card-title">{project.title}</h3>
-                    <p className="projects__card-type">{project.year} · {project.type}</p>
+                    <p className="projects__card-type">{project.type}</p>
                     <p className="projects__card-keywords">{project.keywords}</p>
                   </div>
                 </>

@@ -139,10 +139,6 @@ html {
     --ring: 92 30% 42%;
   }
 
-  * {
-    cursor: none !important;
-  }
-
   @media (hover: none) and (pointer: coarse) {
     * {
       cursor: auto !important;

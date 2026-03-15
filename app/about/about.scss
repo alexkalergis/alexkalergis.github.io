@@ -8,7 +8,6 @@
     padding: 0 2rem;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 5rem;
     align-items: start;
   }
 
@@ -37,6 +36,8 @@
     letter-spacing: -0.03em;
     line-height: 1.1;
     margin: 0;
+    color: transparent;
+    -webkit-text-stroke: 1.5px hsl(var(--accent) / 0.5);
   }
 
   // ─── Right column: pull quote + body + skills ──────────────────────────────
@@ -82,7 +83,7 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: hsl(var(--foreground));
-    background: hsl(var(--secondary));
+    background: hsl(var(--background));
     border: 1px solid hsl(var(--border));
     padding: 0.3rem 0.75rem;
     border-radius: 0;
@@ -130,7 +131,7 @@
     text-transform: uppercase;
     color: hsl(var(--foreground));
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid hsl(var(--border));
+    border-bottom: 1px solid hsl(var(--accent) / 0.4);
   }
 
   &__drawings {
@@ -146,7 +147,7 @@
   &__drawing-frame {
     position: relative;
     aspect-ratio: 3 / 4;
-    background: hsl(var(--secondary));
+    background: hsl(var(--background));
     overflow: hidden;
     border: 1px solid hsl(var(--border));
   }
@@ -193,7 +194,7 @@
   }
 
   &__reads-title {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     color: hsl(var(--foreground));
     transition: color var(--transition-fast);
   }
@@ -228,6 +229,128 @@
   @media (max-width: 600px) {
     &__container {
       padding: 0 1.5rem;
+    }
+  }
+
+  &__drawing-frame {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: opacity 200ms var(--ease);
+
+    &:hover { opacity: 0.75; }
+  }
+
+  // ─── Lightbox ──────────────────────────────────────────────────────────────
+  &__lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: hsl(var(--background) / 0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    cursor: pointer;
+    animation: lb-fade 180ms ease;
+  }
+
+  @keyframes lb-fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  &__lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.75rem;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: hsl(var(--muted-foreground));
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: color 150ms var(--ease);
+    font-family: inherit;
+
+    &:hover { color: hsl(var(--accent)); }
+  }
+
+  &__lightbox-nav {
+    background: none;
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    font-size: 1.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 150ms var(--ease), border-color 150ms var(--ease);
+    font-family: inherit;
+    z-index: 1;
+
+    &:hover {
+      background: hsl(var(--accent) / 0.08);
+      border-color: hsl(var(--accent) / 0.5);
+      color: hsl(var(--accent));
+    }
+  }
+
+  &__lightbox-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    cursor: default;
+  }
+
+  &__lightbox-inner {
+    position: relative;
+    width: min(70vw, 560px);
+    height: min(78vh, 800px);
+    border: 1px solid hsl(var(--border));
+  }
+
+  &__lightbox-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__lightbox-count {
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.12em;
+    color: hsl(var(--muted-foreground));
+    text-transform: uppercase;
+  }
+
+  &__lightbox-dots {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  &__lightbox-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(var(--border));
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 150ms var(--ease), transform 150ms var(--ease);
+
+    &--active {
+      background: hsl(var(--accent));
+      transform: scale(1.3);
+    }
+
+    &:hover:not(&--active) {
+      background: hsl(var(--muted-foreground));
     }
   }
 }

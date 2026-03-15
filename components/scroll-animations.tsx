@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export function ScrollAnimations() {
   useEffect(() => {
     history.scrollRestoration = "manual";
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
   useEffect(() => {
