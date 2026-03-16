@@ -16,11 +16,7 @@ const drawings = [
   "/images/PersonalLibrary/Hobbies/Drawing/IMG_8726.webp",
 ];
 
-const readsItems = [
-  { title: "Aesthetics and the Art of Engineering", meta: "Per Boelskifte, 2014", href: "https://www.researchgate.net/publication/276314506_Aesthetics_and_the_Art_of_Engineering" },
-];
-
-const reads = [
+const inspiration = [
   { title: "IDEO", meta: "ideo.com", href: "https://www.ideo.com" },
   { title: "Interaction Design Foundation", meta: "interaction-design.org", href: "https://www.interaction-design.org" },
   { title: "Stanford d.school", meta: "dschool.stanford.edu", href: "https://dschool.stanford.edu" },
@@ -28,10 +24,16 @@ const reads = [
   { title: "MIT Media Lab", meta: "media.mit.edu", href: "https://www.media.mit.edu" },
 ];
 
-const watches = [
-  { title: "The first secret of great design", meta: "Tony Fadell — TED", href: "https://youtu.be/9uOMectkCCs" },
-  { title: "How product design can change the world", meta: "Christiaan Maats — TED", href: "https://youtu.be/ZqeA_psKn2E" },
+const videos = [
+  { title: "The first secret of great design", meta: "Tony Fadell, TED", href: "https://youtu.be/9uOMectkCCs" },
+  { title: "How product design can change the world", meta: "Christiaan Maats, TED", href: "https://youtu.be/ZqeA_psKn2E" },
 ];
+
+const reads = [
+  { title: "Software designers must abandon their roles as the custodians of libraries, logic and grids", meta: "Nick Foster, Dezeen", href: "https://www.dezeen.com/2026/03/03/software-design-ai-nick-foster-opinion/" },
+  { title: "Aesthetics and the Art of Engineering", meta: "Per Boelskifte, ResearchGate", href: "https://www.researchgate.net/publication/276314506_Aesthetics_and_the_Art_of_Engineering" },
+];
+
 
 export function About() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -103,21 +105,26 @@ export function About() {
             {/* Photography */}
             <div className="about__group">
               <span className="about__group-label">Photography</span>
-              <Link
-                href="https://500px.com/p/alexkalergis?view=photos"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="about__photography-link"
-              >
-                500px <span aria-hidden="true">↗</span>
-              </Link>
+              <ul className="about__reads-list">
+                <li>
+                  <Link
+                    href="https://500px.com/p/alexkalergis?view=photos"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="about__reads-item"
+                  >
+                    <span className="about__reads-title">Profile</span>
+                    <span className="about__reads-meta">500px.com</span>
+                  </Link>
+                </li>
+              </ul>
             </div>
 
             {/* Reads */}
             <div className="about__group">
               <span className="about__group-label">Inspiration</span>
               <ul className="about__reads-list">
-                {reads.map((item) => (
+                {inspiration.map((item) => (
                   <li key={item.title}>
                     <Link
                       href={item.href}
@@ -137,7 +144,7 @@ export function About() {
             <div className="about__group">
               <span className="about__group-label">Videos</span>
               <ul className="about__reads-list">
-                {watches.map((item) => (
+                {videos.map((item) => (
                   <li key={item.title}>
                     <Link
                       href={item.href}
@@ -157,7 +164,7 @@ export function About() {
             <div className="about__group">
               <span className="about__group-label">Reads</span>
               <ul className="about__reads-list">
-                {readsItems.map((item) => (
+                {reads.map((item) => (
                   <li key={item.title}>
                     <Link
                       href={item.href}

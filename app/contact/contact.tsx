@@ -23,25 +23,28 @@ export function Contact() {
 
           <div className="contact__body">
             <p className="contact__blurb">
-              Open to new opportunities, reach out and let's talk.
+              Open to new opportunities, reach out and let&apos;s talk.{" "}
+              <button
+                className="contact__email"
+                onClick={handleEmailClick}
+                aria-label="Send email to Alex Kalergis"
+              >
+                Reach out
+                <span className="contact__email-arrow" aria-hidden="true">↗</span>
+              </button>
             </p>
 
-            <button
-              className="contact__email"
-              onClick={handleEmailClick}
-              aria-label="Send email to Alex Kalergis"
-            >
-              kalergisalex@gmail.com
-              <span className="contact__email-arrow" aria-hidden="true">↗</span>
-            </button>
-
             <div className="contact__links">
+             
+            
               <Link
                 href="https://github.com/alexkalergis"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact__link"
               >
+
+            
                 <Github className="h-4 w-4" />
                 GitHub
               </Link>
@@ -56,9 +59,10 @@ export function Contact() {
                 LinkedIn
               </Link>
             </div>
+          
 
             <p className="contact__meta">
-              Athens, Greece&nbsp;&nbsp;·&nbsp;&nbsp;Available for remote work worldwide
+              Greece&nbsp;&nbsp;·&nbsp;&nbsp;Available for remote work worldwide
             </p>
           </div>
         </div>

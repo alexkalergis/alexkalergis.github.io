@@ -195,7 +195,7 @@
 
   &__reads-title {
     font-size: var(--font-size-base);
-    color: hsl(var(--foreground));
+    color: hsl(var(--muted-foreground));
     transition: color var(--transition-fast);
   }
 
