@@ -15,7 +15,7 @@ type LibraryItem = {
   description: string;
   creator?: string;
   year?: number;
-  image: string;
+  image?: string;
 };
 
 const papers: LibraryItem[] = [
@@ -58,6 +58,19 @@ const videos: LibraryItem[] = [
       "Christiaan Maats shows how thoughtful product design can solve real-world problems and create positive social impact.",
     creator: "Christiaan Maats (TED)",
     image: "/images/PersonalLibrary/Interests/TEDxUniversityofGroningen.png",
+  },
+];
+
+const reads: LibraryItem[] = [
+  {
+    id: 1,
+    title: "Software designers must abandon their roles as the custodians of libraries, logic and grids",
+    link: "https://www.dezeen.com/2026/03/03/software-design-ai-nick-foster-opinion/",
+    tags: ["Software Design", "AI", "Opinion"],
+    description:
+      "Foster argues designers should embrace AI's unpredictability as a creative material rather than eliminating friction, leading to more human-centered digital experiences.",
+    creator: "Nick Foster (Dezeen)",
+    year: 2026,
   },
 ];
 
@@ -149,7 +162,7 @@ const drawingItems = [
 
 export default function PersonalLibraryPage() {
   const [hobbiesTab, setHobbiesTab] = useState("photography");
-  const [interestsTab, setInterestsTab] = useState("papers");
+  const [interestsTab, setInterestsTab] = useState("reads");
   const [showAllHobbies, setShowAllHobbies] = useState(false);
   const [showAllInterests, setShowAllInterests] = useState(false);
   const [hasMoreHobbies, setHasMoreHobbies] = useState(false);
@@ -162,6 +175,7 @@ export default function PersonalLibraryPage() {
   ];
 
   const interestsTabs = [
+    { value: "reads", label: "Reads", items: reads },
     { value: "papers", label: "Papers", items: papers },
     { value: "videos", label: "Videos", items: videos },
     { value: "resources", label: "Resources", items: resources },
@@ -296,7 +310,7 @@ export default function PersonalLibraryPage() {
             </div>
 
             <Tabs
-              defaultValue="papers"
+              defaultValue="reads"
               value={interestsTab}
               onValueChange={(value) => {
                 setInterestsTab(value);
@@ -321,15 +335,17 @@ export default function PersonalLibraryPage() {
                         rel="noopener noreferrer"
                         className="flex p-[10px] flex-col items-start gap-[25px] h-[342px] rounded-lg border border-border hover:border-muted-foreground transition-colors"
                       >
-                        <div className="flex-1 self-stretch relative bg-transparent rounded overflow-hidden">
-                          <Image
-                            src={item.image}
-                            alt={item.title}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                        <div className="flex flex-col items-start gap-[10px] self-stretch">
+                        {item.image && (
+                          <div className="flex-1 self-stretch relative bg-transparent rounded overflow-hidden">
+                            <Image
+                              src={item.image}
+                              alt={item.title}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                        )}
+                        <div className={`flex flex-col items-start gap-[10px] self-stretch ${!item.image ? "flex-1 justify-center" : ""}`}>
                           <div className="self-stretch text-foreground text-center font-mono text-[14px] font-bold leading-normal">
                             {item.title}
                             {item.year && ` | ${item.year}`}
