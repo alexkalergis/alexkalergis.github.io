@@ -38,8 +38,8 @@ const companies = [
     name: "Family Business",
     logo: "/images/Experience/FamilyBusiness.png",
     role: "Assistant Manager",
-    startDate: "Jan 2024",
-    endDate: "Dec 2024",
+    startDate: "Feb 2024",
+    endDate: "Jul 2024",
     location: "Volos, Greece",
     description: [
       "Introduced new customer engagement strategies, improving overall customer experience.",
