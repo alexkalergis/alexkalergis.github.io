@@ -175,6 +175,12 @@
     margin: 0;
   }
 
+  // Divider between the drawings grid and the photography row (Interests group),
+  // matching the separator lines used in the Inspiration list.
+  &__drawings + &__reads-list {
+    border-top: 1px solid hsl(var(--border) / 0.5);
+  }
+
   &__reads-item {
     display: flex;
     align-items: baseline;

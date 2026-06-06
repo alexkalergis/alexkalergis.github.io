@@ -67,17 +67,15 @@ export function About() {
             <span className="about__group-label">Bio</span>
           <div className="about__text-block">
             <p className="about__text">
-              My path into technology began with a degree in Electrical &amp;
-              Computer Engineering from the University of Patras. My academic
-              focus on Cyber-Physical Systems immersed me in Artificial
-              Intelligence, Machine Learning, and Human-Computer Interaction.
-            </p>
-            <p className="about__text">
-              I specialise in bridging engineering rigour with user-centered
-              design from building production-grade React applications to
-              crafting end-to-end product experiences in Figma. I believe the
-              best digital products emerge where technical depth meets genuine
-              empathy for the people using them.
+              My journey began with a fascination for technology and the ways it
+              can improve people&apos;s lives. After studying Electrical and Computer
+              Engineering, I discovered a passion for combining engineering, design,
+              and creativity to build meaningful digital experiences. I enjoy working
+              at the intersection of technology and human needs, turning complex
+              problems into simple, thoughtful solutions. When I&apos;m not designing or
+              building products, I love traveling, exploring architecture, enjoying
+              specialty coffee, being in nature, and learning about psychology,
+              philosophy, and the creative process.
             </p>
           </div>
           </div>
@@ -85,9 +83,9 @@ export function About() {
           {/* ── Personal ───────────────────────────────────────────────────── */}
           <div className="about__personal">
 
-            {/* Drawings */}
+            {/* Interests */}
             <div className="about__group">
-              <span className="about__group-label">Drawings</span>
+              <span className="about__group-label">Interests</span>
               <div className="about__drawings">
                 {drawings.map((src, i) => (
                   <button key={i} className="about__drawing-frame" onClick={() => setLightboxIndex(i)}>
@@ -100,11 +98,6 @@ export function About() {
                   </button>
                 ))}
               </div>
-            </div>
-
-            {/* Photography */}
-            <div className="about__group">
-              <span className="about__group-label">Photography</span>
               <ul className="about__reads-list">
                 <li>
                   <Link
@@ -113,58 +106,18 @@ export function About() {
                     rel="noopener noreferrer"
                     className="about__reads-item"
                   >
-                    <span className="about__reads-title">Profile</span>
+                    <span className="about__reads-title">Photography</span>
                     <span className="about__reads-meta">500px.com</span>
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Reads */}
+            {/* Inspiration */}
             <div className="about__group">
               <span className="about__group-label">Inspiration</span>
               <ul className="about__reads-list">
-                {inspiration.map((item) => (
-                  <li key={item.title}>
-                    <Link
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="about__reads-item"
-                    >
-                      <span className="about__reads-title">{item.title}</span>
-                      <span className="about__reads-meta">{item.meta}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Watches */}
-            <div className="about__group">
-              <span className="about__group-label">Videos</span>
-              <ul className="about__reads-list">
-                {videos.map((item) => (
-                  <li key={item.title}>
-                    <Link
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="about__reads-item"
-                    >
-                      <span className="about__reads-title">{item.title}</span>
-                      <span className="about__reads-meta">{item.meta}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Reads */}
-            <div className="about__group">
-              <span className="about__group-label">Reads</span>
-              <ul className="about__reads-list">
-                {reads.map((item) => (
+                {[...inspiration, ...videos, ...reads].map((item) => (
                   <li key={item.title}>
                     <Link
                       href={item.href}
