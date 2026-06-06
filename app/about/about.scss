@@ -22,7 +22,7 @@
 
   &__num {
     display: block;
-    font-size: clamp(5rem, 9vw, 8rem);
+    font-size: var(--text-display);
     font-weight: 700;
     line-height: 0.9;
     letter-spacing: -0.04em;
@@ -31,7 +31,7 @@
   }
 
   &__title {
-    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-size: var(--text-title);
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
@@ -48,7 +48,7 @@
   }
 
   &__pullquote {
-    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-size: var(--text-lead);
     font-weight: 700;
     line-height: 1.35;
     letter-spacing: -0.02em;
@@ -65,7 +65,7 @@
   }
 
   &__text {
-    font-size: var(--font-size-base);
+    font-size: var(--text-body);
     line-height: var(--line-height-relaxed);
     color: hsl(var(--muted-foreground));
     margin: 0;
@@ -78,7 +78,7 @@
   }
 
   &__skill {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     font-weight: var(--font-weight-medium);
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -94,7 +94,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     font-weight: var(--font-weight-medium);
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -125,13 +125,13 @@
   }
 
   &__group-label {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     font-weight: var(--font-weight-bold);
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: hsl(var(--foreground));
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid hsl(var(--accent) / 0.4);
+    border-bottom: 1px solid hsl(var(--border));
   }
 
   &__drawings {
@@ -156,7 +156,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: hsl(var(--muted-foreground));
@@ -194,13 +194,13 @@
   }
 
   &__reads-title {
-    font-size: var(--font-size-base);
+    font-size: var(--text-body);
     color: hsl(var(--muted-foreground));
     transition: color var(--transition-fast);
   }
 
   &__reads-meta {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     color: hsl(var(--muted-foreground));
     letter-spacing: 0.04em;
     white-space: nowrap;
@@ -221,9 +221,6 @@
       gap: 1rem;
     }
 
-    &__num {
-      font-size: 4rem;
-    }
   }
 
   @media (max-width: 600px) {
@@ -267,7 +264,7 @@
     right: 1.75rem;
     background: none;
     border: none;
-    font-size: 1.25rem;
+    font-size: var(--text-lead);
     color: hsl(var(--muted-foreground));
     cursor: pointer;
     padding: 0.25rem 0.5rem;
@@ -281,7 +278,7 @@
     background: none;
     border: 1px solid hsl(var(--border));
     color: hsl(var(--foreground));
-    font-size: 1.25rem;
+    font-size: var(--text-lead);
     width: 2.75rem;
     height: 2.75rem;
     display: flex;
@@ -323,7 +320,7 @@
   }
 
   &__lightbox-count {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     letter-spacing: 0.12em;
     color: hsl(var(--muted-foreground));
     text-transform: uppercase;

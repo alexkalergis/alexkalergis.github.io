@@ -19,7 +19,7 @@
 
   &__num {
     display: block;
-    font-size: clamp(5rem, 9vw, 8rem);
+    font-size: var(--text-display);
     font-weight: 700;
     line-height: 0.9;
     letter-spacing: -0.04em;
@@ -28,7 +28,7 @@
   }
 
   &__label {
-    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-size: var(--text-title);
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
@@ -45,7 +45,7 @@
   }
 
   &__title {
-    font-size: clamp(1.5rem, 7vw, 3rem);
+    font-size: var(--text-title);
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.0;
@@ -62,7 +62,7 @@
   }
 
   &__blurb {
-    font-size: var(--font-size-base);
+    font-size: var(--text-lead);
     color: hsl(var(--muted-foreground));
     line-height: var(--line-height-relaxed);
     margin: 0;
@@ -73,7 +73,7 @@
     align-items: center;
     gap: 0.5rem;
     font-family: "IBM Plex Mono", monospace;
-    font-size: var(--font-size-base);
+    font-size: var(--text-body);
     font-weight: var(--font-weight-semibold);
     color: hsl(var(--foreground));
     background: transparent;
@@ -93,7 +93,7 @@
   }
 
   &__email-arrow {
-    font-size: var(--font-size-base);
+    font-size: var(--text-body);
     opacity: 0.6;
     transition: transform var(--transition-fast), opacity var(--transition-fast);
 
@@ -114,7 +114,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: var(--font-size-sm);
+    font-size: var(--text-meta);
     color: hsl(var(--muted-foreground));
     text-decoration: none;
     letter-spacing: 0.04em;
@@ -127,11 +127,11 @@
 
   &__sep {
     color: hsl(var(--border));
-    font-size: var(--font-size-sm);
+    font-size: var(--text-meta);
   }
 
   &__meta {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     color: hsl(var(--muted-foreground) / 0.7);
     letter-spacing: 0.06em;
     margin: 0;
@@ -148,9 +148,6 @@
       position: static;
     }
 
-    &__num {
-      font-size: 4rem;
-    }
   }
 
   @media (max-width: 600px) {

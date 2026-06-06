@@ -22,7 +22,7 @@
 
   &__num {
     display: block;
-    font-size: clamp(5rem, 9vw, 8rem);
+    font-size: var(--text-display);
     font-weight: 700;
     line-height: 0.9;
     letter-spacing: -0.04em;
@@ -31,7 +31,7 @@
   }
 
   &__title {
-    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-size: var(--text-title);
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
@@ -68,7 +68,7 @@
   }
 
   &__date {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     color: hsl(var(--muted-foreground));
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -92,7 +92,7 @@
   }
 
   &__institution {
-    font-size: var(--font-size-base);
+    font-size: var(--text-body);
     font-weight: var(--font-weight-semibold);
     color: hsl(var(--foreground));
     letter-spacing: 0.01em;
@@ -100,13 +100,13 @@
   }
 
   &__degree {
-    font-size: var(--font-size-base);
+    font-size: var(--text-body);
     color: hsl(var(--foreground));
     font-weight: var(--font-weight-medium);
   }
 
   &__detail {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     color: hsl(var(--muted-foreground));
     letter-spacing: 0.02em;
   }
@@ -119,13 +119,13 @@
   }
 
   &__group-label {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     font-weight: var(--font-weight-bold);
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: hsl(var(--foreground));
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid hsl(var(--accent) / 0.4);
+    border-bottom: 1px solid hsl(var(--border));
   }
 
   &__flat-list {
@@ -142,8 +142,8 @@
 
   &__flat-logo {
     position: relative;
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 0;
     overflow: hidden;
     background: hsl(var(--background));
@@ -158,14 +158,14 @@
   }
 
   &__flat-org {
-    font-size: var(--font-size-sm);
+    font-size: var(--text-body);
     font-weight: var(--font-weight-semibold);
     color: hsl(var(--foreground));
     letter-spacing: 0.02em;
   }
 
   &__flat-detail {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     color: hsl(var(--muted-foreground));
     letter-spacing: 0.02em;
   }
@@ -184,9 +184,6 @@
       gap: 1rem;
     }
 
-    &__num {
-      font-size: 4rem;
-    }
   }
 
   @media (max-width: 640px) {

@@ -24,6 +24,15 @@ const config = {
         heading: ["'IBM Plex Mono'", "monospace"],
         mono: ["'IBM Plex Mono'", "monospace"],
       },
+      // Single type scale — same CSS vars used by SCSS (see globals.scss).
+      fontSize: {
+        meta: "var(--text-meta)",
+        body: "var(--text-body)",
+        lead: "var(--text-lead)",
+        title: "var(--text-title)",
+        display: "var(--text-display)",
+        hero: "var(--text-hero)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

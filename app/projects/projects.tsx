@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     title: "Dr.Parrot",
     type: "Product Design & Development",
-    image: "/images/Projects/DrParrot.svg",
+    image: "/images/Projects/logo.png",
     keywords: "Figma · React · Claude Code",
   },
   {
@@ -21,15 +21,22 @@ const projects = [
     url: "https://mameds.gr"
   },
   {
+    id: 0,
+    title: "Arkon.health",
+    type: "Website Design & Development",
+    image: "/images/Projects/Arkon-logo.png",
+    keywords: "Figma · React · Claude Code",
+  },
+  {
     id: 3,
     title: "HIVE",
     type: "Mobile App Design",
     image: "/images/Projects/HIVE.webp",
-    keywords: "Figma · Claude Code",
+    keywords: "Figma · Google Stitch",
   },
   {
     id: 4,
-    title: "ASSETS",
+    title: "AssetScope",
     type: "Mobile App Design",
     image: "/images/Projects/Assets.png",
     keywords: "Figma · React Native",
@@ -53,7 +60,7 @@ const projects = [
   {
     id: 7,
     title: "Robot writing",
-    type: "Machine Learning",
+    type: "Robotics Engineering",
     image: "/images/Projects/RobotWriting.png",
     keywords: "Machine Learning · Robotics",
     url: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
@@ -61,7 +68,7 @@ const projects = [
   {
     id: 8,
     title: "Clustering shapes",
-    type: "Machine Learning",
+    type: "Machine Learning Engineering",
     image: "/images/Projects/Clustering.png",
     keywords: "SVM · Kernel Methods",
     url: "https://github.com/alexkalergis/Clustering-using-Support-Vector-Machines",
@@ -69,7 +76,7 @@ const projects = [
   {
     id: 9,
     title: "Image reconstruction",
-    type: "Machine Learning",
+    type: "Machine Learning Engineering",
     image: "/images/Projects/GanRecovery.png",
     keywords: "GANs · Gradient Descent",
     url: "https://github.com/alexkalergis/Image-Recovery-using-Generative-Adversarial-Networks",
@@ -93,19 +100,23 @@ export function Projects() {
               const content = (
                 <>
                   <div className="projects__card-frame">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-contain"
-                    />
-                    {isLinked && <span className="projects__card-arrow" aria-hidden="true">↗</span>}
+                    {project.image ? (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="projects__card-img object-contain"
+                      />
+                    ) : (
+                      <span className="projects__card-soon">Coming soon</span>
+                    )}
                   </div>
 
                   <div className="projects__card-caption">
                     <h3 className="projects__card-title">{project.title}</h3>
                     <p className="projects__card-type">{project.type}</p>
                     <p className="projects__card-keywords">{project.keywords}</p>
+                    {project.comingSoon && <span className="projects__card-soon-tag">Coming soon</span>}
                   </div>
                 </>
               );

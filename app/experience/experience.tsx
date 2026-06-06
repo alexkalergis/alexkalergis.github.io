@@ -100,7 +100,7 @@ export function Experience() {
                           className="experience__company-link"
                         >
                           {company.name}
-                          <ExternalLink className="h-3 w-3" />
+                          <ExternalLink className="h-4 w-4" />
                         </Link>
                       ) : (
                         <span className="experience__company-name">{company.name}</span>

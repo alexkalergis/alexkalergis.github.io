@@ -213,7 +213,7 @@ export default function PersonalLibraryPage() {
           <section id="hobbies" className="space-y-16" ref={hobbiesRef}>
             <div className="space-y-6">
               <h2 className="font-bold text-[2.5rem]">Hobbies</h2>
-              <p className="text-muted-foreground max-w-3xl text-lg">
+              <p className="text-muted-foreground max-w-3xl text-lead">
                 Creative activities that excites me.
               </p>
             </div>
@@ -262,16 +262,16 @@ export default function PersonalLibraryPage() {
                         {(item.title || item.description || hobbiesTab) && (
                           <div className="flex flex-col items-start gap-[10px] self-stretch">
                             {item.title && (
-                              <div className="self-stretch text-foreground text-center font-mono text-[14px] font-bold leading-normal">
+                              <div className="self-stretch text-foreground text-center font-mono text-meta font-bold leading-normal">
                                 {item.title}
                               </div>
                             )}
                             {item.description && (
-                              <div className="self-stretch text-foreground text-center font-mono text-[14px] font-medium leading-normal">
+                              <div className="self-stretch text-foreground text-center font-mono text-meta font-medium leading-normal">
                                 {item.description}
                               </div>
                             )}
-                            <div className="self-stretch text-foreground text-center font-mono text-[14px] font-normal leading-normal">
+                            <div className="self-stretch text-foreground text-center font-mono text-meta font-normal leading-normal">
                               {hobbiesTab === "photography"
                                 ? "Photography"
                                 : "Art"}
@@ -290,7 +290,7 @@ export default function PersonalLibraryPage() {
                         rel="noopener noreferrer"
                         className="flex px-[25px] py-[15px] justify-center items-center gap-[10px] rounded-lg border border-border hover:bg-secondary transition-colors"
                       >
-                        <span className="text-foreground text-justify font-mono text-[16px] font-medium leading-normal">
+                        <span className="text-foreground text-justify font-mono text-body font-medium leading-normal">
                           Follow me on 500px
                         </span>
                       </Link>
@@ -304,7 +304,7 @@ export default function PersonalLibraryPage() {
           <section id="interests" className="space-y-16" ref={interestsRef}>
             <div className="space-y-6">
               <h2 className="font-bold text-[2.5rem]">Interests</h2>
-              <p className="text-muted-foreground max-w-3xl text-lg">
+              <p className="text-muted-foreground max-w-3xl text-lead">
                 A curated collection that inspires me.
               </p>
             </div>
@@ -346,14 +346,14 @@ export default function PersonalLibraryPage() {
                           </div>
                         )}
                         <div className={`flex flex-col items-start gap-[10px] self-stretch ${!item.image ? "flex-1 justify-center" : ""}`}>
-                          <div className="self-stretch text-foreground text-center font-mono text-[14px] font-bold leading-normal">
+                          <div className="self-stretch text-foreground text-center font-mono text-meta font-bold leading-normal">
                             {item.title}
                             {item.year && ` | ${item.year}`}
                           </div>
-                          <div className="self-stretch text-foreground text-center font-mono text-[14px] font-medium leading-normal">
+                          <div className="self-stretch text-foreground text-center font-mono text-meta font-medium leading-normal">
                             {item.creator || item.description}
                           </div>
-                          <div className="self-stretch text-foreground text-center font-mono text-[14px] font-normal leading-normal">
+                          <div className="self-stretch text-foreground text-center font-mono text-meta font-normal leading-normal">
                             {item.tags.slice(0, 3).join(" | ")}
                           </div>
                         </div>

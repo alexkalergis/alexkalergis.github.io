@@ -15,7 +15,7 @@ export function Education() {
         <div className="education__right">
           {/* ── Degree ────────────────────────────────────────────────────── */}
           <div className="education__group">
-            <span className="education__group-label">University Degree</span>
+            <span className="education__group-label">Degrees</span>
             <div className="education__flat-list">
               <div className="education__flat-item">
                 <div className="education__flat-logo">
@@ -88,13 +88,13 @@ export function Education() {
                     src="/images/Education/AIHUB.png"
                     alt="AI HUB logo"
                     fill
-                    className="oanabject-contain"
+                    className="object-contain"
                   />
                 </div>
                 <div className="education__flat-body">
-                  <span className="education__flat-org">Honorable Mention in AI</span>
+                  <span className="education__flat-org">AI HUB</span>
                   <span className="education__flat-detail">
-                    AI HUB · 2023
+                    Honorable Mention · 2023
                   </span>
                 </div>
               </div>

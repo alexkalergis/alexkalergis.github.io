@@ -22,7 +22,7 @@
   }
 
   &__title {
-    font-size: var(--font-size-5xl);
+    font-size: var(--text-title);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tight);
     color: hsl(var(--foreground));
@@ -33,7 +33,7 @@
     color: hsl(var(--foreground));
     text-align: justify;
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: var(--font-size-lg);
+    font-size: var(--text-lead);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
   }
@@ -52,7 +52,7 @@
   &__tab-button {
     text-align: center;
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: var(--font-size-lg);
+    font-size: var(--text-lead);
     line-height: var(--line-height-normal);
     color: hsl(var(--foreground));
     font-weight: var(--font-weight-normal);
@@ -121,7 +121,7 @@
     color: hsl(var(--foreground));
     text-align: center;
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: var(--font-size-sm);
+    font-size: var(--text-meta);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-normal);
   }
@@ -131,7 +131,7 @@
     color: hsl(var(--foreground));
     text-align: center;
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: var(--font-size-sm);
+    font-size: var(--text-meta);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-normal);
   }
@@ -141,7 +141,7 @@
     color: hsl(var(--foreground));
     text-align: center;
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: var(--font-size-sm);
+    font-size: var(--text-meta);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
   }
@@ -166,7 +166,7 @@
     color: hsl(var(--foreground));
     text-align: justify;
     font-family: "IBM Plex Mono", "Roboto Mono", monospace;
-    font-size: var(--font-size-base);
+    font-size: var(--text-body);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-normal);
   }

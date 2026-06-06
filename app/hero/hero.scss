@@ -2,7 +2,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid hsl(var(--border));
+  // No border-bottom here: the next section's border-top already draws the
+  // divider. Stacking both made the line under the ticker look 2px thick.
   overflow: hidden;
 
   // ─── Split layout: name left, info right ───────────────────────────────────
@@ -31,7 +32,7 @@
   &__name {
     display: flex;
     flex-direction: column;
-    font-size: clamp(4rem, 9vw, 9rem);
+    font-size: var(--text-hero);
     font-weight: 700;
     line-height: 0.87;
     letter-spacing: -0.04em;
@@ -58,15 +59,15 @@
   }
 
   &__role {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: hsl(var(--muted-foreground));
+    color: hsl(var(--foreground));
     font-weight: var(--font-weight-medium);
   }
 
   &__description {
-    font-size: var(--font-size-base);
+    font-size: var(--text-lead);
     line-height: var(--line-height-relaxed);
     color: hsl(var(--muted-foreground));
     margin: 0;
@@ -88,7 +89,7 @@
     gap: 0.5rem;
     flex: 1;
     padding: 0.875rem 1rem;
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     font-weight: var(--font-weight-medium);
     font-family: "IBM Plex Mono", monospace;
     letter-spacing: 0.12em;
@@ -113,7 +114,7 @@
     &--ghost {
       background: transparent;
       color: hsl(var(--foreground));
-      border: 1px solid hsl(var(--border));
+      border: 1px solid hsl(var(--foreground));
       border-left: none;
 
       &:hover {
@@ -131,14 +132,14 @@
   }
 
   &__meta-item {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     letter-spacing: 0.1em;
     color: hsl(var(--muted-foreground) / 0.7);
   }
 
   &__meta-sep {
     color: hsl(var(--accent));
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
   }
 
   // ─── Skills ticker ─────────────────────────────────────────────────────────
@@ -162,7 +163,7 @@
   }
 
   &__ticker-item {
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: hsl(var(--muted-foreground));
@@ -172,7 +173,7 @@
 
   &__ticker-sep {
     color: hsl(var(--accent));
-    font-size: var(--font-size-xs);
+    font-size: var(--text-meta);
     flex-shrink: 0;
   }
 
