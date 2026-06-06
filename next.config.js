@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  ...(process.env.NODE_ENV === "production" ? { output: "export" } : {}),
+  outputFileTracingRoot: __dirname,
   images: {
     unoptimized: true,
   },

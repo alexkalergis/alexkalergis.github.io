@@ -41,7 +41,6 @@ export function Header() {
           ) : (
             <>
               <Link href="/" className="header__link">Home</Link>
-              <Link href="/professional" className="header__link">Professional</Link>
               <Link href="/personal" className="header__link">Personal</Link>
             </>
           )}
@@ -72,7 +71,6 @@ export function Header() {
           ) : (
             <>
               <Link href="/" className="header__mobile-link" onClick={closeMenu}>Home</Link>
-              <Link href="/professional" className="header__mobile-link" onClick={closeMenu}>Professional</Link>
               <Link href="/personal" className="header__mobile-link" onClick={closeMenu}>Personal</Link>
             </>
           )}

@@ -1,25 +1,7 @@
-"use client";
+import { Header } from "@/components/header/header";
 
-import dynamic from "next/dynamic";
-
-const HeaderPlaceholder = () => (
-  <header className="header">
-    <div className="header__inner">
-      <a href="/" className="header__logo">
-        Alex Kalergis
-      </a>
-    </div>
-  </header>
-);
-
-const DynamicHeader = dynamic(
-  () => import("@/components/header/header").then((mod) => mod.Header),
-  {
-    ssr: false,
-    loading: () => <HeaderPlaceholder />,
-  }
-);
-
+// Kept as a thin wrapper so existing call sites stay unchanged.
+// The header is server-rendered for SEO; only its scroll/menu state hydrates on the client.
 export function InteractiveHeader() {
-  return <DynamicHeader />;
+  return <Header />;
 }

@@ -19,11 +19,15 @@ export function CustomCursor() {
   const isClicking = useRef(false);
   const trail = useRef<TrailPoint[]>([]);
   const rafId = useRef<number>(0);
-const [isTouchDevice, setIsTouchDevice] = useState(false);
+const [isDisabled, setIsDisabled] = useState(false);
 
   useEffect(() => {
-    if ("ontouchstart" in window) {
-      setIsTouchDevice(true);
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if ("ontouchstart" in window || prefersReducedMotion) {
+      setIsDisabled(true);
       return;
     }
 
@@ -98,9 +102,9 @@ const [isTouchDevice, setIsTouchDevice] = useState(false);
       document.removeEventListener("mousedown", handleMouseDown);
       document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [isTouchDevice]);
+  }, [isDisabled]);
 
-  if (isTouchDevice) return null;
+  if (isDisabled) return null;
 
   return (
     <>
