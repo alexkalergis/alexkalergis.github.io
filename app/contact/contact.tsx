@@ -23,15 +23,16 @@ export function Contact() {
 
           <div className="contact__body">
             <p className="contact__blurb">
-              Open to new opportunities, reach out and let&apos;s talk.{" "}
+              Open to new opportunities,{" "}
               <button
                 className="contact__email"
                 onClick={handleEmailClick}
                 aria-label="Send email to Alex Kalergis"
               >
-                Reach out
+                reach out
                 <span className="contact__email-arrow" aria-hidden="true">↗</span>
-              </button>
+              </button>{" "}
+              and let&apos;s talk.
             </p>
 
             <div className="contact__links">
