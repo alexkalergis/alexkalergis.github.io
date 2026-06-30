@@ -9,51 +9,45 @@ const projects = [
     id: 1,
     title: "Dr.Parrot",
     type: "Product Design & Development",
-    image: "/images/Projects/logo.png",
-    keywords: "Figma · React · Claude Code",
+    image: "/images/Projects/logo.webp",
+    url: "https://dr-parrot.gr",
   },
   {
     id: 2,
     title: "maMEDS",
     type: "Product Design & Development",
-    image: "/images/Projects/maMEDS.png",
-    keywords: "Figma · React · React Native",
+    image: "/images/Projects/maMEDS.webp",
     url: "https://mameds.gr"
   },
   {
     id: 0,
     title: "Arkon.health",
     type: "Website Design & Development",
-    image: "/images/Projects/Arkon-logo.png",
-    keywords: "Figma · React · Claude Code",
+    image: "/images/Projects/Arkon-logo.webp",
   },
   {
     id: 3,
     title: "HIVE",
     type: "Mobile App Design",
     image: "/images/Projects/HIVE.webp",
-    keywords: "Figma · Google Stitch",
   },
   {
     id: 4,
     title: "AssetScope",
     type: "Mobile App Design",
-    image: "/images/Projects/Assets.png",
-    keywords: "Figma · React Native",
+    image: "/images/Projects/Assets.webp",
   },
   {
     id: 5,
     title: "Busifinder",
     type: "Web App Design",
-    image: "/images/Projects/Busifinder.png",
-    keywords: "Figma · Retool",
+    image: "/images/Projects/Busifinder.webp",
   },
   {
     id: 6,
     title: "Navigation App Evaluation",
     type: "Design & Research",
-    image: "/images/Projects/myNavigation.png",
-    keywords: "Double Diamond · Heuristic",
+    image: "/images/Projects/myNavigation.webp",
     url: "https://github.com/alexkalergis/Design-and-evaluation-of-a-navigation-app",
 
   },
@@ -61,24 +55,21 @@ const projects = [
     id: 7,
     title: "Robot writing",
     type: "Robotics Engineering",
-    image: "/images/Projects/RobotWriting.png",
-    keywords: "Machine Learning · Robotics",
+    image: "/images/Projects/RobotWriting.webp",
     url: "https://github.com/alexkalergis/Robot-writing-via-Reinforcement-Learning",
   },
   {
     id: 8,
     title: "Clustering shapes",
     type: "Machine Learning Engineering",
-    image: "/images/Projects/Clustering.png",
-    keywords: "SVM · Kernel Methods",
+    image: "/images/Projects/Clustering.webp",
     url: "https://github.com/alexkalergis/Clustering-using-Support-Vector-Machines",
   },
   {
     id: 9,
     title: "Image reconstruction",
     type: "Machine Learning Engineering",
-    image: "/images/Projects/GanRecovery.png",
-    keywords: "GANs · Gradient Descent",
+    image: "/images/Projects/GanRecovery.webp",
     url: "https://github.com/alexkalergis/Image-Recovery-using-Generative-Adversarial-Networks",
   },
 ];
@@ -115,8 +106,6 @@ export function Projects() {
                   <div className="projects__card-caption">
                     <h3 className="projects__card-title">{project.title}</h3>
                     <p className="projects__card-type">{project.type}</p>
-                    <p className="projects__card-keywords">{project.keywords}</p>
-                    {project.comingSoon && <span className="projects__card-soon-tag">Coming soon</span>}
                   </div>
                 </>
               );

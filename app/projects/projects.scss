@@ -38,7 +38,7 @@
     line-height: 1.1;
     margin: 0;
     color: transparent;
-    -webkit-text-stroke: 1.5px hsl(var(--accent) / 0.5);
+    -webkit-text-stroke: 1.5px hsl(var(--accent));
   }
 
   // ─── Right column ────────────────────────────────────────────────────────
@@ -139,13 +139,6 @@
     margin: 0;
   }
 
-  &__card-keywords {
-    font-size: var(--text-meta);
-    color: hsl(var(--muted-foreground) / 0.65);
-    letter-spacing: 0.04em;
-    margin: 0;
-  }
-
   // ─── Responsive ──────────────────────────────────────────────────────────
   @media (max-width: 900px) {
     &__container {
@@ -171,8 +164,12 @@
       padding: 0 1.5rem;
     }
 
-    &__grid {
-      grid-template-columns: 1fr;
+    // Keep two columns on phones — a single full-width column made each 4:3 card
+    // huge and the 10-project list an endless scroll. Tighten the card padding
+    // so the compact thumbnails still breathe.
+    &__card-inner {
+      gap: 0.75rem;
+      padding: 1rem;
     }
   }
 }

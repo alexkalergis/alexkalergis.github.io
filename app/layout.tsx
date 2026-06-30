@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title,
   description,
   icons: {
-    icon: "/images/profile-photo.png",
+    icon: "/images/profile-photo.webp",
   },
   openGraph: {
     type: "website",

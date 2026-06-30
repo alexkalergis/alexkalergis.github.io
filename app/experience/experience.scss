@@ -37,7 +37,7 @@
     line-height: 1.1;
     margin: 0;
     color: transparent;
-    -webkit-text-stroke: 1.5px hsl(var(--accent) / 0.5);
+    -webkit-text-stroke: 1.5px hsl(var(--accent));
   }
 
   // ─── Right column ──────────────────────────────────────────────────────────
@@ -193,14 +193,27 @@
       padding: 0 1.5rem;
     }
 
+    // Tame the giant watermark number so it sits cleanly beside the title
+    // instead of crowding it.
+    &__num {
+      font-size: clamp(2.5rem, 16vw, 3.5rem);
+    }
+
     &__item {
       gap: 0.75rem;
       padding: 1.5rem 0;
     }
 
-    &__item-header {
+    // Stack role-above-date and company-above-location so the long role text
+    // gets the full column width instead of wrapping into a narrow tower.
+    &__item-row {
       flex-direction: column;
-      gap: 0.25rem;
+      align-items: flex-start;
+      gap: 0.1rem;
+    }
+
+    &__date {
+      white-space: normal;
     }
   }
 }

@@ -48,6 +48,11 @@
     }
   }
 
+  &__name-outline {
+    -webkit-text-stroke: 1.5px hsl(var(--accent));
+    color: transparent;
+  }
+
   // ─── Info column ───────────────────────────────────────────────────────────
   &__info-col {
     display: flex;
@@ -190,11 +195,20 @@
     &__split  { padding: 3rem 1.5rem 2.5rem; }
     &__ticker { padding-left: 1.5rem; padding-right: 1.5rem; }
 
+    // "Alexandros" is the widest line; scale it to nearly fill the column width
+    // on phones (~15vw keeps the monospace line just inside the 1.5rem padding
+    // across common widths, and the section's overflow:hidden guards the rest).
+    &__name { font-size: clamp(3rem, 15vw, 5rem); }
+
     &__actions {
       flex-direction: column;
 
+      // Stacked: fuse the ghost button under the primary. Match the primary's
+      // foreground border on all visible edges (the old light --border left edge
+      // was barely visible against the page) and drop the top so the two share
+      // the primary's bottom line.
       .hero__btn--ghost {
-        border-left: 1px solid hsl(var(--border));
+        border: 1px solid hsl(var(--foreground));
         border-top: none;
       }
     }

@@ -49,7 +49,7 @@
   --text-meta: 0.8125rem;                  // 13px
   --text-body: 1rem;                       // 16px
   --text-lead: 1.125rem;                   // 18px
-  --text-title: clamp(1.875rem, 4vw, 3rem);
+  --text-title: clamp(2.375rem, 9vw, 3rem); // steeper ramp → bigger on phones, same 3rem cap on desktop
   --text-display: clamp(4rem, 9vw, 8rem);   // fluid: no mobile override needed
   --text-hero: clamp(4rem, 9vw, 9rem);
 

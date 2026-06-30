@@ -5,10 +5,12 @@ import Link from "next/link";
 import "./hero.scss";
 
 const tickerSkills = [
-  "Frontend Development", "React", "React Native", "Python", "Claude Code",
-  "Human-Computer Interaction", "Product Design", "UX Design", "Figma", 
-  "Machine Learning", "Agile", 
-];
+  "Frontend Development",
+  "Software Engineering",
+  "Human-Computer Interaction", 
+  "Design Thinking",
+  "Product Design", 
+  "User Experience Design"];
 
 export function Hero() {
   const doubled = [...tickerSkills, ...tickerSkills];
@@ -20,7 +22,7 @@ export function Hero() {
       <div className="hero__split">
         <div className="hero__name-col">
           <h1 className="hero__name">
-            <span className="hero__name-line">Alex</span>
+            <span className="hero__name-line">Alex<span className="hero__name-outline">andros</span></span>
             <span className="hero__name-line hero__name-line--outlined">Kalergis</span>
           </h1>
         </div>

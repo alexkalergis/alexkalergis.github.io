@@ -13,11 +13,6 @@ const companies = [
     startDate: "Jul 2025",
     endDate: "Present",
     location: "Athens, Greece",
-    description: [
-      "Led the Product Design of maMEDS platform, user flows and UI prototypes.",
-      "Maintained Frontend features, contributing to a responsive and accessible UX.",
-      "Collaborated with cross-functional teams on product strategy and feature planning.",
-    ],
     website: "https://mameds.gr",
   },
   {
@@ -27,11 +22,6 @@ const companies = [
     startDate: "Jan 2025",
     endDate: "Present",
     location: "Athens, Greece",
-    description: [
-      "Designed the UX/UI for multiple mobile and web applications for EU-funded programs.",
-      "Designed a product that converts doctor–patient conversations into clinical notes.",
-      "Assisted in the design and setup of the company's website.",
-    ],
     website: "https://ainigma.tech",
   },
   {
@@ -41,11 +31,6 @@ const companies = [
     startDate: "Feb 2024",
     endDate: "Jul 2024",
     location: "Volos, Greece",
-    description: [
-      "Introduced new customer engagement strategies, improving overall customer experience.",
-      "Assisted in the strategic business's successful exit planning.",
-      "Gained experience of business operations, budget allocation and revenue management.",
-    ],
     website: "#",
   },
   {
@@ -55,11 +40,6 @@ const companies = [
     startDate: "Oct 2023",
     endDate: "Jan 2024",
     location: "Lisbon, Portugal",
-    description: [
-      "Led the design of a product that suggests business models for early-stage startups.",
-      "Developed a minimum viable product using Retool to ensure strategic objectives.",
-      "Gained experience in product lifecycle, UX Design, coding and collaboration skills.",
-    ],
     website: "https://builduplabs.com",
   },
 ];
@@ -109,15 +89,6 @@ export function Experience() {
                     </div>
                   </div>
                 </div>
-
-                <ul className="experience__description experience__description--indented">
-                  {company.description.map((item, idx) => (
-                    <li key={idx} className="experience__description-item">
-                      <span className="experience__bullet" />
-                      <span className="experience__description-text">{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>

@@ -37,7 +37,7 @@
     line-height: 1.1;
     margin: 0;
     color: transparent;
-    -webkit-text-stroke: 1.5px hsl(var(--accent) / 0.5);
+    -webkit-text-stroke: 1.5px hsl(var(--accent));
   }
 
   // ─── Right column: pull quote + body + skills ──────────────────────────────
@@ -233,6 +233,19 @@
     &__container {
       padding: 0 1.5rem;
     }
+
+    // Stack title-above-source instead of squeezing them onto one line, where
+    // long titles wrap into a narrow tower and the right-aligned source floats.
+    &__reads-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+
+    &__reads-meta {
+      white-space: normal;
+      color: hsl(var(--muted-foreground) / 0.75);
+    }
   }
 
   &__drawing-frame {
@@ -354,6 +367,35 @@
 
     &:hover:not(&--active) {
       background: hsl(var(--muted-foreground));
+    }
+  }
+
+  // ─── Lightbox: mobile ───────────────────────────────────────────────────────
+  // On phones the side-by-side [nav][image][nav] row overflows. Float the arrows
+  // over the backdrop edges and let the image use the full width.
+  @media (max-width: 600px) {
+    &__lightbox {
+      gap: 0;
+      padding: 0 0.5rem;
+    }
+
+    &__lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: hsl(var(--background) / 0.7);
+      backdrop-filter: blur(4px);
+    }
+
+    &__lightbox-nav--prev { left: 0.5rem; }
+    &__lightbox-nav--next { right: 0.5rem; }
+
+    &__lightbox-inner {
+      width: 86vw;
+      height: 70vh;
     }
   }
 }
