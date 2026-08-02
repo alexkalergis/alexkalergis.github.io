@@ -57,21 +57,19 @@ export function Experience() {
           <div className="experience__list">
             {companies.map((company) => (
               <div key={company.name} className="experience__item">
-                <div className="experience__item-top">
-                  <div className="experience__logo-wrapper">
-                    <Image
-                      src={company.logo}
-                      alt={`${company.name} logo`}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  <div className="experience__item-info">
-                    <div className="experience__item-row">
-                      <h3 className="experience__role">{company.role}</h3>
-                      <span className="experience__date">{company.startDate} — {company.endDate}</span>
+                <h3 className="experience__role">{company.role}</h3>
+
+                <div className="experience__meta">
+                  <div className="experience__identity">
+                    <div className="experience__logo-wrapper">
+                      <Image
+                        src={company.logo}
+                        alt={`${company.name} logo`}
+                        fill
+                        className="object-contain"
+                      />
                     </div>
-                    <div className="experience__item-row">
+                    <div className="experience__identity-text">
                       {company.website !== "#" ? (
                         <Link
                           href={company.website}
@@ -88,6 +86,8 @@ export function Experience() {
                       <span className="experience__location">{company.location}</span>
                     </div>
                   </div>
+
+                  <span className="experience__date">{company.startDate} — {company.endDate}</span>
                 </div>
               </div>
             ))}

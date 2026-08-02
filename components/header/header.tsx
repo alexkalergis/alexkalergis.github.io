@@ -41,7 +41,6 @@ export function Header() {
           ) : (
             <>
               <Link href="/" className="header__link">Home</Link>
-              <Link href="/personal" className="header__link">Personal</Link>
             </>
           )}
         </nav>
@@ -71,7 +70,6 @@ export function Header() {
           ) : (
             <>
               <Link href="/" className="header__mobile-link" onClick={closeMenu}>Home</Link>
-              <Link href="/personal" className="header__mobile-link" onClick={closeMenu}>Personal</Link>
             </>
           )}
         </div>

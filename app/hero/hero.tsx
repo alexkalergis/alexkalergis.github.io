@@ -5,8 +5,8 @@ import Link from "next/link";
 import "./hero.scss";
 
 const tickerSkills = [
-  "Frontend Development",
-  "Software Engineering",
+  "User Interface Design",
+  "Software Development",
   "Human-Computer Interaction", 
   "Design Thinking",
   "Product Design", 

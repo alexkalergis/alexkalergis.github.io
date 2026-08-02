@@ -6,32 +6,34 @@ import Link from "next/link";
 import "./about.scss";
 
 const drawings = [
-  "/images/PersonalLibrary/Hobbies/Drawing/IMG_8711.webp",
-  "/images/PersonalLibrary/Hobbies/Drawing/IMG_8712.webp",
-  "/images/PersonalLibrary/Hobbies/Drawing/IMG_8714.webp",
-  "/images/PersonalLibrary/Hobbies/Drawing/IMG_8715.webp",
-  "/images/PersonalLibrary/Hobbies/Drawing/IMG_8716.webp",
-  "/images/PersonalLibrary/Hobbies/Drawing/IMG_8717.webp",
-  "/images/PersonalLibrary/Hobbies/Drawing/IMG_8718.webp",
-  "/images/PersonalLibrary/Hobbies/Drawing/IMG_8726.webp",
+  "/images/About/Interests/IMG_8711.webp",
+  "/images/About/Interests/IMG_8712.webp",
+  "/images/About/Interests/IMG_8714.webp",
+  "/images/About/Interests/IMG_8715.webp",
+  "/images/About/Interests/IMG_8716.webp",
+  "/images/About/Interests/IMG_8717.webp",
+  "/images/About/Interests/IMG_8718.webp",
+  "/images/About/Interests/IMG_8726.webp",
 ];
 
-const inspiration = [
-  { title: "IDEO", meta: "ideo.com", href: "https://www.ideo.com" },
-  { title: "Interaction Design Foundation", meta: "interaction-design.org", href: "https://www.interaction-design.org" },
-  { title: "Stanford d.school", meta: "dschool.stanford.edu", href: "https://dschool.stanford.edu" },
-  { title: "Harvard Graduate School of Design", meta: "gsd.harvard.edu", href: "https://www.gsd.harvard.edu" },
-  { title: "MIT Media Lab", meta: "media.mit.edu", href: "https://www.media.mit.edu" },
+type InspirationItem = { title: string; meta: string; href: string; image?: string };
+
+const inspiration: InspirationItem[] = [
+  { title: "IDEO", meta: "ideo.com", href: "https://www.ideo.com", image: "/images/About/Inspiration/IDEO.png" },
+  { title: "Interaction Design Foundation", meta: "interaction-design.org", href: "https://www.interaction-design.org", image: "/images/About/Inspiration/InteractionDesignFoundation.png" },
+  { title: "Stanford d.school", meta: "dschool.stanford.edu", href: "https://dschool.stanford.edu", image: "/images/About/Inspiration/Stanford.webp" },
+  { title: "Harvard Graduate School of Design", meta: "gsd.harvard.edu", href: "https://www.gsd.harvard.edu", image: "/images/About/Inspiration/HarvardGSD.webp" },
+  { title: "MIT Media Lab", meta: "media.mit.edu", href: "https://www.media.mit.edu", image: "/images/About/Inspiration/MITMediaLab.webp" },
 ];
 
-const videos = [
-  { title: "The first secret of great design", meta: "Tony Fadell, TED", href: "https://youtu.be/9uOMectkCCs" },
-  { title: "How product design can change the world", meta: "Christiaan Maats, TED", href: "https://youtu.be/ZqeA_psKn2E" },
+const videos: InspirationItem[] = [
+  { title: "The first secret of great design", meta: "Tony Fadell, TED", href: "https://youtu.be/9uOMectkCCs", image: "/images/About/Inspiration/TED.png" },
+  { title: "How product design can change the world", meta: "Christiaan Maats, TED", href: "https://youtu.be/ZqeA_psKn2E", image: "/images/About/Inspiration/TEDxUniversityofGroningen.png" },
 ];
 
-const reads = [
-  { title: "Software designers must abandon their roles as the custodians of libraries, logic and grids", meta: "Nick Foster, Dezeen", href: "https://www.dezeen.com/2026/03/03/software-design-ai-nick-foster-opinion/" },
-  { title: "Aesthetics and the Art of Engineering", meta: "Per Boelskifte, ResearchGate", href: "https://www.researchgate.net/publication/276314506_Aesthetics_and_the_Art_of_Engineering" },
+const reads: InspirationItem[] = [
+  { title: "Software designers must abandon their roles as the custodians of libraries, logic and grids", meta: "Nick Foster, Dezeen", href: "https://www.dezeen.com/2026/03/03/software-design-ai-nick-foster-opinion/", image: "/images/About/Inspiration/Dezeen.webp" },
+  { title: "Aesthetics and the Art of Engineering", meta: "Per Boelskifte, ResearchGate", href: "https://www.researchgate.net/publication/276314506_Aesthetics_and_the_Art_of_Engineering", image: "/images/About/Inspiration/ResearchGate.png" },
 ];
 
 
@@ -69,13 +71,13 @@ export function About() {
             <p className="about__text">
               My journey began with a fascination for technology and the ways it
               can improve people&apos;s lives. After studying Electrical and Computer
-              Engineering, I discovered a passion for combining engineering, design,
-              and creativity to build meaningful digital experiences. I enjoy working
+              Engineering, I discovered a passion for combining engineering with design,
+              to build meaningful digital (and why not physical) experiences. I enjoy working
               at the intersection of technology and human needs, turning complex
               problems into simple, thoughtful solutions. When I&apos;m not designing or
               building products, I love traveling, exploring architecture, enjoying
               specialty coffee, being in nature, and learning about psychology,
-              philosophy, and the creative process.
+              philosophy and the creative process.
             </p>
           </div>
           </div>
@@ -83,50 +85,89 @@ export function About() {
           {/* ── Personal ───────────────────────────────────────────────────── */}
           <div className="about__personal">
 
-            {/* Interests */}
+            {/* Interests — two project-style cards */}
             <div className="about__group">
               <span className="about__group-label">Interests</span>
-              <div className="about__drawings">
-                {drawings.map((src, i) => (
-                  <button key={i} className="about__drawing-frame" onClick={() => setLightboxIndex(i)}>
-                    <Image
-                      src={src}
-                      alt={`Drawing ${i + 1}`}
-                      fill
-                      className="object-contain"
-                    />
+              <div className="about__cards">
+                {/* Drawing → opens the lightbox to browse all drawings */}
+                <article className="about__card">
+                  <button
+                    type="button"
+                    className="about__card-inner"
+                    onClick={() => setLightboxIndex(0)}
+                  >
+                    <div className="about__card-frame">
+                      <Image
+                        src={drawings[0]}
+                        alt="Drawing"
+                        fill
+                        className="about__card-img object-contain"
+                      />
+                    </div>
+                    <div className="about__card-caption">
+                      <h3 className="about__card-title">Drawing</h3>
+                      <p className="about__card-type">Pencil &amp; charcoal studies</p>
+                    </div>
                   </button>
-                ))}
-              </div>
-              <ul className="about__reads-list">
-                <li>
+                </article>
+
+                {/* Photography → links out to 500px */}
+                <article className="about__card">
                   <Link
                     href="https://500px.com/p/alexkalergis?view=photos"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="about__reads-item"
+                    className="about__card-inner"
                   >
-                    <span className="about__reads-title">Photography</span>
-                    <span className="about__reads-meta">500px.com</span>
+                    <div className="about__card-frame about__card-frame--logo">
+                      <span className="about__card-logo-wrap">
+                        <Image
+                          src="/images/About/Interests/500px.webp"
+                          alt="500px"
+                          fill
+                          className="about__card-img object-contain"
+                        />
+                      </span>
+                    </div>
+                    <div className="about__card-caption">
+                      <h3 className="about__card-title">Photography</h3>
+                      <p className="about__card-type">500px.com ↗</p>
+                    </div>
                   </Link>
-                </li>
-              </ul>
+                </article>
+              </div>
             </div>
 
             {/* Inspiration */}
             <div className="about__group">
               <span className="about__group-label">Inspiration</span>
-              <ul className="about__reads-list">
+              <ul className="about__insp-list">
                 {[...inspiration, ...videos, ...reads].map((item) => (
                   <li key={item.title}>
                     <Link
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="about__reads-item"
+                      className="about__insp-item"
                     >
-                      <span className="about__reads-title">{item.title}</span>
-                      <span className="about__reads-meta">{item.meta}</span>
+                      <span className="about__insp-logo">
+                        {item.image ? (
+                          <Image
+                            src={item.image}
+                            alt={`${item.title} logo`}
+                            fill
+                            className="object-contain"
+                          />
+                        ) : (
+                          <span className="about__insp-monogram" aria-hidden="true">
+                            {item.title.charAt(0)}
+                          </span>
+                        )}
+                      </span>
+                      <span className="about__insp-body">
+                        <span className="about__insp-title">{item.title}</span>
+                        <span className="about__insp-meta">{item.meta}</span>
+                      </span>
                     </Link>
                   </li>
                 ))}
